@@ -1,0 +1,34 @@
+BasedOnStyle: Google
+IndentWidth: 4
+
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+  AlignFunctionDeclarations: true
+  AlignFunctionPointers: false
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+  AlignFunctionDeclarations: true
+  AlignFunctionPointers: false
+
+
+BreakBeforeBinaryOperators: All
+AlignOperands: Align
+
+
+AllowShortBlocksOnASingleLine: true
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLambdasOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeComma
+
+FixNamespaceComments: true
+IndentWrappedFunctionNames: true
