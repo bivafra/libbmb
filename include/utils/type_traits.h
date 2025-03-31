@@ -119,4 +119,39 @@ struct is_pointer<T*> : true_type {};
 template <typename T>
 constexpr bool is_pointer_v = is_pointer<T>::value;
 
+/// remove_const
+template <typename T>
+struct remove_const {
+    using type = T;
+};
+
+template <typename T>
+struct remove_const<const T> {
+    using type = T;
+};
+
+/// remove_const_t
+template <typename T>
+using remove_const_t = remove_const<T>::type;
+
+/// remove_ref
+template <typename T>
+struct remove_ref {
+    using type = T;
+};
+
+template <typename T>
+struct remove_ref<T&> {
+    using type = T;
+};
+
+template <typename T>
+struct remove_ref<T&&> {
+    using type = T;
+};
+
+/// remove_ref_t
+template <typename T>
+using remove_ref_t = remove_ref<T>::type;
+
 }  // namespace bmb
