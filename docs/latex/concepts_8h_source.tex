@@ -1,0 +1,66 @@
+\doxysection{concepts.\+h}
+\hypertarget{concepts_8h_source}{}\label{concepts_8h_source}\index{include/utils/concepts.h@{include/utils/concepts.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__traits_8h}{type\_traits.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }bmb\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00014\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1detail_1_1SameHelper}{SameHelper}}\ =\ \mbox{\hyperlink{type__traits_8h_a2fe481c4fabaf7816a4164ddfed20866}{is\_same\_v<T,\ U>}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ SameHelper\ is\ needed\ for\ correct\ subsuming.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ This\ is\ required\ for\ all\ commutative\ relations.}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00023\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1SameAs}{SameAs}}\ =\ \mbox{\hyperlink{conceptbmb_1_1detail_1_1SameHelper}{detail::SameHelper<T,\ U>}}\ \&\&\ \mbox{\hyperlink{conceptbmb_1_1detail_1_1SameHelper}{detail::SameHelper<U,\ T>}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1DefaultConstructible}{DefaultConstructible}}\ =\ \textcolor{keyword}{requires}\ \{\ T();\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1ConstructibleFrom}{ConstructibleFrom}}\ =\ \textcolor{keyword}{requires}\ \{\ T(\mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<Args>}}()...);\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00035\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowConstructibleFrom}{NothrowConstructibleFrom}}\ =\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ There\ is\ no\ subsuming\ with\ ConstructibleFrom}}
+\DoxyCodeLine{00037\ \ \ \ \ \{\ T(\mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<Args>}}()...)\ \}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1MoveConstructible}{MoveConstructible}}\ =\ \mbox{\hyperlink{conceptbmb_1_1ConstructibleFrom}{ConstructibleFrom<T,\ T\&\&>}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00046\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowMoveConstructible}{NothrowMoveConstructible}}\ =\ \mbox{\hyperlink{conceptbmb_1_1NothrowConstructibleFrom}{NothrowConstructibleFrom<T,\ T\&\&>}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00050\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1MoveAssignable}{MoveAssignable}}\ =\ \textcolor{keyword}{requires}(T\ a)\ \{\ a\ =\ \mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<T\ \&\&>}}();\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00054\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowMoveAssignable}{NothrowMoveAssignable}}\ =\ \textcolor{keyword}{requires}(T\ a)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \{\ a\ =\ \mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<T\ \&\&>}}()\ \}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00060\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1CopyConstructible}{CopyConstructible}}\ =\ \mbox{\hyperlink{conceptbmb_1_1ConstructibleFrom}{ConstructibleFrom<T,\ const\ T\&>}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00064\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowCopyConstructible}{NothrowCopyConstructible}}\ =\ \mbox{\hyperlink{conceptbmb_1_1NothrowConstructibleFrom}{NothrowConstructibleFrom<T,\ const\ T\&>}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1CopyAssignable}{CopyAssignable}}\ =\ \textcolor{keyword}{requires}(T\ a,\ T\ b)\ \{\ a\ =\ b;\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00072\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowCopyAssignable}{NothrowCopyAssignable}}\ =\ \textcolor{keyword}{requires}(T\ a,\ T\ b)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \{\ a\ =\ b\ \}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}\ \ \textcolor{comment}{//\ namespace\ bmb}}
+
+\end{DoxyCode}

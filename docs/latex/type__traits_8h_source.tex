@@ -1,0 +1,143 @@
+\doxysection{type\+\_\+traits.\+h}
+\hypertarget{type__traits_8h_source}{}\label{type__traits_8h_source}\index{include/utils/type\_traits.h@{include/utils/type\_traits.h}}
+\mbox{\hyperlink{type__traits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }bmb\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ T\&\&\ \mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval}}()\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}declval\ isn't\ implemented\ to\ call\ it"{}});}
+\DoxyCodeLine{00013\ \}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ This\ type\ forces\ non-\/deduced\ context.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ It\ works\ because\ compiler's\ not\ able\ to\ deduce\ "{}qualifed\ name"{}}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ like\ "{}type\_identity<MyType>::value"{}.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ It\ useful\ for\ forcing\ a\ client\ to\ call\ a\ function\ with}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ explicitly\ given\ template\ types.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ For\ more\ explanation\ see\ https://stackoverflow.com/a/25245676}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1type__identity}{type\_identity}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00031\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_a2ee7eae935f73977bb23f14edcd423a5}{type\_identity\_t}}\ =\ type\_identity<T>::type;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{template}\ <auto\ val>}
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1integral__constant}{integral\_constant}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{using\ }value\_type\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{decltype}(val);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ value\ =\ val;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{template}\ <\textcolor{keywordtype}{bool}\ val>}
+\DoxyCodeLine{00042\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\_constant}}\ =\ \mbox{\hyperlink{structbmb_1_1integral__constant}{integral\_constant<val>}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \ =\ \mbox{\hyperlink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\_constant<true>}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ =\ \mbox{\hyperlink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\_constant<false>}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00051\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__same}{is\_same}}\ :\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ \{\};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__same}{is\_same}}<T,\ T>\ :\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \{\};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{00058\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_a2fe481c4fabaf7816a4164ddfed20866}{is\_same\_v}}\ =\ is\_same<T,\ U>::value;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__lvalue__ref}{is\_lvalue\_ref}}\ :\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ \{\};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__lvalue__ref}{is\_lvalue\_ref}}<T\&>\ :\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \{\};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00069\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_a09576dc4ba18e2df90d9f6e1ca809a85}{is\_lvalue\_ref\_v}}\ =\ is\_lvalue\_ref<T>::value;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00073\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__rvalue__ref}{is\_rvalue\_ref}}\ :\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ \{\};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__rvalue__ref}{is\_rvalue\_ref}}<T\&\&>\ :\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \{\};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00080\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_ae75e01d69a1a776d8049520df1123533}{is\_rvalue\_ref\_v}}\ =\ is\_rvalue\_ref<T>::value;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00084\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__const}{is\_const}}\ :\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ \{\};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__const}{is\_const}}<const\ T>\ :\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \{\};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_a7179c32348d8ebc69dd053e9a0ecc47b}{is\_const\_v}}\ =\ is\_const<T>::value;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{namespace\ }detail\ \{}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ Only\ classes\ and\ unions\ can\ have\ pointers\ to\ members,\ even\ if}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ there\ is\ no\ such\ member\ in\ the\ class.}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ test\_is\_class(\textcolor{keywordtype}{int}\ T::*);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}>}
+\DoxyCodeLine{00101\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ test\_is\_class(...);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}\ \ \textcolor{comment}{//\ namespace\ detail}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ WARNING:\ this\ implementation\ of\ is\_class\ detects\ unions\ as\ classes}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ because\ union\ is\ the\ same\ as\ struct/class\ but\ fields\ size.}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ Also\ it's\ impossible\ to\ differentiate\ class\ and\ union\ without}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ using\ compiler\ internal\ information.}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00112\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__class}{is\_class}}\ :\ decltype(detail::test\_is\_class<T>(nullptr))\ \{\};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00116\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_a4100c7275d1d036f0a68187c596f51ea}{is\_class\_v}}\ =\ \mbox{\hyperlink{structbmb_1_1is__class}{is\_class<T>::value}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00120\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__pointer}{is\_pointer}}\ :\ \mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\_type}}\ \{\};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00123\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1is__pointer}{is\_pointer}}<T*>\ :\ \mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\_type}}\ \{\};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00127\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{type__traits_8h_ae173583f9b03d883c0c19b246b219309}{is\_pointer\_v}}\ =\ is\_pointer<T>::value;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00131\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1remove__const}{remove\_const}}\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1remove__const}{remove\_const}}<const\ T>\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00142\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_a1bb6f3ed95ae13cce8351da4e00aa8eb}{remove\_const\_t}}\ =\ remove\_const<T>::type;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00146\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1remove__ref}{remove\_ref}}\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00151\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1remove__ref}{remove\_ref}}<T\&>\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00156\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbmb_1_1remove__ref}{remove\_ref}}<T\&\&>\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{using\ }type\ =\ T;}
+\DoxyCodeLine{00158\ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00162\ \textcolor{keyword}{using\ }\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\_ref\_t}}\ =\ remove\_ref<T>::type;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \}\ \ \textcolor{comment}{//\ namespace\ bmb}}
+
+\end{DoxyCode}

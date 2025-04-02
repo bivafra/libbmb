@@ -1,9 +1,16 @@
+#pragma once
 /**
  * @file type_traits.h
  * @authors bivafra
  */
 
 namespace bmb {
+
+/// declval
+template <typename T>
+T&& declval() {
+    static_assert(false, "declval isn't implemented to call it");
+}
 
 // This type forces non-deduced context.
 // It works because compiler's not able to deduce "qualifed name"

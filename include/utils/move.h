@@ -1,12 +1,32 @@
+#pragma once
 /**
  * @file move.h
  * This file provides move semantics features.
  * @authors bivafra
  */
 
+#include "concepts.h"
 #include "type_traits.h"
 
 namespace bmb {
+
+/**
+ * @brief Swap values
+ *
+ * @tparam x Value to swap
+ * @tparam y Value to swap
+ *
+ * @throws The same exception safety as move c-tor and
+ * move assignmet operator
+ * of T
+ */
+template <typename T>
+void swap(T& x, T& y) noexcept(MoveConstructible<T> && MoveAssignable<T>) {
+    T tmp = move(x);
+
+    x = move(y);
+    y = move(tmp);
+}
 
 /**
  * @brief Convert a value to xvalue
@@ -33,6 +53,11 @@ constexpr T&& forward(remove_ref_t<T>& value) noexcept {
     return static_cast<T&&>(value);
 }
 
+/**
+ * @brief Forward a rvalue
+ * @tparam value The object to forward
+ * @return Given value with proper expressions category
+ */
 template <typename T>
     requires(!is_lvalue_ref_v<T>)
 [[nodiscard("Forward should be used to initialize other object")]]

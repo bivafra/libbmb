@@ -1,0 +1,24 @@
+\doxysection{bmb\+::Nothrow\+Copy\+Assignable Concept Reference}
+\hypertarget{conceptbmb_1_1NothrowCopyAssignable}{}\label{conceptbmb_1_1NothrowCopyAssignable}\index{bmb::NothrowCopyAssignable@{bmb::NothrowCopyAssignable}}
+
+
+Nothrow\+Copy\+Assignable.  
+
+
+
+
+{\ttfamily \#include $<$concepts.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowCopyAssignable}{bmb::NothrowCopyAssignable}}\ =\ \ \textcolor{keyword}{requires}(T\ a,\ T\ b)\ \{}
+\DoxyCodeLine{\ \ \ \ \{\ a\ =\ b\ \}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Nothrow\+Copy\+Assignable. 

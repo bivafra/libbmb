@@ -1,0 +1,22 @@
+\doxysection{bmb\+::Move\+Assignable Concept Reference}
+\hypertarget{conceptbmb_1_1MoveAssignable}{}\label{conceptbmb_1_1MoveAssignable}\index{bmb::MoveAssignable@{bmb::MoveAssignable}}
+
+
+Move\+Assignable.  
+
+
+
+
+{\ttfamily \#include $<$concepts.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1MoveAssignable}{bmb::MoveAssignable}}\ =\ \ \textcolor{keyword}{requires}(T\ a)\ \{\ a\ =\ \mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<T\ \&\&>}}();\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Move\+Assignable. 

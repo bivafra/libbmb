@@ -1,0 +1,25 @@
+\doxysection{bmb\+::Nothrow\+Constructible\+From Concept Reference}
+\hypertarget{conceptbmb_1_1NothrowConstructibleFrom}{}\label{conceptbmb_1_1NothrowConstructibleFrom}\index{bmb::NothrowConstructibleFrom@{bmb::NothrowConstructibleFrom}}
+
+
+Nothrow\+Constructible\+From.  
+
+
+
+
+{\ttfamily \#include $<$concepts.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1NothrowConstructibleFrom}{bmb::NothrowConstructibleFrom}}\ =\ \ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \{\ T(\mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<Args>}}()...)\ \}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Nothrow\+Constructible\+From. 

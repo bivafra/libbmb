@@ -1,0 +1,106 @@
+\doxysection{include/utils/move.h File Reference}
+\hypertarget{move_8h}{}\label{move_8h}\index{include/utils/move.h@{include/utils/move.h}}
+{\ttfamily \#include "{}concepts.\+h"{}}\newline
+{\ttfamily \#include "{}type\+\_\+traits.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{move_8h_a200db918e21cad6da78596db4499153e}{bmb\+::swap}} (T \&x, T \&y) noexcept(Move\+Constructible$<$ T $>$ \&\&Move\+Assignable$<$ T $>$)
+\begin{DoxyCompactList}\small\item\em Swap values. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr \mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t}}$<$ T $>$ \&\& \mbox{\hyperlink{move_8h_a264120afa6d7704e00de0c0433958280}{bmb\+::move}} (T \&\&value) noexcept
+\begin{DoxyCompactList}\small\item\em Convert a value to xvalue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\constexpr T \&\& \mbox{\hyperlink{move_8h_ad6e28351b3ce5c7980db338ecc7cc5e2}{bmb\+::forward}} (\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t}}$<$ T $>$ \&value) noexcept
+\begin{DoxyCompactList}\small\item\em Forward a lvalue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ \newline
+requires (!\mbox{\hyperlink{type__traits_8h_a09576dc4ba18e2df90d9f6e1ca809a85}{is\+\_\+lvalue\+\_\+ref\+\_\+v}}$<$T$>$)}\\constexpr T \&\& \mbox{\hyperlink{move_8h_a1f5bd91ea0545bbd363ec365e4b14a68}{bmb\+::forward}} (\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t}}$<$ T $>$ \&\&value) noexcept
+\begin{DoxyCompactList}\small\item\em Forward a rvalue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides move semantics features. \begin{DoxyAuthor}{Authors}
+bivafra 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{move_8h_a1f5bd91ea0545bbd363ec365e4b14a68}\index{move.h@{move.h}!forward@{forward}}
+\index{forward@{forward}!move.h@{move.h}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{move_8h_a1f5bd91ea0545bbd363ec365e4b14a68} 
+template$<$typename T$>$ \newline
+requires (!is\+\_\+lvalue\+\_\+ref\+\_\+v$<$T$>$)\\
+T \&\& bmb\+::forward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t}}$<$ T $>$ \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Forward a rvalue. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em value} & The object to forward \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Given value with proper expressions category 
+\end{DoxyReturn}
+\Hypertarget{move_8h_ad6e28351b3ce5c7980db338ecc7cc5e2}\index{move.h@{move.h}!forward@{forward}}
+\index{forward@{forward}!move.h@{move.h}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{move_8h_ad6e28351b3ce5c7980db338ecc7cc5e2} 
+template$<$typename T$>$ \\
+T \&\& bmb\+::forward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t}}$<$ T $>$ \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Forward a lvalue. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em value} & The object to forward \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Given value with proper expressions category 
+\end{DoxyReturn}
+\Hypertarget{move_8h_a264120afa6d7704e00de0c0433958280}\index{move.h@{move.h}!move@{move}}
+\index{move@{move}!move.h@{move.h}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{move_8h_a264120afa6d7704e00de0c0433958280} 
+template$<$typename T$>$ \\
+remove\+\_\+ref\+\_\+t$<$ T $>$ \&\& bmb\+::move (\begin{DoxyParamCaption}\item[{T \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Convert a value to xvalue. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em value} & The object to cast to xvalue \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The given parameter casted to rvalue reference 
+\end{DoxyReturn}
+\Hypertarget{move_8h_a200db918e21cad6da78596db4499153e}\index{move.h@{move.h}!swap@{swap}}
+\index{swap@{swap}!move.h@{move.h}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{move_8h_a200db918e21cad6da78596db4499153e} 
+template$<$typename T$>$ \\
+void bmb\+::swap (\begin{DoxyParamCaption}\item[{T \&}]{x}{, }\item[{T \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Swap values. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em x} & Value to swap \\
+\hline
+{\em y} & Value to swap\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em The} & same exception safety as move c-\/tor and move assignmet operator of T \\
+\hline
+\end{DoxyExceptions}

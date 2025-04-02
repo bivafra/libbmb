@@ -1,0 +1,101 @@
+\doxysection{include/utils/type\+\_\+traits.h File Reference}
+\hypertarget{type__traits_8h}{}\label{type__traits_8h}\index{include/utils/type\_traits.h@{include/utils/type\_traits.h}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1type__identity}{bmb\+::type\+\_\+identity$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1type__identity}{type\+\_\+identity} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1integral__constant}{bmb\+::integral\+\_\+constant$<$ val $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1integral__constant}{integral\+\_\+constant} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__same}{bmb\+::is\+\_\+same$<$ T, U $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__same}{is\+\_\+same} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__same_3_01T_00_01T_01_4}{bmb\+::is\+\_\+same$<$ T, T $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1is__lvalue__ref}{bmb\+::is\+\_\+lvalue\+\_\+ref$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__lvalue__ref}{is\+\_\+lvalue\+\_\+ref} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__lvalue__ref_3_01T_01_6_01_4}{bmb\+::is\+\_\+lvalue\+\_\+ref$<$ T \& $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1is__rvalue__ref}{bmb\+::is\+\_\+rvalue\+\_\+ref$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__lvalue__ref}{is\+\_\+lvalue\+\_\+ref} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__rvalue__ref_3_01T_01_6_6_01_4}{bmb\+::is\+\_\+rvalue\+\_\+ref$<$ T \&\& $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1is__const}{bmb\+::is\+\_\+const$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__const}{is\+\_\+const} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__const_3_01const_01T_01_4}{bmb\+::is\+\_\+const$<$ const T $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1is__class}{bmb\+::is\+\_\+class$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__class}{is\+\_\+class} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__pointer}{bmb\+::is\+\_\+pointer$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1is__pointer}{is\+\_\+pointer} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1is__pointer_3_01T_01_5_01_4}{bmb\+::is\+\_\+pointer$<$ T \texorpdfstring{$\ast$}{*} $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1remove__const}{bmb\+::remove\+\_\+const$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1remove__const}{remove\+\_\+const} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1remove__const_3_01const_01T_01_4}{bmb\+::remove\+\_\+const$<$ const T $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1remove__ref}{bmb\+::remove\+\_\+ref$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structbmb_1_1remove__ref}{remove\+\_\+ref} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmb_1_1remove__ref_3_01T_01_6_01_4}{bmb\+::remove\+\_\+ref$<$ T \& $>$}}
+\item 
+struct \mbox{\hyperlink{structbmb_1_1remove__ref_3_01T_01_6_6_01_4}{bmb\+::remove\+\_\+ref$<$ T \&\& $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{type__traits_8h_a2ee7eae935f73977bb23f14edcd423a5}\label{type__traits_8h_a2ee7eae935f73977bb23f14edcd423a5} 
+{\footnotesize template$<$typename T$>$ }\\using {\bfseries bmb\+::type\+\_\+identity\+\_\+t} = \mbox{\hyperlink{structbmb_1_1type__identity}{type\+\_\+identity}}$<$T$>$\+::type
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_a2ee7eae935f73977bb23f14edcd423a5}{type\+\_\+identity\+\_\+t} \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}\label{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb} 
+{\footnotesize template$<$bool val$>$ }\\using {\bfseries bmb\+::bool\+\_\+constant} = \mbox{\hyperlink{structbmb_1_1integral__constant}{integral\+\_\+constant}}$<$val$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\+\_\+constant} \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_aabf2cb916779e877b347099e729b9c88}\label{type__traits_8h_aabf2cb916779e877b347099e729b9c88} 
+using {\bfseries bmb\+::true\+\_\+type} = \mbox{\hyperlink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\+\_\+constant}}$<$true$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\+\_\+type} \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a44b6b10c570c560e140baecef66c9474}\label{type__traits_8h_a44b6b10c570c560e140baecef66c9474} 
+using {\bfseries bmb\+::false\+\_\+type} = \mbox{\hyperlink{type__traits_8h_a6d2e29bfe367198b1442d105a8f3a8bb}{bool\+\_\+constant}}$<$false$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\+\_\+type} \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a1bb6f3ed95ae13cce8351da4e00aa8eb}\label{type__traits_8h_a1bb6f3ed95ae13cce8351da4e00aa8eb} 
+{\footnotesize template$<$typename T$>$ }\\using {\bfseries bmb\+::remove\+\_\+const\+\_\+t} = \mbox{\hyperlink{structbmb_1_1remove__const}{remove\+\_\+const}}$<$T$>$\+::type
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_a1bb6f3ed95ae13cce8351da4e00aa8eb}{remove\+\_\+const\+\_\+t} \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}\label{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0} 
+{\footnotesize template$<$typename T$>$ }\\using {\bfseries bmb\+::remove\+\_\+ref\+\_\+t} = \mbox{\hyperlink{structbmb_1_1remove__ref}{remove\+\_\+ref}}$<$T$>$\+::type
+\begin{DoxyCompactList}\small\item\em \doxylink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\+\_\+ref\+\_\+t} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}\label{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec} 
+{\footnotesize template$<$typename T$>$ }\\T \&\& {\bfseries bmb\+::declval} ()
+\begin{DoxyCompactList}\small\item\em declval \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a3d0dd97c996fd4027248e4bee085b27a}\label{type__traits_8h_a3d0dd97c996fd4027248e4bee085b27a} 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{type__traits_8h_aabf2cb916779e877b347099e729b9c88}{true\+\_\+type}} {\bfseries bmb\+::detail\+::test\+\_\+is\+\_\+class} (int T\+::\texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{type__traits_8h_ae4fd2cb3e4d4855eba7ddddfed3e5ce1}\label{type__traits_8h_ae4fd2cb3e4d4855eba7ddddfed3e5ce1} 
+{\footnotesize template$<$typename$>$ }\\\mbox{\hyperlink{type__traits_8h_a44b6b10c570c560e140baecef66c9474}{false\+\_\+type}} {\bfseries bmb\+::detail\+::test\+\_\+is\+\_\+class} (...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{type__traits_8h_a2fe481c4fabaf7816a4164ddfed20866}\label{type__traits_8h_a2fe481c4fabaf7816a4164ddfed20866} 
+{\footnotesize template$<$typename T, typename U$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+same\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__same}{is\+\_\+same}}$<$T, U$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+same\+\_\+v \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a09576dc4ba18e2df90d9f6e1ca809a85}\label{type__traits_8h_a09576dc4ba18e2df90d9f6e1ca809a85} 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+lvalue\+\_\+ref\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__lvalue__ref}{is\+\_\+lvalue\+\_\+ref}}$<$T$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+lvalue\+\_\+ref\+\_\+v \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_ae75e01d69a1a776d8049520df1123533}\label{type__traits_8h_ae75e01d69a1a776d8049520df1123533} 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+rvalue\+\_\+ref\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__rvalue__ref}{is\+\_\+rvalue\+\_\+ref}}$<$T$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+rvalue\+\_\+ref\+\_\+v \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a7179c32348d8ebc69dd053e9a0ecc47b}\label{type__traits_8h_a7179c32348d8ebc69dd053e9a0ecc47b} 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+const\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__const}{is\+\_\+const}}$<$T$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+const\+\_\+v \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_a4100c7275d1d036f0a68187c596f51ea}\label{type__traits_8h_a4100c7275d1d036f0a68187c596f51ea} 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+class\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__class}{is\+\_\+class}}$<$T$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+class\+\_\+v \end{DoxyCompactList}\item 
+\Hypertarget{type__traits_8h_ae173583f9b03d883c0c19b246b219309}\label{type__traits_8h_ae173583f9b03d883c0c19b246b219309} 
+{\footnotesize template$<$typename T$>$ }\\constexpr bool {\bfseries bmb\+::is\+\_\+pointer\+\_\+v} = \mbox{\hyperlink{structbmb_1_1is__pointer}{is\+\_\+pointer}}$<$T$>$\+::value
+\begin{DoxyCompactList}\small\item\em is\+\_\+pointer\+\_\+v \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Authors}
+bivafra 
+\end{DoxyAuthor}

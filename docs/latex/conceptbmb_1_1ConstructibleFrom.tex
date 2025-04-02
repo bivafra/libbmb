@@ -1,0 +1,22 @@
+\doxysection{bmb\+::Constructible\+From Concept Reference}
+\hypertarget{conceptbmb_1_1ConstructibleFrom}{}\label{conceptbmb_1_1ConstructibleFrom}\index{bmb::ConstructibleFrom@{bmb::ConstructibleFrom}}
+
+
+Constructible\+From.  
+
+
+
+
+{\ttfamily \#include $<$concepts.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptbmb_1_1ConstructibleFrom}{bmb::ConstructibleFrom}}\ =\ \ \textcolor{keyword}{requires}\ \{\ T(\mbox{\hyperlink{type__traits_8h_afb1ba0a6a3fcef530ca3983ea29b66ec}{declval<Args>}}()...);\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Detailed Description}
+Constructible\+From. 

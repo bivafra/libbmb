@@ -1,0 +1,44 @@
+\doxysection{move.\+h}
+\hypertarget{move_8h_source}{}\label{move_8h_source}\index{include/utils/move.h@{include/utils/move.h}}
+\mbox{\hyperlink{move_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}concepts.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__traits_8h}{type\_traits.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }bmb\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{move_8h_a200db918e21cad6da78596db4499153e}{swap}}(T\&\ x,\ T\&\ y)\ \textcolor{keyword}{noexcept}(\mbox{\hyperlink{conceptbmb_1_1MoveConstructible}{MoveConstructible<T>}}\ \&\&\ \mbox{\hyperlink{conceptbmb_1_1MoveAssignable}{MoveAssignable<T>}})\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ T\ tmp\ =\ \mbox{\hyperlink{move_8h_a264120afa6d7704e00de0c0433958280}{move}}(x);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ x\ =\ \mbox{\hyperlink{move_8h_a264120afa6d7704e00de0c0433958280}{move}}(y);}
+\DoxyCodeLine{00028\ \ \ \ \ y\ =\ \mbox{\hyperlink{move_8h_a264120afa6d7704e00de0c0433958280}{move}}(tmp);}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ [[nodiscard(\textcolor{stringliteral}{"{}Move\ should\ be\ used\ to\ initialize\ other\ object"{}})]]}
+\DoxyCodeLine{00038\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\_ref\_t<T>}}\&\&\ \mbox{\hyperlink{move_8h_a264120afa6d7704e00de0c0433958280}{move}}(T\&\&\ value)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Universal\ reference\ as\ a\ parameter\ allows\ to\ move\ already\ rvalue}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ expressions.\ Therefore\ returning\ type\ should\ remove\ reference\ from\ the}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ deduced\ type(see\ reference\ collapsing\ rules)}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\_ref\_t<T>}}\&\&\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00051\ [[nodiscard(\textcolor{stringliteral}{"{}Forward\ should\ be\ used\ to\ initialize\ other\ object"{}})]]}
+\DoxyCodeLine{00052\ \textcolor{keyword}{constexpr}\ T\&\&\ \mbox{\hyperlink{move_8h_ad6e28351b3ce5c7980db338ecc7cc5e2}{forward}}(\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\_ref\_t<T>}}\&\ value)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\&\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{requires}(!is\_lvalue\_ref\_v<T>)}
+\DoxyCodeLine{00063\ [[nodiscard(\textcolor{stringliteral}{"{}Forward\ should\ be\ used\ to\ initialize\ other\ object"{}})]]}
+\DoxyCodeLine{00064\ \textcolor{keyword}{constexpr}\ T\&\&\ \mbox{\hyperlink{move_8h_ad6e28351b3ce5c7980db338ecc7cc5e2}{forward}}(\mbox{\hyperlink{type__traits_8h_a3f28057f53e15d3bac5152f7f07991d0}{remove\_ref\_t<T>}}\&\&\ value)\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\&\&\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \}\ \ \textcolor{comment}{//\ namespace\ bmb}}
+
+\end{DoxyCode}
