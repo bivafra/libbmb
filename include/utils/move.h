@@ -5,16 +5,16 @@
  * @authors bivafra
  */
 
-#include "concepts.h"
-#include "type_traits.h"
+#include "utils/concepts.h"
+#include "utils/type_traits.h"
 
 namespace bmb {
 
 /**
  * @brief Swap values
  *
- * @tparam x Value to swap
- * @tparam y Value to swap
+ * @param x Value to swap
+ * @param y Value to swap
  *
  * @throws The same exception safety as move c-tor and
  * move assignmet operator
@@ -30,7 +30,7 @@ void swap(T& x, T& y) noexcept(MoveConstructible<T> && MoveAssignable<T>) {
 
 /**
  * @brief Convert a value to xvalue
- * @tparam value The object to cast to xvalue
+ * @param value The object to cast to xvalue
  * @return The given parameter casted to rvalue reference
  */
 template <typename T>
@@ -44,7 +44,7 @@ constexpr remove_ref_t<T>&& move(T&& value) noexcept {
 
 /**
  * @brief Forward a lvalue
- * @tparam value The object to forward
+ * @param value The object to forward
  * @return Given value with proper expressions category
  */
 template <typename T>
@@ -55,7 +55,7 @@ constexpr T&& forward(remove_ref_t<T>& value) noexcept {
 
 /**
  * @brief Forward a rvalue
- * @tparam value The object to forward
+ * @param value The object to forward
  * @return Given value with proper expressions category
  */
 template <typename T>

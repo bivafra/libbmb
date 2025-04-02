@@ -4,7 +4,7 @@
  * @authors bivafra
  */
 
-#include "type_traits.h"
+#include "utils/type_traits.h"
 
 namespace bmb {
 
