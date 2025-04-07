@@ -69,4 +69,8 @@ concept RandomAccessIterator
              { i >= j } -> ConvertibleTo<bool>;
          };
 
+/// ContiguousIterator
+template <typename Iter>
+concept ContiguousIterator = RandomAccessIterator<Iter>;
+
 }  // namespace bmb
