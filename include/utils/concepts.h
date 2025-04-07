@@ -73,4 +73,8 @@ concept NothrowCopyAssignable = requires(T a, T b) {
     { a = b } noexcept;
 };
 
+/// ConvertibleTo
+template <typename From, typename To>
+concept ConvertibleTo = requires(From from) { static_cast<To>(from); };
+
 }  // namespace bmb

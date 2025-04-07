@@ -161,4 +161,19 @@ struct remove_ref<T&&> {
 template <typename T>
 using remove_ref_t = remove_ref<T>::type;
 
+/// conditional
+template <bool Cond, typename IfTrue, typename IfFalse>
+struct conditional {
+    using type = IfTrue;
+};
+
+template <typename IfTrue, typename IfFalse>
+struct conditional<false, IfTrue, IfFalse> {
+    using type = IfFalse;
+};
+
+/// conditional_t
+template <bool Cond, typename IfTrue, typename IfFalse>
+using conditional_t = conditional<Cond, IfTrue, IfFalse>::type;
+
 }  // namespace bmb
