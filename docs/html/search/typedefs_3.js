@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['true_5ftype_0',['true_type',['../type__traits_8h.html#aabf2cb916779e877b347099e729b9c88',1,'bmb']]],
-  ['type_5fidentity_5ft_1',['type_identity_t',['../type__traits_8h.html#a2ee7eae935f73977bb23f14edcd423a5',1,'bmb']]]
+  ['remove_5fconst_5ft_0',['remove_const_t',['../namespacebmb.html#a1bb6f3ed95ae13cce8351da4e00aa8eb',1,'bmb']]],
+  ['remove_5fref_5ft_1',['remove_ref_t',['../namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0',1,'bmb']]]
 ];

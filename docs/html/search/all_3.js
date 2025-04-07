@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['false_5ftype_0',['false_type',['../type__traits_8h.html#a44b6b10c570c560e140baecef66c9474',1,'bmb']]],
-  ['forward_1',['forward',['../move_8h.html#ad6e28351b3ce5c7980db338ecc7cc5e2',1,'bmb::forward(remove_ref_t&lt; T &gt; &amp;value) noexcept'],['../move_8h.html#a1f5bd91ea0545bbd363ec365e4b14a68',1,'bmb::forward(remove_ref_t&lt; T &gt; &amp;&amp;value) noexcept']]]
+  ['deallocate_0',['deallocate',['../classbmb_1_1_primitive_allocator.html#ae796075c9d4b48496e3023aabdbeb7d5',1,'bmb::PrimitiveAllocator::deallocate()'],['../classbmb_1_1_allocator_traits.html#a7b04689095868b4fc54e005dd956c396',1,'bmb::AllocatorTraits::deallocate()']]],
+  ['declval_1',['declval',['../namespacebmb.html#afb1ba0a6a3fcef530ca3983ea29b66ec',1,'bmb']]],
+  ['defaultconstructible_2',['DefaultConstructible',['../conceptbmb_1_1_default_constructible.html',1,'bmb']]],
+  ['destroy_3',['destroy',['../classbmb_1_1_allocator_traits.html#ab9891ac0bdd5ca18fc58d4d30848d491',1,'bmb::AllocatorTraits']]]
 ];

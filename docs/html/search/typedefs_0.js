@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bool_5fconstant_0',['bool_constant',['../type__traits_8h.html#a6d2e29bfe367198b1442d105a8f3a8bb',1,'bmb']]]
+  ['allocator_5ftype_0',['allocator_type',['../classbmb_1_1_allocator_traits.html#a090d6dcb0d52cbf922e2a3ad45858f6a',1,'bmb::AllocatorTraits']]]
 ];
