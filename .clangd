@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - -std=c++23
+    - -Wall
+    # Important - clangd doesn't support relative paths, so adjust this one to your machine
+    - --include-directory=/home/vladimir/work/libbmb/include
+
+  Compiler: clang++
