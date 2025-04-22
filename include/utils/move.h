@@ -5,7 +5,6 @@
  * @authors bivafra
  */
 
-#include "utils/concepts.h"
 #include "utils/type_traits.h"
 
 namespace bmb {
@@ -21,7 +20,7 @@ namespace bmb {
  * of T
  */
 template <typename T>
-void swap(T& x, T& y) noexcept(MoveConstructible<T> && MoveAssignable<T>) {
+void swap(T& x, T& y) {
     T tmp = move(x);
 
     x = move(y);
