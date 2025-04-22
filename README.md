@@ -112,12 +112,16 @@ not used.
 
 [source](include/utils/iterators.h)
 
-iterator_traits not implemented, since there's no real need for them - 
+~~iterator_traits are not implemented, since there's no real need for them - 
 every iterator still must define category, value_type, etc. However traits support 
-raw pointer and have rules for defining missing typedefs.
+raw pointer and have rules for defining missing typedefs.~~ There is real need for traits for raw pointers, otherwise
+this is not possible use general algorithms(like std::copy) for pointers. Now, as in STL,
+every Iter::*some type* must be IteratorTraits<Iter>::*some type*.
+
  
 - [x] Iterator category tags
 - [x] Iterator category concepts
+- [x] IteratorTraits
 - [ ] advance
 - [ ] distance
 - [ ] next

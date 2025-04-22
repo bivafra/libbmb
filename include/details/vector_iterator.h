@@ -6,6 +6,8 @@
  * @authors bivafra
  */
 
+#include <cstddef>
+
 #include "utils/iterators.h"
 #include "utils/type_traits.h"
 
@@ -23,10 +25,10 @@ private:
     using Self = BaseVectorIter;
 
 public:
-    using value_type        = conditional_t<IsConst, const T, T>;
-    using reference         = value_type&;
-    using pointer           = value_type*;
-    using difference_type   = int;
+    using value_type        = remove_const_t<T>;
+    using reference         = conditional_t<IsConst, const T, T>&;
+    using pointer           = conditional_t<IsConst, const T, T>*;
+    using difference_type   = ptrdiff_t;
     using iterator_category = contiguous_iter_tag;
 
     BaseVectorIter()

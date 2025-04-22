@@ -6,7 +6,6 @@
  */
 
 #include <cstddef>
-#include <cstdio>
 #include <new>
 
 #include "utils/move.h"
