@@ -98,7 +98,7 @@ not used.
 
 [source](include/utils/move.h)
 - [x] swap
-    * You're free to overload it, so there is no need for using std::swap ...
+    * You're free to overload it
 - [x] move
 - [x] forward
 - [ ] forward_like
