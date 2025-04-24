@@ -37,6 +37,9 @@ public:
     explicit BaseVectorIter(pointer* ptr)
         : ptr_(ptr) {};
 
+    // Want a conversion non-const -> const underlying value
+    operator BaseVectorIter<T, true>() const { return BaseVectorIter<T, true>(ptr_); }
+
     pointer   operator->() const { return ptr_; }
     reference operator*() const { return *ptr_; }
 

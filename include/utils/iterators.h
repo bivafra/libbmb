@@ -9,6 +9,7 @@
 #include <cstddef>
 
 #include "utils/concepts.h"
+#include "utils/move.h"
 #include "utils/type_traits.h"
 
 namespace bmb {
@@ -46,7 +47,6 @@ struct IteratorTraits<T*> {
 };
 
 // TODO: improve these concepts. Now they aren't as general as 'std::' ones.
-// Integrate output iterator with input iterator.
 // NOTE: for info about requirements see:
 // https://en.cppreference.com/w/cpp/named_req/Iterator.
 
@@ -54,6 +54,13 @@ struct IteratorTraits<T*> {
 template <typename Iter>
 concept InputIterator = requires(Iter it) {
     { ++it } -> SameAs<Iter&>;
+    { *it } -> ConvertibleTo<typename IteratorTraits<Iter>::value_type>;
+};
+
+/// OutputIterator
+template <typename Iter, typename T>
+concept OutputIterator = requires(Iter it, T&& t) {
+    *it++ = forward<T>(t);
     { *it } -> ConvertibleTo<typename IteratorTraits<Iter>::value_type>;
 };
 
