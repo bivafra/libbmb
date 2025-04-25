@@ -46,6 +46,26 @@ using true_type  = bool_constant<true>;
 /// false_type
 using false_type = bool_constant<false>;
 
+/// Logical AND metafunction
+template <typename... Types>
+struct conjunction {
+    static constexpr bool value = (Types::value && ...);
+};
+
+/// Logical AND metafunction
+template <typename... Types>
+constexpr bool conjunction_v = conjunction<Types...>::value;
+
+/// Logical OR metafunction
+template <typename... Types>
+struct disjunction {
+    static constexpr bool value = (Types::value || ...);
+};
+
+/// Logical OR metafunction
+template <typename... Types>
+constexpr bool disjunction_v = disjunction<Types...>::value;
+
 /// is_same
 template <typename T, typename U>
 struct is_same : false_type {};
@@ -175,5 +195,49 @@ struct conditional<false, IfTrue, IfFalse> {
 /// conditional_t
 template <bool Cond, typename IfTrue, typename IfFalse>
 using conditional_t = conditional<Cond, IfTrue, IfFalse>::type;
+
+/// enable_if
+template <bool Cond, typename T = void>
+struct enable_if {};
+
+template <typename T>
+struct enable_if<true, T> {
+    using type = T;
+};
+
+/// enable_if_t
+template <bool Cond, typename T = void>
+using enable_if_t = enable_if<Cond, T>::type;
+
+namespace detail {
+
+// NOTE: here we need another one level of redirection,
+// because without it SFINAE won't work: test_ptr_cast(const B*) is
+// a valid declaration, thefore, the compiler choose it over others overloads,
+// and only then it checks avalability/accessibility, which causes CE in case of
+// private/disambiguous inheritance. However the 'decltype' below enables SFINAE.
+
+template <typename B>
+true_type test_ptr_cast(const B*);
+template <typename>
+false_type test_ptr_cast(const void*);
+
+template <typename B, typename D>
+auto test_is_base_of(int) -> decltype(test_ptr_cast<B>(static_cast<D*>(nullptr)));
+template <typename, typename>
+auto test_is_base_of(...) -> true_type;  // private/disambiguous base
+
+}  // namespace detail
+
+/// is_base_of
+template <typename Base, typename Derived>
+struct is_base_of : conjunction<
+                        is_class<Base>,
+                        is_class<Derived>,
+                        decltype(detail::test_is_base_of<Base, Derived>(0))> {};
+
+/// is_base_of_v
+template <typename Base, typename Derived>
+constexpr bool is_base_of_v = is_base_of<Base, Derived>::value;
 
 }  // namespace bmb
