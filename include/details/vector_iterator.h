@@ -34,7 +34,7 @@ public:
     BaseVectorIter()
         : ptr_(nullptr) {};
 
-    explicit BaseVectorIter(pointer* ptr)
+    explicit BaseVectorIter(pointer ptr)
         : ptr_(ptr) {};
 
     // Want a conversion non-const -> const underlying value
@@ -60,11 +60,11 @@ public:
     }
 
     Self operator+(difference_type n) {
-        return {ptr_ + n};
+        return Self{ptr_ + n};
     }
 
     friend Self operator+(difference_type n, const Self& it) {
-        return {it.ptr_ + n};
+        return Self{it.ptr_ + n};
     }
 
     Self& operator--() {
