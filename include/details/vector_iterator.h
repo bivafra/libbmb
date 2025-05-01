@@ -86,7 +86,7 @@ public:
     Self operator-(difference_type n) { return {ptr_ - n}; }
 
     friend difference_type operator-(const Self& lhs,
-                                     const Self& rhs) { return lhs - rhs; }
+                                     const Self& rhs) { return lhs.ptr_ - rhs.ptr_; }
 
     // NOTE: consider spaceship opeator
     bool operator<(const Self& rhs) { return ptr_ < rhs.ptr_; }
