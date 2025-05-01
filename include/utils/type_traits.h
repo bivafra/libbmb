@@ -240,4 +240,18 @@ struct is_base_of : conjunction<
 template <typename Base, typename Derived>
 constexpr bool is_base_of_v = is_base_of<Base, Derived>::value;
 
+/// A metafunction that always equals to void,
+/// used for SFINAE checking(detecting valid types)
+///
+/// Example:
+/// template <typename T, typename = void_t>
+/// struct SomeStruct {};
+///
+/// template <typename T>
+/// struct SomeStruct<T, void_t<T::value_type>> {...};
+///
+/// Here the partial specialization is always chosen when T::value_type
+/// is valid, otherwise SFINAE works and first definition is chosen.
+template <typename...> using void_t = void;
+
 }  // namespace bmb
