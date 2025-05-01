@@ -27,15 +27,30 @@ struct random_access_iter_tag : public bidirectional_iter_tag {};
 /// contiguous_iter_tag
 struct contiguous_iter_tag : public random_access_iter_tag {};
 
-/// IteratorTraits
+namespace detail {
+// NOTE: this makes IteratorTraits SFINAE friendly
+
+template <typename Iter, typename = void_t<>>
+struct IteratorTraitsImpl {};
+
 template <typename Iter>
-struct IteratorTraits {
+struct IteratorTraitsImpl<Iter, void_t<typename Iter::value_type,
+                                       typename Iter::reference,
+                                       typename Iter::pointer,
+                                       typename Iter::difference_type,
+                                       typename Iter::iterator_category>> {
     using value_type        = Iter::value_type;
     using reference         = Iter::reference;
     using pointer           = Iter::pointer;
     using difference_type   = Iter::difference_type;
     using iterator_category = Iter::iterator_category;
 };
+
+}  // namespace detail
+
+/// IteratorTraits
+template <typename Iter>
+struct IteratorTraits : public detail::IteratorTraitsImpl<Iter> {};
 
 template <typename T>
 struct IteratorTraits<T*> {
@@ -183,7 +198,7 @@ void advance(Iter& it, Distance dist) {
  *
  * @return Iterator that holds n-th successor of the given one
  *
- * @throws Same as advance(Iter, Distance)
+ * @throws Same as advance(Iter, diff_type)
  */
 template <InputIterator Iter>
 Iter next(Iter it, typename IteratorTraits<Iter>::difference_type n = 1) {
@@ -200,9 +215,9 @@ Iter next(Iter it, typename IteratorTraits<Iter>::difference_type n = 1) {
  *
  * @return Iterator that holds n-th predecessor of the given one
  *
- * @throws Same as advance(Iter, Distance)
+ * @throws Same as advance(Iter, diff_type)
  */
-template <BidirectionalIterator Iter, typename Distance>
+template <BidirectionalIterator Iter>
 Iter prev(Iter it, typename IteratorTraits<Iter>::difference_type n = 1) {
     advance(it, -n);
     return it;
