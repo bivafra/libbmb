@@ -10,24 +10,6 @@
 namespace bmb {
 
 /**
- * @brief Swap values
- *
- * @param x Value to swap
- * @param y Value to swap
- *
- * @throws The same exception safety as move c-tor and
- * move assignmet operator
- * of T
- */
-template <typename T>
-void swap(T& x, T& y) {
-    T tmp = move(x);
-
-    x = move(y);
-    y = move(tmp);
-}
-
-/**
  * @brief Convert a value to xvalue
  * @param value The object to cast to xvalue
  * @return The given parameter casted to rvalue reference
@@ -62,6 +44,24 @@ template <typename T>
 [[nodiscard("Forward should be used to initialize other object")]]
 constexpr T&& forward(remove_ref_t<T>&& value) noexcept {
     return static_cast<T&&>(value);
+}
+
+/**
+ * @brief Swap values
+ *
+ * @param x Value to swap
+ * @param y Value to swap
+ *
+ * @throws The same exception safety as move c-tor and
+ * move assignmet operator
+ * of T
+ */
+template <typename T>
+void swap(T& x, T& y) {
+    T tmp = move(x);
+
+    x = move(y);
+    y = move(tmp);
 }
 
 }  // namespace bmb
