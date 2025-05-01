@@ -1,8 +1,7 @@
 #pragma once
 /**
  * @file vector_iterator
- * @warning This file is an internal implementation details and should not be
- * directly used. Implementation of Vector's iterator
+ * Implementation of Vector's iterator
  * @authors bivafra
  */
 
