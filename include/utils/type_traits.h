@@ -219,11 +219,13 @@ namespace detail {
 
 template <typename B>
 true_type test_ptr_cast(const B*);
+
 template <typename>
 false_type test_ptr_cast(const void*);
 
 template <typename B, typename D>
 auto test_is_base_of(int) -> decltype(test_ptr_cast<B>(static_cast<D*>(nullptr)));
+
 template <typename, typename>
 auto test_is_base_of(...) -> true_type;  // private/disambiguous base
 
@@ -253,5 +255,46 @@ constexpr bool is_base_of_v = is_base_of<Base, Derived>::value;
 /// Here the partial specialization is always chosen when T::value_type
 /// is valid, otherwise SFINAE works and first definition is chosen.
 template <typename...> using void_t = void;
+
+namespace detail {
+// TODO: add pointers to members support
+
+template <typename F, typename... Args>
+auto invoke() -> decltype(declval<F>()(declval<Args>()...));
+
+template <typename F, typename... Args>
+true_type test_is_invocable(decltype(invoke<F, Args...>(), 0));
+
+template <typename...>
+false_type test_is_invocable(...);
+
+// can't use void_t as default parameter
+template <typename AlwaysVoid, typename F, typename... Args>
+struct invoke_result_impl {};
+
+template <typename F, typename... Args>
+struct invoke_result_impl<decltype(void(invoke<F, Args...>())),  // just try to call 'invoke'
+                          F,
+                          Args...> {
+    using type = decltype(invoke<F, Args...>());
+};
+
+}  // namespace detail
+
+/// is_invocable
+template <typename F, typename... Args>
+struct is_invocable : decltype(detail::test_is_invocable<F, Args...>(0)) {};
+
+/// is_invocable_v
+template <typename F, typename... Args>
+constexpr bool is_invocable_v = is_invocable<F, Args...>::value;
+
+/// invoke_result
+template <typename F, typename... Args>
+struct invoke_result : detail::invoke_result_impl<void, F, Args...> {};
+
+/// invoke_result_t
+template <typename F, typename... Args>
+using invoke_result_t = invoke_result<F, Args...>::type;
 
 }  // namespace bmb

@@ -77,4 +77,13 @@ concept NothrowCopyAssignable = requires(T a, T b) {
 template <typename From, typename To>
 concept ConvertibleTo = requires(From from) { static_cast<To>(from); };
 
+/// Invocable
+template <typename F, typename... Args>
+concept Invocable = is_invocable_v<F, Args...>;
+
+/// Predicate
+template <typename F, typename... Args>
+concept Predicate
+    = Invocable<F, Args...> && ConvertibleTo<invoke_result_t<F, Args...>, bool>;
+
 }  // namespace bmb
