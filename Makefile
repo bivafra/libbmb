@@ -8,7 +8,7 @@ init_no_test_build:
 
 test: init_test_build
 	cmake --build build/
-	./build/libbmb_tests
+	valgrind --leak-check=yes ./build/libbmb_tests
 
 init_test_build_gcc:
 	mkdir -p build
@@ -16,7 +16,7 @@ init_test_build_gcc:
 
 test_gcc: init_test_build_gcc
 	cmake --build build/
-	./build/libbmb_tests
+	valgrind --leak-check=yes ./build/libbmb_tests
 
 clean:
 	rm -rf build

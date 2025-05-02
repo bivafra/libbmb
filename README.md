@@ -1,7 +1,7 @@
 # 🌟 libbmb
 **libbmb** is a header only DSA library written using modern C++. It implements significant STL functionality and extends it.
 The library's containers are *AllocatorAware* with *strong exception guarantee*.
-The **key features** of this realization are **code readability**, **rich documentation**, and different view to the **design**.<br/>
+The **key features** of this realization are **code readability**, **rich documentation**, and modern view to the **code design**.<br/>
 
 All documentation is available **[here](https://bivafra.github.io/libbmb/)**.
 
@@ -28,17 +28,24 @@ There are several reasons for that:
      git clone https://github.com/bivafra/libbmb.git
     ```
 2. 
-    1. If you're using the library as a dependency, add this to your CMakeLists.txt:
+    1. If you're using the library as a dependency, add this to your `CMakeLists.txt`:
         ```shell
         add_subdirectory(libbmb)
         target_link_libraries(*your_target* PRIVATE libbmb)
         ```
         **libbmb** uses cmake's *interface*, so when linking you'll automatically get include directories.
-    2. If you're developing the library, the only options is to build the tests:
+    2. If you want to develop the library, you must write unit tests for your code. <br/> 
+       To build tests you should install [valgrind](https://valgrind.org/) for memory checks, add the test files into `CMakeLists.txt`, and 
+       run:
         ```shell
         make test
         ```
-    Note: if you use clangd, adjust the include path in the .clangd config file.
+        This will automatically install `gtest` and run tests with `valgrind` checks. <br/><br/>
+        The default compiler is `clang`. To build with `gcc` run:
+        ```shell
+        make test_gcc
+        ```
+        Note: if you use clangd as a language server, adjust the include path in the `.clangd` config file.
 ## ⚙️ Features
 Following sections contain details about implemented and planned functionality, C++ standard compatibility, 
 reasons why there's a deviation from the standard, and some other useful notes.
@@ -98,7 +105,7 @@ not used.
 
 [source](include/utils/move.h)
 - [x] swap
-    * You're free to overload it
+    * You're free to overload it, but you should understand the consequences.
 - [x] move
 - [x] forward
 - [ ] forward_like
