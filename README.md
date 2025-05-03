@@ -56,6 +56,44 @@ reasons why there's a deviation from the standard, and some other useful notes.
 <!-- </details> -->
 
 <details>
+<summary><strong>General</strong></summary>
+
+1. Declaration and definition of templates.
+
+    Since C++ obligates to write boilerplate template types like:
+    ```c++
+    template <typename T>
+    class A {
+    public:
+        void foo();
+    };
+
+    // definition either later or in the included `.tpp` file
+    template <typename T>
+    void A<T>::foo() {...}
+    ```
+    it is painful to separatly declare and define template class methods. Boilerplate 
+    can be avoided using strange looking macroses like:
+    ```c++
+    // Start of the `.tpp` file
+    #define A_METHOD(return_type)\
+    template <typename T>\
+    return_type A<T>::
+
+    // some code ...
+
+    A_METHOD(void) foo() {...}
+
+    // End of the file
+    #undef A_METHOD
+    ```
+    The desicion was made to define methods inside a class. Documentation and 
+    definition at the same place. If you don't like this - every modern IDE supports 
+    code wrapping, so collapse all definitions by default.
+
+</details>
+
+<details>
 <summary><strong>Allocator</strong></summary>
 
 [source](include/utils/allocator.h)
@@ -67,16 +105,18 @@ reasons why there's a deviation from the standard, and some other useful notes.
 - [ ] polymorphic_allocator
 - [ ] scoped_allocator_adaptor
 
-There are major changes in the allocator's design.
-*std::allocator* analog here is *PrimitiveAllocator*. 
+There are changes in the allocator's design.
+`std::allocator` analog here is `PrimitiveAllocator`. 
 **It isn't a template**. The template parameter in class only creates pain 
-and *rebid* semantics. Instead, every allocator's function marked as a template. 
-Thus, each allocator must define all methods as templates.
+and *rebind* semantics. Instead, every allocator's function marked as a template. 
+Thus, each allocator must define at least `allocate` method as a template(other methods can 
+use template type deduction, so may be non-templated).
 * Pros:
-    * There is no need for rebind at all, since the type will be provided with each call.
+    * There is no need for rebind at all, since the type will be either provided by
+      the client or deduced by the compiler.
 * Cons:
-    * Every method must be a template.
-    * Due to the c++ rules, *allocate* will look weird:
+    * `allocate` method must be a template.
+    * Due to the C++ rules, `allocate` call will look weird:
         ```c++
         using AllocTraits = bmb::AllocatorTraits<SomeAllocator>;
         SomeAllocator alloc;
@@ -93,7 +133,7 @@ what to do while copying/moving. **libbmb** preserve only the second semantics, 
 copy/move c-tors/assignment operators with appropriate semantics. `propogate_on_container_...` and `select_on_container_copy_construction` are 
 not used.
 * Pros:
-    * Much easier containers implementation and support.
+    * Easier containers implementation and support.
 * Cons:
     * Less flexibility for allocators.  
     
@@ -148,8 +188,25 @@ every Iter::*some type* must be IteratorTraits<Iter>::*some type*.
 <details>
 <summary><strong>Vector</strong></summary>
 
-Work progress.
+sources: [1](include/containers/vector.h), [2](include/details/vector_iterator.h)<br/>
+tests: [1](tests/vector)
 
+This is a classic implementation of STL vector. It suports all original vector
+methods except `shrink_to_fit` and `insert`. They will be added later.
+The major difference from the STL one is an exception safety.
+* For methods like `pushBack` and `reserve` conditional safety is provided:
+
+    For the reallocation the move constructor is always chosen. If it throws,
+    Vector destroyes all moved elements, leaving the original array with
+    some empty elements and elements, that weren't moved. There is the ***basic guarantee***.
+    Otherwise the ***strong guarantee***.<br/>
+    Meanwhile, STL's version will choose move c-tor only if it is marked as noexcept.
+
+Currently, there is a problem: the provided template type must not delete move c-tor
+explicitly, since forwarding and moving will stop compile(`reserve`, `pushBack`, `emplaceBack`).
+This can be fixed by concepts or SFINAE. Highly likely this will not be fixed due to the redundancy. 
+Modern code must(at least from the author's point of view) either define both copy and move c-tor(may 
+just call copy one if it isn't able to move) or doesn't define them at all.
 </details>
 
 
@@ -159,7 +216,7 @@ Work progress.
 [source](include/utils/type_traits.h)
 
 Some iterator traits will not be implemented, since c++20 concepts 
-may completely replace them.
+may almost completely replace them.
 Now implemented the most important traits. Support will be extended with the growth of the codebase.
 
 </details>
@@ -172,6 +229,3 @@ Now implemented the most important traits. Support will be extended with the gro
 
 Now implemented the most important concepts. Support will be extended with the growth of the codebase.
 </details>
-
-
-
