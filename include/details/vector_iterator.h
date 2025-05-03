@@ -15,7 +15,7 @@ namespace detail {
 
 /**
  * @class BaseVectorIter
- * @brief contiguous iterator for Vector
+ * @brief contiguous iterator for Vector.
  * Trivial iterator-wrapper for pointer to array(aka T*)
  */
 template <typename T, bool IsConst>
