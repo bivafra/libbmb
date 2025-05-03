@@ -136,59 +136,55 @@ $(function(){initNavTree('move_8h_source.html',''); initResizable(true); });
 <div class="contents">
 <a href="move_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="concepts_8h.html">utils/concepts.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="type__traits_8h.html">utils/type_traits.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacebmb.html">bmb</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacebmb.html#a200db918e21cad6da78596db4499153e">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacebmb.html#a200db918e21cad6da78596db4499153e">swap</a>(T&amp; x, T&amp; y) <span class="keyword">noexcept</span>(<a class="code hl_concept" href="conceptbmb_1_1_move_constructible.html">MoveConstructible&lt;T&gt;</a> &amp;&amp; <a class="code hl_concept" href="conceptbmb_1_1_move_assignable.html">MoveAssignable&lt;T&gt;</a>) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    T tmp = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(x);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    x = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(y);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    y = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(tmp);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="type__traits_8h.html">utils/type_traits.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacebmb.html">bmb</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>[[nodiscard(<span class="stringliteral">&quot;Move should be used to initialize other object&quot;</span>)]]</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">   19</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp; <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(T&amp;&amp; value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// Universal reference as a parameter allows to move already rvalue</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// expressions. Therefore returning type should remove reference from the</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// deduced type(see reference collapsing rules)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>[[nodiscard(<span class="stringliteral">&quot;Move should be used to initialize other object&quot;</span>)]]</div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">   38</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp; <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(T&amp;&amp; value) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Universal reference as a parameter allows to move already rvalue</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// expressions. Therefore returning type should remove reference from the</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// deduced type(see reference collapsing rules)</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>[[nodiscard(<span class="stringliteral">&quot;Forward should be used to initialize other object&quot;</span>)]]</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">   33</a></span><span class="keyword">constexpr</span> T&amp;&amp; <a class="code hl_function" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">forward</a>(<a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp; value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>[[nodiscard(<span class="stringliteral">&quot;Forward should be used to initialize other object&quot;</span>)]]</div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">   52</a></span><span class="keyword">constexpr</span> T&amp;&amp; <a class="code hl_function" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">forward</a>(<a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp; value) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">requires</span>(!<a class="code hl_variable" href="namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85">is_lvalue_ref_v&lt;T&gt;</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>[[nodiscard(<span class="stringliteral">&quot;Forward should be used to initialize other object&quot;</span>)]]</div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespacebmb.html#a1f5bd91ea0545bbd363ec365e4b14a68">   45</a></span><span class="keyword">constexpr</span> T&amp;&amp; <a class="code hl_function" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">forward</a>(<a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp; value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">requires</span>(!<a class="code hl_variable" href="namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85">is_lvalue_ref_v&lt;T&gt;</a>)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>[[nodiscard(<span class="stringliteral">&quot;Forward should be used to initialize other object&quot;</span>)]]</div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="namespacebmb.html#a1f5bd91ea0545bbd363ec365e4b14a68">   64</a></span><span class="keyword">constexpr</span> T&amp;&amp; <a class="code hl_function" href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">forward</a>(<a class="code hl_typedef" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">remove_ref_t&lt;T&gt;</a>&amp;&amp; value) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(value);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">swap</a>(T&amp; x, T&amp; y) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    T tmp = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(x);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    x = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(y);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    y = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(tmp);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}  <span class="comment">// namespace bmb</span></div>
-<div class="ttc" id="aconceptbmb_1_1_move_assignable_html"><div class="ttname"><a href="conceptbmb_1_1_move_assignable.html">bmb::MoveAssignable</a></div><div class="ttdoc">MoveAssignable.</div><div class="ttdef"><b>Definition</b> concepts.h:50</div></div>
-<div class="ttc" id="aconceptbmb_1_1_move_constructible_html"><div class="ttname"><a href="conceptbmb_1_1_move_constructible.html">bmb::MoveConstructible</a></div><div class="ttdoc">MoveConstructible.</div><div class="ttdef"><b>Definition</b> concepts.h:42</div></div>
-<div class="ttc" id="aconcepts_8h_html"><div class="ttname"><a href="concepts_8h.html">concepts.h</a></div></div>
-<div class="ttc" id="anamespacebmb_html"><div class="ttname"><a href="namespacebmb.html">bmb</a></div><div class="ttdef"><b>Definition</b> allocator.h:14</div></div>
-<div class="ttc" id="anamespacebmb_html_a09576dc4ba18e2df90d9f6e1ca809a85"><div class="ttname"><a href="namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85">bmb::is_lvalue_ref_v</a></div><div class="ttdeci">constexpr bool is_lvalue_ref_v</div><div class="ttdoc">is_lvalue_ref_v</div><div class="ttdef"><b>Definition</b> type_traits.h:69</div></div>
-<div class="ttc" id="anamespacebmb_html_a200db918e21cad6da78596db4499153e"><div class="ttname"><a href="namespacebmb.html#a200db918e21cad6da78596db4499153e">bmb::swap</a></div><div class="ttdeci">void swap(T &amp;x, T &amp;y) noexcept(MoveConstructible&lt; T &gt; &amp;&amp;MoveAssignable&lt; T &gt;)</div><div class="ttdoc">Swap values.</div><div class="ttdef"><b>Definition</b> move.h:24</div></div>
-<div class="ttc" id="anamespacebmb_html_a264120afa6d7704e00de0c0433958280"><div class="ttname"><a href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">bmb::move</a></div><div class="ttdeci">constexpr remove_ref_t&lt; T &gt; &amp;&amp; move(T &amp;&amp;value) noexcept</div><div class="ttdoc">Convert a value to xvalue.</div><div class="ttdef"><b>Definition</b> move.h:38</div></div>
-<div class="ttc" id="anamespacebmb_html_a3f28057f53e15d3bac5152f7f07991d0"><div class="ttname"><a href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">bmb::remove_ref_t</a></div><div class="ttdeci">remove_ref&lt; T &gt;::type remove_ref_t</div><div class="ttdoc">remove_ref_t</div><div class="ttdef"><b>Definition</b> type_traits.h:162</div></div>
-<div class="ttc" id="anamespacebmb_html_ad6e28351b3ce5c7980db338ecc7cc5e2"><div class="ttname"><a href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">bmb::forward</a></div><div class="ttdeci">constexpr T &amp;&amp; forward(remove_ref_t&lt; T &gt; &amp;value) noexcept</div><div class="ttdoc">Forward a lvalue.</div><div class="ttdef"><b>Definition</b> move.h:52</div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}  <span class="comment">// namespace bmb</span></div>
+<div class="ttc" id="anamespacebmb_html"><div class="ttname"><a href="namespacebmb.html">bmb</a></div><div class="ttdef"><b>Definition</b> algo_base.h:14</div></div>
+<div class="ttc" id="anamespacebmb_html_a09576dc4ba18e2df90d9f6e1ca809a85"><div class="ttname"><a href="namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85">bmb::is_lvalue_ref_v</a></div><div class="ttdeci">constexpr bool is_lvalue_ref_v</div><div class="ttdoc">is_lvalue_ref_v</div><div class="ttdef"><b>Definition</b> type_traits.h:89</div></div>
+<div class="ttc" id="anamespacebmb_html_a264120afa6d7704e00de0c0433958280"><div class="ttname"><a href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">bmb::move</a></div><div class="ttdeci">constexpr remove_ref_t&lt; T &gt; &amp;&amp; move(T &amp;&amp;value) noexcept</div><div class="ttdoc">Convert a value to xvalue.</div><div class="ttdef"><b>Definition</b> move.h:19</div></div>
+<div class="ttc" id="anamespacebmb_html_a2c0cf6a6c303a49b7599b40ed823c3fd"><div class="ttname"><a href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">bmb::swap</a></div><div class="ttdeci">void swap(T &amp;x, T &amp;y)</div><div class="ttdoc">Swap values.</div><div class="ttdef"><b>Definition</b> move.h:60</div></div>
+<div class="ttc" id="anamespacebmb_html_a3f28057f53e15d3bac5152f7f07991d0"><div class="ttname"><a href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">bmb::remove_ref_t</a></div><div class="ttdeci">remove_ref&lt; T &gt;::type remove_ref_t</div><div class="ttdoc">remove_ref_t</div><div class="ttdef"><b>Definition</b> type_traits.h:182</div></div>
+<div class="ttc" id="anamespacebmb_html_ad6e28351b3ce5c7980db338ecc7cc5e2"><div class="ttname"><a href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">bmb::forward</a></div><div class="ttdeci">constexpr T &amp;&amp; forward(remove_ref_t&lt; T &gt; &amp;value) noexcept</div><div class="ttdoc">Forward a lvalue.</div><div class="ttdef"><b>Definition</b> move.h:33</div></div>
 <div class="ttc" id="atype__traits_8h_html"><div class="ttname"><a href="type__traits_8h.html">type_traits.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

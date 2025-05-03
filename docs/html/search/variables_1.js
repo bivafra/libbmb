@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['value',['../structbmb_1_1integral__constant.html#ad9f32dbc0faefdac8577d9600899e758',1,'bmb::integral_constant']]]
+  ['disjunction_5fv_0',['disjunction_v',['../namespacebmb.html#a897cd914591effa526b89777b9d058e1',1,'bmb']]]
 ];

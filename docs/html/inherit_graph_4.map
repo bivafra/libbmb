@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classbmb_1_1_primitive_allocator.html" title="Allocator&#45;proxy for new/delete operators." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="Node000000" href="$structbmb_1_1conjunction.html" title=" " alt="" coords="5,5,255,76"/>
+<area shape="rect" id="Node000001" href="$structbmb_1_1is__base__of.html" title="is_base_of" alt="" coords="303,20,463,61"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="271,38,302,38,302,43,271,43"/>
 </map>

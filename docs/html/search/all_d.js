@@ -1,6 +1,15 @@
 var searchData=
 [
-  ['value_0',['value',['../structbmb_1_1integral__constant.html#ad9f32dbc0faefdac8577d9600899e758',1,'bmb::integral_constant']]],
-  ['value_5ftype_1',['value_type',['../structbmb_1_1integral__constant.html#a73c836bc02651248235e865cd302a4ec',1,'bmb::integral_constant']]],
-  ['vector_2eh_2',['vector.h',['../vector_8h.html',1,'']]]
+  ['random_5faccess_5fiter_5ftag_0',['random_access_iter_tag',['../structbmb_1_1random__access__iter__tag.html',1,'bmb']]],
+  ['randomaccessiterator_1',['RandomAccessIterator',['../conceptbmb_1_1_random_access_iterator.html',1,'bmb']]],
+  ['readme_2emd_2',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reference_3',['reference',['../classbmb_1_1_vector.html#abf3a52a1ff90b02188c9aa3b439ba304',1,'bmb::Vector::reference'],['../classbmb_1_1detail_1_1_base_vector_iter.html#a240d96d0c67c6d30accb43f696f7be4c',1,'bmb::detail::BaseVectorIter::reference'],['../structbmb_1_1detail_1_1_iterator_traits_impl_3_01_iter_00_01void__t_3_01typename_01_iter_1_1valub10188df1cabbb4fd0a914e7723039c9.html#a4a5ebeaddd2b73249f64afba221df499',1,'bmb::detail::IteratorTraitsImpl&lt; Iter, void_t&lt; typename Iter::value_type, typename Iter::reference, typename Iter::pointer, typename Iter::difference_type, typename Iter::iterator_category &gt; &gt;::reference'],['../structbmb_1_1_iterator_traits_3_01_t_01_5_01_4.html#a2db888d082b8b2e7d37411a975e420b8',1,'bmb::IteratorTraits&lt; T * &gt;::reference']]],
+  ['remove_5fconst_4',['remove_const',['../structbmb_1_1remove__const.html',1,'bmb']]],
+  ['remove_5fconst_3c_20const_20t_20_3e_5',['remove_const&lt; const T &gt;',['../structbmb_1_1remove__const_3_01const_01_t_01_4.html',1,'bmb']]],
+  ['remove_5fconst_5ft_6',['remove_const_t',['../namespacebmb.html#a1bb6f3ed95ae13cce8351da4e00aa8eb',1,'bmb']]],
+  ['remove_5fref_7',['remove_ref',['../structbmb_1_1remove__ref.html',1,'bmb']]],
+  ['remove_5fref_3c_20t_20_26_20_3e_8',['remove_ref&lt; T &amp; &gt;',['../structbmb_1_1remove__ref_3_01_t_01_6_01_4.html',1,'bmb']]],
+  ['remove_5fref_3c_20t_20_26_26_20_3e_9',['remove_ref&lt; T &amp;&amp; &gt;',['../structbmb_1_1remove__ref_3_01_t_01_6_6_01_4.html',1,'bmb']]],
+  ['remove_5fref_5ft_10',['remove_ref_t',['../namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0',1,'bmb']]],
+  ['reserve_11',['reserve',['../classbmb_1_1_vector.html#a35953229c759943b0403a3f9ef37aa72',1,'bmb::Vector']]]
 ];

@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>libbmb: bmb::detail::BaseVectorIter&lt; T, IsConst &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/bivafra/libbmb" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libbmb
+   </div>
+   <div id="projectbrief">Modern implementation of extended STL library</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classbmb_1_1detail_1_1_base_vector_iter.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classbmb_1_1detail_1_1_base_vector_iter-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">bmb::detail::BaseVectorIter&lt; T, IsConst &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>contiguous iterator for <a class="el" href="classbmb_1_1_vector.html" title="AllocatorAware dynamic array structure.">Vector</a>. Trivial iterator-wrapper for pointer to array(aka T*)  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="vector__iterator_8h_source.html">vector_iterator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae0ee91568ce80c7dd33c65ca8577fc36" id="r_ae0ee91568ce80c7dd33c65ca8577fc36"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0ee91568ce80c7dd33c65ca8577fc36">value_type</a> = <a class="el" href="namespacebmb.html#a1bb6f3ed95ae13cce8351da4e00aa8eb">remove_const_t</a>&lt;T&gt;</td></tr>
+<tr class="separator:ae0ee91568ce80c7dd33c65ca8577fc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240d96d0c67c6d30accb43f696f7be4c" id="r_a240d96d0c67c6d30accb43f696f7be4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a240d96d0c67c6d30accb43f696f7be4c">reference</a> = <a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4">conditional_t</a>&lt;IsConst, const T, T&gt;&amp;</td></tr>
+<tr class="separator:a240d96d0c67c6d30accb43f696f7be4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76174c355c84f67ba434797979da4582" id="r_a76174c355c84f67ba434797979da4582"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76174c355c84f67ba434797979da4582">pointer</a> = <a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4">conditional_t</a>&lt;IsConst, const T, T&gt;*</td></tr>
+<tr class="separator:a76174c355c84f67ba434797979da4582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef0ab1ae8ed303f196c78aa0d3c9d57" id="r_a5ef0ab1ae8ed303f196c78aa0d3c9d57"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> = ptrdiff_t</td></tr>
+<tr class="separator:a5ef0ab1ae8ed303f196c78aa0d3c9d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a5d3c87c83666b5f9e804eb49a1ad6" id="r_a31a5d3c87c83666b5f9e804eb49a1ad6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a5d3c87c83666b5f9e804eb49a1ad6">iterator_category</a> = <a class="el" href="structbmb_1_1contiguous__iter__tag.html">contiguous_iter_tag</a></td></tr>
+<tr class="separator:a31a5d3c87c83666b5f9e804eb49a1ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab435a145b2b6de3bea4ba793a64179cc" id="r_ab435a145b2b6de3bea4ba793a64179cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab435a145b2b6de3bea4ba793a64179cc">BaseVectorIter</a> ()</td></tr>
+<tr class="separator:ab435a145b2b6de3bea4ba793a64179cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a5d5bf75842fefece76b8f44768d35a" id="r_a1a5d5bf75842fefece76b8f44768d35a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a5d5bf75842fefece76b8f44768d35a">BaseVectorIter</a> (<a class="el" href="#a76174c355c84f67ba434797979da4582">pointer</a> ptr)</td></tr>
+<tr class="separator:a1a5d5bf75842fefece76b8f44768d35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada19972eaf203e0fcc879cc218834fc5" id="r_ada19972eaf203e0fcc879cc218834fc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada19972eaf203e0fcc879cc218834fc5">operator BaseVectorIter&lt; T, true &gt;</a> () const</td></tr>
+<tr class="separator:ada19972eaf203e0fcc879cc218834fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76139cccff1c437d4763c1c57efee834" id="r_a76139cccff1c437d4763c1c57efee834"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a76174c355c84f67ba434797979da4582">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76139cccff1c437d4763c1c57efee834">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a76139cccff1c437d4763c1c57efee834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a100cda6373635914a5c14594cabfb05b" id="r_a100cda6373635914a5c14594cabfb05b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a240d96d0c67c6d30accb43f696f7be4c">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100cda6373635914a5c14594cabfb05b">operator*</a> () const</td></tr>
+<tr class="separator:a100cda6373635914a5c14594cabfb05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b6f364806a73018af8600cbe79114c" id="r_ab2b6f364806a73018af8600cbe79114c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b6f364806a73018af8600cbe79114c">operator++</a> ()</td></tr>
+<tr class="separator:ab2b6f364806a73018af8600cbe79114c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f12f9fea1059bc90304f0099d79a1f" id="r_ae4f12f9fea1059bc90304f0099d79a1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4f12f9fea1059bc90304f0099d79a1f">operator++</a> (int)</td></tr>
+<tr class="separator:ae4f12f9fea1059bc90304f0099d79a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8680b26b56e2a7902facf1c9779066" id="r_a0e8680b26b56e2a7902facf1c9779066"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e8680b26b56e2a7902facf1c9779066">operator+=</a> (<a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> n)</td></tr>
+<tr class="separator:a0e8680b26b56e2a7902facf1c9779066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a97a12cf0c4fca28155447b7a010da9" id="r_a1a97a12cf0c4fca28155447b7a010da9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a97a12cf0c4fca28155447b7a010da9">operator+</a> (<a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> n)</td></tr>
+<tr class="separator:a1a97a12cf0c4fca28155447b7a010da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962c98d265df141ca8cb2adc437b7950" id="r_a962c98d265df141ca8cb2adc437b7950"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a962c98d265df141ca8cb2adc437b7950">operator--</a> ()</td></tr>
+<tr class="separator:a962c98d265df141ca8cb2adc437b7950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff6afed5a7997ae9a614d12d06a9285a" id="r_aff6afed5a7997ae9a614d12d06a9285a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff6afed5a7997ae9a614d12d06a9285a">operator--</a> (int)</td></tr>
+<tr class="separator:aff6afed5a7997ae9a614d12d06a9285a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ffe8fa4ec6580e155e3b538ed39f33c" id="r_a3ffe8fa4ec6580e155e3b538ed39f33c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ffe8fa4ec6580e155e3b538ed39f33c">operator-=</a> (<a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> n)</td></tr>
+<tr class="separator:a3ffe8fa4ec6580e155e3b538ed39f33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0650cef4a3134376794f847b04c9ba1" id="r_af0650cef4a3134376794f847b04c9ba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0650cef4a3134376794f847b04c9ba1">operator-</a> (<a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> n)</td></tr>
+<tr class="separator:af0650cef4a3134376794f847b04c9ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10764e9dbe6334b78fdfc0dcf645e340" id="r_a10764e9dbe6334b78fdfc0dcf645e340"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10764e9dbe6334b78fdfc0dcf645e340">operator&lt;=&gt;</a> (const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;other) const =default</td></tr>
+<tr class="separator:a10764e9dbe6334b78fdfc0dcf645e340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a816e96d5b4d92794fb24a63bbea95e21" id="r_a816e96d5b4d92794fb24a63bbea95e21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a816e96d5b4d92794fb24a63bbea95e21">operator+</a> (<a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> n, const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;it)</td></tr>
+<tr class="separator:a816e96d5b4d92794fb24a63bbea95e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513a713dfd833f95f49346c8a800bca6" id="r_a513a713dfd833f95f49346c8a800bca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a513a713dfd833f95f49346c8a800bca6">operator-</a> (const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;lhs, const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;rhs)</td></tr>
+<tr class="separator:a513a713dfd833f95f49346c8a800bca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool IsConst&gt;<br />
+class bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</div><p>contiguous iterator for <a class="el" href="classbmb_1_1_vector.html" title="AllocatorAware dynamic array structure.">Vector</a>. Trivial iterator-wrapper for pointer to array(aka T*) </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a5ef0ab1ae8ed303f196c78aa0d3c9d57" name="a5ef0ab1ae8ed303f196c78aa0d3c9d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">&#9670;&#160;</a></span>difference_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::difference_type = ptrdiff_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31a5d3c87c83666b5f9e804eb49a1ad6" name="a31a5d3c87c83666b5f9e804eb49a1ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a5d3c87c83666b5f9e804eb49a1ad6">&#9670;&#160;</a></span>iterator_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::iterator_category = <a class="el" href="structbmb_1_1contiguous__iter__tag.html">contiguous_iter_tag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76174c355c84f67ba434797979da4582" name="a76174c355c84f67ba434797979da4582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76174c355c84f67ba434797979da4582">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::pointer = <a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4">conditional_t</a>&lt;IsConst, const T, T&gt;*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a240d96d0c67c6d30accb43f696f7be4c" name="a240d96d0c67c6d30accb43f696f7be4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240d96d0c67c6d30accb43f696f7be4c">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::reference = <a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4">conditional_t</a>&lt;IsConst, const T, T&gt;&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0ee91568ce80c7dd33c65ca8577fc36" name="ae0ee91568ce80c7dd33c65ca8577fc36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ee91568ce80c7dd33c65ca8577fc36">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::value_type = <a class="el" href="namespacebmb.html#a1bb6f3ed95ae13cce8351da4e00aa8eb">remove_const_t</a>&lt;T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab435a145b2b6de3bea4ba793a64179cc" name="ab435a145b2b6de3bea4ba793a64179cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab435a145b2b6de3bea4ba793a64179cc">&#9670;&#160;</a></span>BaseVectorIter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::BaseVectorIter </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a5d5bf75842fefece76b8f44768d35a" name="a1a5d5bf75842fefece76b8f44768d35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a5d5bf75842fefece76b8f44768d35a">&#9670;&#160;</a></span>BaseVectorIter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::BaseVectorIter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a76174c355c84f67ba434797979da4582">pointer</a></td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ada19972eaf203e0fcc879cc218834fc5" name="ada19972eaf203e0fcc879cc218834fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada19972eaf203e0fcc879cc218834fc5">&#9670;&#160;</a></span>operator BaseVectorIter&lt; T, true &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">BaseVectorIter</a>&lt; T, true &gt; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a100cda6373635914a5c14594cabfb05b" name="a100cda6373635914a5c14594cabfb05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a100cda6373635914a5c14594cabfb05b">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a240d96d0c67c6d30accb43f696f7be4c">reference</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a97a12cf0c4fca28155447b7a010da9" name="a1a97a12cf0c4fca28155447b7a010da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a97a12cf0c4fca28155447b7a010da9">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2b6f364806a73018af8600cbe79114c" name="ab2b6f364806a73018af8600cbe79114c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b6f364806a73018af8600cbe79114c">&#9670;&#160;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp; <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4f12f9fea1059bc90304f0099d79a1f" name="ae4f12f9fea1059bc90304f0099d79a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f12f9fea1059bc90304f0099d79a1f">&#9670;&#160;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e8680b26b56e2a7902facf1c9779066" name="a0e8680b26b56e2a7902facf1c9779066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8680b26b56e2a7902facf1c9779066">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp; <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0650cef4a3134376794f847b04c9ba1" name="af0650cef4a3134376794f847b04c9ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0650cef4a3134376794f847b04c9ba1">&#9670;&#160;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a962c98d265df141ca8cb2adc437b7950" name="a962c98d265df141ca8cb2adc437b7950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a962c98d265df141ca8cb2adc437b7950">&#9670;&#160;</a></span>operator--() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp; <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff6afed5a7997ae9a614d12d06a9285a" name="aff6afed5a7997ae9a614d12d06a9285a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff6afed5a7997ae9a614d12d06a9285a">&#9670;&#160;</a></span>operator--() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ffe8fa4ec6580e155e3b538ed39f33c" name="a3ffe8fa4ec6580e155e3b538ed39f33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ffe8fa4ec6580e155e3b538ed39f33c">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp; <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76139cccff1c437d4763c1c57efee834" name="a76139cccff1c437d4763c1c57efee834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76139cccff1c437d4763c1c57efee834">&#9670;&#160;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a76174c355c84f67ba434797979da4582">pointer</a> <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10764e9dbe6334b78fdfc0dcf645e340" name="a10764e9dbe6334b78fdfc0dcf645e340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10764e9dbe6334b78fdfc0dcf645e340">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">bmb::detail::BaseVectorIter</a>&lt; T, IsConst &gt;::operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a816e96d5b4d92794fb24a63bbea95e21" name="a816e96d5b4d92794fb24a63bbea95e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816e96d5b4d92794fb24a63bbea95e21">&#9670;&#160;</a></span>operator+</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>it</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a513a713dfd833f95f49346c8a800bca6" name="a513a713dfd833f95f49346c8a800bca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513a713dfd833f95f49346c8a800bca6">&#9670;&#160;</a></span>operator-</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5ef0ab1ae8ed303f196c78aa0d3c9d57">difference_type</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">Self</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="vector__iterator_8h_source.html">vector_iterator.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacebmb.html">bmb</a></li><li class="navelem"><a class="el" href="namespacebmb_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html">BaseVectorIter</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

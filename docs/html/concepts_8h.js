@@ -12,5 +12,8 @@ var concepts_8h =
     [ "bmb::CopyConstructible", "conceptbmb_1_1_copy_constructible.html", null ],
     [ "bmb::NothrowCopyConstructible", "conceptbmb_1_1_nothrow_copy_constructible.html", null ],
     [ "bmb::CopyAssignable", "conceptbmb_1_1_copy_assignable.html", null ],
-    [ "bmb::NothrowCopyAssignable", "conceptbmb_1_1_nothrow_copy_assignable.html", null ]
+    [ "bmb::NothrowCopyAssignable", "conceptbmb_1_1_nothrow_copy_assignable.html", null ],
+    [ "bmb::ConvertibleTo", "conceptbmb_1_1_convertible_to.html", null ],
+    [ "bmb::Invocable", "conceptbmb_1_1_invocable.html", null ],
+    [ "bmb::Predicate", "conceptbmb_1_1_predicate.html", null ]
 ];

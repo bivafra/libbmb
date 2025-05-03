@@ -143,7 +143,7 @@ $(function(){initNavTree('type__traits_8h.html',''); initResizable(true); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="type__traits_8h__dep__incl.svg" width="139" height="258"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="type__traits_8h__dep__incl.svg" width="484" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="type__traits_8h_source.html">Go to the source code of this file.</a></p>
@@ -155,6 +155,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1integral__constant.html">bmb::integral_constant&lt; val &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1integral__constant.html" title="integral_constant">integral_constant</a>  <a href="structbmb_1_1integral__constant.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1conjunction.html">bmb::conjunction&lt; Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical AND metafunction.  <a href="structbmb_1_1conjunction.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1disjunction.html">bmb::disjunction&lt; Types &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical OR metafunction.  <a href="structbmb_1_1disjunction.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1is__same.html">bmb::is_same&lt; T, U &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1is__same.html" title="is_same">is_same</a>  <a href="structbmb_1_1is__same.html#details">More...</a><br /></td></tr>
@@ -196,6 +202,29 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1remove__ref_3_01_t_01_6_6_01_4.html">bmb::remove_ref&lt; T &amp;&amp; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1conditional.html">bmb::conditional&lt; Cond, IfTrue, IfFalse &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">conditional  <a href="structbmb_1_1conditional.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1conditional_3_01false_00_01_if_true_00_01_if_false_01_4.html">bmb::conditional&lt; false, IfTrue, IfFalse &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1enable__if.html">bmb::enable_if&lt; Cond, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1enable__if.html" title="enable_if">enable_if</a>  <a href="structbmb_1_1enable__if.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1enable__if_3_01true_00_01_t_01_4.html">bmb::enable_if&lt; true, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1is__base__of.html">bmb::is_base_of&lt; Base, Derived &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1is__base__of.html" title="is_base_of">is_base_of</a>  <a href="structbmb_1_1is__base__of.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1detail_1_1invoke__result__impl.html">bmb::detail::invoke_result_impl&lt; AlwaysVoid, F, Args &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1detail_1_1invoke__result__impl_3_01decltype_07void_07invoke_3_01_f_00_01_args_8_8_889964edc0008ca54201befec28e1e642.html">bmb::detail::invoke_result_impl&lt; decltype(void(invoke&lt; F, Args... &gt;())), F, Args... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1is__invocable.html">bmb::is_invocable&lt; F, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1is__invocable.html" title="is_invocable">is_invocable</a>  <a href="structbmb_1_1is__invocable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1invoke__result.html">bmb::invoke_result&lt; F, Args &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1invoke__result.html" title="invoke_result">invoke_result</a>  <a href="structbmb_1_1invoke__result.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -228,6 +257,21 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a3f28057f53e15d3bac5152f7f07991d0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">bmb::remove_ref_t</a> = <a class="el" href="structbmb_1_1remove__ref.html">remove_ref</a>&lt;T&gt;::type</td></tr>
 <tr class="memdesc:a3f28057f53e15d3bac5152f7f07991d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0" title="remove_ref_t">remove_ref_t</a>  <br /></td></tr>
 <tr class="separator:a3f28057f53e15d3bac5152f7f07991d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77cdc7be4ea2a6a1b2ff7b003a3245c4" id="r_a77cdc7be4ea2a6a1b2ff7b003a3245c4"><td class="memTemplParams" colspan="2">template&lt;bool Cond, typename IfTrue, typename IfFalse&gt; </td></tr>
+<tr class="memitem:a77cdc7be4ea2a6a1b2ff7b003a3245c4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4">bmb::conditional_t</a> = <a class="el" href="structbmb_1_1conditional.html">conditional</a>&lt;Cond, IfTrue, IfFalse&gt;::type</td></tr>
+<tr class="memdesc:a77cdc7be4ea2a6a1b2ff7b003a3245c4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4" title="conditional_t">conditional_t</a>  <br /></td></tr>
+<tr class="separator:a77cdc7be4ea2a6a1b2ff7b003a3245c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab0ed0e420c4120a1a18f8a55a40436" id="r_a5ab0ed0e420c4120a1a18f8a55a40436"><td class="memTemplParams" colspan="2">template&lt;bool Cond, typename T = void&gt; </td></tr>
+<tr class="memitem:a5ab0ed0e420c4120a1a18f8a55a40436"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a5ab0ed0e420c4120a1a18f8a55a40436">bmb::enable_if_t</a> = <a class="el" href="structbmb_1_1enable__if.html">enable_if</a>&lt;Cond, T&gt;::type</td></tr>
+<tr class="memdesc:a5ab0ed0e420c4120a1a18f8a55a40436"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacebmb.html#a5ab0ed0e420c4120a1a18f8a55a40436" title="enable_if_t">enable_if_t</a>  <br /></td></tr>
+<tr class="separator:a5ab0ed0e420c4120a1a18f8a55a40436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae784e36a8a1aecffb429fadf13df06f5" id="r_ae784e36a8a1aecffb429fadf13df06f5"><td class="memTemplParams" colspan="2">template&lt;typename...&gt; </td></tr>
+<tr class="memitem:ae784e36a8a1aecffb429fadf13df06f5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#ae784e36a8a1aecffb429fadf13df06f5">bmb::void_t</a> = void</td></tr>
+<tr class="separator:ae784e36a8a1aecffb429fadf13df06f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e13fc8728220caa096f697f1e72f400" id="r_a2e13fc8728220caa096f697f1e72f400"><td class="memTemplParams" colspan="2">template&lt;typename F, typename... Args&gt; </td></tr>
+<tr class="memitem:a2e13fc8728220caa096f697f1e72f400"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a2e13fc8728220caa096f697f1e72f400">bmb::invoke_result_t</a> = <a class="el" href="structbmb_1_1invoke__result.html">invoke_result</a>&lt;F, Args...&gt;::type</td></tr>
+<tr class="memdesc:a2e13fc8728220caa096f697f1e72f400"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacebmb.html#a2e13fc8728220caa096f697f1e72f400" title="invoke_result_t">invoke_result_t</a>  <br /></td></tr>
+<tr class="separator:a2e13fc8728220caa096f697f1e72f400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -241,9 +285,38 @@ Functions</h2></td></tr>
 <tr class="memitem:ae4fd2cb3e4d4855eba7ddddfed3e5ce1" id="r_ae4fd2cb3e4d4855eba7ddddfed3e5ce1"><td class="memTemplParams" colspan="2">template&lt;typename&gt; </td></tr>
 <tr class="memitem:ae4fd2cb3e4d4855eba7ddddfed3e5ce1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacebmb.html#a44b6b10c570c560e140baecef66c9474">false_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#ae4fd2cb3e4d4855eba7ddddfed3e5ce1">bmb::detail::test_is_class</a> (...)</td></tr>
 <tr class="separator:ae4fd2cb3e4d4855eba7ddddfed3e5ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1cfe0792a1cfc3e4eb539a1e63be1d8" id="r_ab1cfe0792a1cfc3e4eb539a1e63be1d8"><td class="memTemplParams" colspan="2">template&lt;typename B&gt; </td></tr>
+<tr class="memitem:ab1cfe0792a1cfc3e4eb539a1e63be1d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacebmb.html#aabf2cb916779e877b347099e729b9c88">true_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#ab1cfe0792a1cfc3e4eb539a1e63be1d8">bmb::detail::test_ptr_cast</a> (const B *)</td></tr>
+<tr class="separator:ab1cfe0792a1cfc3e4eb539a1e63be1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253c2739feeedde5fb2e4b8b00195cf9" id="r_a253c2739feeedde5fb2e4b8b00195cf9"><td class="memTemplParams" colspan="2">template&lt;typename&gt; </td></tr>
+<tr class="memitem:a253c2739feeedde5fb2e4b8b00195cf9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacebmb.html#a44b6b10c570c560e140baecef66c9474">false_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#a253c2739feeedde5fb2e4b8b00195cf9">bmb::detail::test_ptr_cast</a> (const void *)</td></tr>
+<tr class="separator:a253c2739feeedde5fb2e4b8b00195cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb189c1fff859b04d52b805bbda7c88d" id="r_abb189c1fff859b04d52b805bbda7c88d"><td class="memTemplParams" colspan="2">template&lt;typename B, typename D&gt; </td></tr>
+<tr class="memitem:abb189c1fff859b04d52b805bbda7c88d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#abb189c1fff859b04d52b805bbda7c88d">bmb::detail::test_is_base_of</a> (int) -&gt; decltype(<a class="el" href="namespacebmb_1_1detail.html#ab1cfe0792a1cfc3e4eb539a1e63be1d8">test_ptr_cast</a>&lt; B &gt;(static_cast&lt; D * &gt;(nullptr)))</td></tr>
+<tr class="separator:abb189c1fff859b04d52b805bbda7c88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e7e85086ada5654b1f6bb04258194b1" id="r_a9e7e85086ada5654b1f6bb04258194b1"><td class="memTemplParams" colspan="2">template&lt;typename, typename&gt; </td></tr>
+<tr class="memitem:a9e7e85086ada5654b1f6bb04258194b1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#a9e7e85086ada5654b1f6bb04258194b1">bmb::detail::test_is_base_of</a> (...) -&gt; <a class="el" href="namespacebmb.html#aabf2cb916779e877b347099e729b9c88">true_type</a></td></tr>
+<tr class="separator:a9e7e85086ada5654b1f6bb04258194b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae8fecb9f2797e9920e5f2e2cf230fb2" id="r_aae8fecb9f2797e9920e5f2e2cf230fb2"><td class="memTemplParams" colspan="2">template&lt;typename F, typename... Args&gt; </td></tr>
+<tr class="memitem:aae8fecb9f2797e9920e5f2e2cf230fb2"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#aae8fecb9f2797e9920e5f2e2cf230fb2">bmb::detail::invoke</a> () -&gt; decltype(<a class="el" href="namespacebmb.html#afb1ba0a6a3fcef530ca3983ea29b66ec">declval</a>&lt; F &gt;()(<a class="el" href="namespacebmb.html#afb1ba0a6a3fcef530ca3983ea29b66ec">declval</a>&lt; Args &gt;()...))</td></tr>
+<tr class="separator:aae8fecb9f2797e9920e5f2e2cf230fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6677ff9a76d4de2a2bde27e01a1f72" id="r_a2b6677ff9a76d4de2a2bde27e01a1f72"><td class="memTemplParams" colspan="2">template&lt;typename F, typename... Args&gt; </td></tr>
+<tr class="memitem:a2b6677ff9a76d4de2a2bde27e01a1f72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacebmb.html#aabf2cb916779e877b347099e729b9c88">true_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#a2b6677ff9a76d4de2a2bde27e01a1f72">bmb::detail::test_is_invocable</a> (decltype(<a class="el" href="namespacebmb_1_1detail.html#aae8fecb9f2797e9920e5f2e2cf230fb2">invoke</a>&lt; F, Args... &gt;(), 0))</td></tr>
+<tr class="separator:a2b6677ff9a76d4de2a2bde27e01a1f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8957b582ecf4dd0ae1057d3516c4902b" id="r_a8957b582ecf4dd0ae1057d3516c4902b"><td class="memTemplParams" colspan="2">template&lt;typename...&gt; </td></tr>
+<tr class="memitem:a8957b582ecf4dd0ae1057d3516c4902b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacebmb.html#a44b6b10c570c560e140baecef66c9474">false_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html#a8957b582ecf4dd0ae1057d3516c4902b">bmb::detail::test_is_invocable</a> (...)</td></tr>
+<tr class="separator:a8957b582ecf4dd0ae1057d3516c4902b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a00fd2b286ed7bb38bf682698cc30a7d6" id="r_a00fd2b286ed7bb38bf682698cc30a7d6"><td class="memTemplParams" colspan="2">template&lt;typename... Types&gt; </td></tr>
+<tr class="memitem:a00fd2b286ed7bb38bf682698cc30a7d6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a00fd2b286ed7bb38bf682698cc30a7d6">bmb::conjunction_v</a> = <a class="el" href="structbmb_1_1conjunction.html">conjunction</a>&lt;Types...&gt;::value</td></tr>
+<tr class="memdesc:a00fd2b286ed7bb38bf682698cc30a7d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical AND metafunction.  <br /></td></tr>
+<tr class="separator:a00fd2b286ed7bb38bf682698cc30a7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897cd914591effa526b89777b9d058e1" id="r_a897cd914591effa526b89777b9d058e1"><td class="memTemplParams" colspan="2">template&lt;typename... Types&gt; </td></tr>
+<tr class="memitem:a897cd914591effa526b89777b9d058e1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a897cd914591effa526b89777b9d058e1">bmb::disjunction_v</a> = <a class="el" href="structbmb_1_1disjunction.html">disjunction</a>&lt;Types...&gt;::value</td></tr>
+<tr class="memdesc:a897cd914591effa526b89777b9d058e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical OR metafunction.  <br /></td></tr>
+<tr class="separator:a897cd914591effa526b89777b9d058e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fe481c4fabaf7816a4164ddfed20866" id="r_a2fe481c4fabaf7816a4164ddfed20866"><td class="memTemplParams" colspan="2">template&lt;typename T, typename U&gt; </td></tr>
 <tr class="memitem:a2fe481c4fabaf7816a4164ddfed20866"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a2fe481c4fabaf7816a4164ddfed20866">bmb::is_same_v</a> = <a class="el" href="structbmb_1_1is__same.html">is_same</a>&lt;T, U&gt;::value</td></tr>
 <tr class="memdesc:a2fe481c4fabaf7816a4164ddfed20866"><td class="mdescLeft">&#160;</td><td class="mdescRight">is_same_v  <br /></td></tr>
@@ -268,6 +341,14 @@ Variables</h2></td></tr>
 <tr class="memitem:ae173583f9b03d883c0c19b246b219309"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#ae173583f9b03d883c0c19b246b219309">bmb::is_pointer_v</a> = <a class="el" href="structbmb_1_1is__pointer.html">is_pointer</a>&lt;T&gt;::value</td></tr>
 <tr class="memdesc:ae173583f9b03d883c0c19b246b219309"><td class="mdescLeft">&#160;</td><td class="mdescRight">is_pointer_v  <br /></td></tr>
 <tr class="separator:ae173583f9b03d883c0c19b246b219309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6707af62dd9fd85791d893dd0886574" id="r_ab6707af62dd9fd85791d893dd0886574"><td class="memTemplParams" colspan="2">template&lt;typename Base, typename Derived&gt; </td></tr>
+<tr class="memitem:ab6707af62dd9fd85791d893dd0886574"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#ab6707af62dd9fd85791d893dd0886574">bmb::is_base_of_v</a> = <a class="el" href="structbmb_1_1is__base__of.html">is_base_of</a>&lt;Base, Derived&gt;::value</td></tr>
+<tr class="memdesc:ab6707af62dd9fd85791d893dd0886574"><td class="mdescLeft">&#160;</td><td class="mdescRight">is_base_of_v  <br /></td></tr>
+<tr class="separator:ab6707af62dd9fd85791d893dd0886574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff0a5ed51324c6e2f956ca55e10b6dd" id="r_a6ff0a5ed51324c6e2f956ca55e10b6dd"><td class="memTemplParams" colspan="2">template&lt;typename F, typename... Args&gt; </td></tr>
+<tr class="memitem:a6ff0a5ed51324c6e2f956ca55e10b6dd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a6ff0a5ed51324c6e2f956ca55e10b6dd">bmb::is_invocable_v</a> = <a class="el" href="structbmb_1_1is__invocable.html">is_invocable</a>&lt;F, Args...&gt;::value</td></tr>
+<tr class="memdesc:a6ff0a5ed51324c6e2f956ca55e10b6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">is_invocable_v  <br /></td></tr>
+<tr class="separator:a6ff0a5ed51324c6e2f956ca55e10b6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Authors</dt><dd>bivafra </dd></dl>

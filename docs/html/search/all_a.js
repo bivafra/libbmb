@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['remove_5fconst_1',['remove_const',['../structbmb_1_1remove__const.html',1,'bmb']]],
-  ['remove_5fconst_3c_20const_20t_20_3e_2',['remove_const&lt; const T &gt;',['../structbmb_1_1remove__const_3_01const_01_t_01_4.html',1,'bmb']]],
-  ['remove_5fconst_5ft_3',['remove_const_t',['../namespacebmb.html#a1bb6f3ed95ae13cce8351da4e00aa8eb',1,'bmb']]],
-  ['remove_5fref_4',['remove_ref',['../structbmb_1_1remove__ref.html',1,'bmb']]],
-  ['remove_5fref_3c_20t_20_26_20_3e_5',['remove_ref&lt; T &amp; &gt;',['../structbmb_1_1remove__ref_3_01_t_01_6_01_4.html',1,'bmb']]],
-  ['remove_5fref_3c_20t_20_26_26_20_3e_6',['remove_ref&lt; T &amp;&amp; &gt;',['../structbmb_1_1remove__ref_3_01_t_01_6_6_01_4.html',1,'bmb']]],
-  ['remove_5fref_5ft_7',['remove_ref_t',['../namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0',1,'bmb']]]
+  ['next_0',['next',['../namespacebmb.html#a305875f53e74cf64d2278cd9ceb99aa1',1,'bmb']]],
+  ['not_5fequal_5fto_1',['not_equal_to',['../structbmb_1_1not__equal__to.html',1,'bmb']]],
+  ['nothrowconstructiblefrom_2',['NothrowConstructibleFrom',['../conceptbmb_1_1_nothrow_constructible_from.html',1,'bmb']]],
+  ['nothrowcopyassignable_3',['NothrowCopyAssignable',['../conceptbmb_1_1_nothrow_copy_assignable.html',1,'bmb']]],
+  ['nothrowcopyconstructible_4',['NothrowCopyConstructible',['../conceptbmb_1_1_nothrow_copy_constructible.html',1,'bmb']]],
+  ['nothrowmoveassignable_5',['NothrowMoveAssignable',['../conceptbmb_1_1_nothrow_move_assignable.html',1,'bmb']]],
+  ['nothrowmoveconstructible_6',['NothrowMoveConstructible',['../conceptbmb_1_1_nothrow_move_constructible.html',1,'bmb']]]
 ];

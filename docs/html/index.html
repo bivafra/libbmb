@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>libbmb: libbmb</title>
+<title>libbmb: 🌟 libbmb</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -131,10 +131,234 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">libbmb </div></div>
+  <div class="headertitle"><div class="title">🌟 libbmb </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p><b>libbmb</b> is a header only DSA library written using modern C++. It implements significant STL functionality and extends it. The library's containers are <em>AllocatorAware</em> with <em>strong exception guarantee</em>. The <b>key features</b> of this realization are <b>code readability</b>, <b>rich documentation</b>, and modern view to the <b>code design</b>.<br  />
+</p>
+<p>All documentation is available <b><a href="https://bivafra.github.io/libbmb/">here</a></b>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+🎯 Technology stack</h1>
+<ul>
+<li><b>Compiling</b> (<em>must support c++23</em>): <a href="https://clang.llvm.org/">clang</a> and <a href="https://gcc.gnu.org/">gcc</a></li>
+<li><b>Build system</b>: <a href="https://cmake.org/">cmake</a> &gt;=3.23</li>
+<li><b>Testing</b>: <a href="https://github.com/google/googletest">gtest</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+🤔 Motivation</h1>
+<p>Why do we need one more DSA library while there'are STL, Boost, Abseil and many other great solutions? There are several reasons for that:</p><ol type="1">
+<li><b>My personal interest.</b><ul>
+<li>I love to understand things deeply, and STL is one of these things. In fact, implementing STL and DSA in general is much more challenging than one might imagine, given sometimes tough ISO C++ requirements(e.g. exception safety, iterators time complexity, type erasure).</li>
+</ul>
+</li>
+<li><b>Newbie friendly code.</b><ul>
+<li>When I started reading GCC libstdc++ sources, it was awful - infinite underscores, strange code alignment, lack of inline comments, etc. While <b>libbmb</b> explains many moments, understanding of the ideas how algorithms and containers work is required.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md3"></a>
+🛠️ Building</h1>
+<ol type="1">
+<li>Clone the repo: <div class="fragment"><div class="line">git clone https://github.com/bivafra/libbmb.git</div>
+</div><!-- fragment --></li>
+<li><ol type="a">
+<li>If you're using the library as a dependency, add this to your <code>CMakeLists.txt</code>: <code>shell add_subdirectory(libbmb) target_link_libraries(*your_target* PRIVATE libbmb) </code> <b>libbmb</b> uses cmake's <em>interface</em>, so when linking you'll automatically get include directories.</li>
+<li>If you want to develop the library, you must write unit tests for your code. <br  />
+ To build tests you should install <a href="https://valgrind.org/">valgrind</a> for memory checks, add the test files into <code>CMakeLists.txt</code>, and run: <code>shell make test </code> This will automatically install <code>gtest</code> and run tests with <code>valgrind</code> checks. <br  />
+<br  />
+ The default compiler is <code>clang</code>. To build with <code>gcc</code> run: <code>shell make test_gcc </code> Note: if you use clangd as a language server, adjust the include path in the <code>.clangd</code> config file. </li>
+</ol>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
+⚙️ Features</h1>
+<p>Following sections contain details about implemented and planned functionality, C++ standard compatibility, reasons why there's a deviation from the standard, and some other useful notes.</p>
+<details >
+<summary >
+<b>General</b></summary>
+<p></p>
+<ol type="1">
+<li><p class="startli">Declaration and definition of templates.</p>
+<p class="startli">Since C++ obligates to write boilerplate template types like: </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">class </span>A {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> foo();</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// definition either later or in the included `.tpp` file</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> A&lt;T&gt;::foo() {...}</div>
+</div><!-- fragment --><p> it is painful to separatly declare and define template class methods. Boilerplate can be avoided using strange looking macroses like: </p><div class="fragment"><div class="line"><span class="comment">// Start of the `.tpp` file</span></div>
+<div class="line"><span class="preprocessor">#define A_METHOD(return_type)\</span></div>
+<div class="line"><span class="preprocessor">template &lt;typename T&gt;\</span></div>
+<div class="line"><span class="preprocessor">return_type A&lt;T&gt;::</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// some code ...</span></div>
+<div class="line"> </div>
+<div class="line">A_METHOD(<span class="keywordtype">void</span>) foo() {...}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// End of the file</span></div>
+<div class="line"><span class="preprocessor">#undef A_METHOD</span></div>
+</div><!-- fragment --><p> The desicion was made to define methods inside a class. Documentation and definition at the same place. If you don't like this - every modern IDE supports code wrapping, so collapse all definitions by default.</p>
+</li>
+</ol>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Allocator</b></summary>
+<p></p>
+<p><a href="include/utils/allocator.h">source</a></p>
+<ul class="check">
+<li class="checked">PrimitiveAllocator</li>
+</ul>
+<ul class="check">
+<li class="checked">AllocatorTraits</li>
+<li class="unchecked">StackAllocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">PoolAllocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">polymorphic_allocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">scoped_allocator_adaptor</li>
+</ul>
+<p>There are changes in the allocator's design. <code>std::allocator</code> analog here is <code>PrimitiveAllocator</code>. <b>It isn't a template</b>. The template parameter in class only creates pain and <em>rebind</em> semantics. Instead, every allocator's function marked as a template. Thus, each allocator must define at least <code>allocate</code> method as a template(other methods can use template type deduction, so may be non-templated).</p><ul>
+<li>Pros:<ul>
+<li>There is no need for rebind at all, since the type will be either provided by the client or deduced by the compiler.</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li><code>allocate</code> method must be a template.</li>
+<li><p class="startli">Due to the C++ rules, <code>allocate</code> call will look weird: ```c++ using AllocTraits = <a class="el" href="classbmb_1_1_allocator_traits.html" title="Unifined interface for allocators.">bmb::AllocatorTraits&lt;SomeAllocator&gt;</a>; SomeAllocator alloc;</p>
+<p class="startli">auto ptr = AllocTraits::template allocate&lt;T&gt;(alloc, 10);</p>
+<p class="startli">``` Meanwhile other methods usage the same as STL ones.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Also the allocator's copy and move semantics changed:<br  />
+ STL differentiates allocators copying/moving as value type(like string, vector and any other) and allocators copying/moving as container's fields. Therefore every container must consult a allocator what to do while copying/moving. <b>libbmb</b> preserve only the second semantics, so now each allocator <b>must</b> define copy/move c-tors/assignment operators with appropriate semantics. <code>propogate_on_container_...</code> and <code>select_on_container_copy_construction</code> are not used.</p><ul>
+<li>Pros:<ul>
+<li>Easier containers implementation and support.</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Less flexibility for allocators. <br  />
+</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Move semantics</b></summary>
+<p></p>
+<p><a href="include/utils/move.h">source</a></p><ul class="check">
+<li class="checked">swap<ul>
+<li>You're free to overload it, but you should understand the consequences.</li>
+</ul>
+</li>
+</ul>
+<ul class="check">
+<li class="checked">move</li>
+</ul>
+<ul class="check">
+<li class="checked">forward</li>
+<li class="unchecked">forward_like<ul>
+<li>Useful for <em>deducing this</em> c++23</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Iterators</b></summary>
+<p></p>
+<p><a href="include/utils/iterators.h">source</a></p>
+<p><strike>iterator_traits are not implemented, since there's no real need for them - every iterator still must define category, value_type, etc. However traits support raw pointer and have rules for defining missing typedefs.</strike> There is real need for traits for raw pointers, otherwise this is not possible use general algorithms(like std::copy) for pointers. Now, as in STL, every Iter::<em>some type</em> must be IteratorTraits&lt;Iter&gt;::<em>some type</em>.</p>
+<ul class="check">
+<li class="checked">Iterator category tags</li>
+</ul>
+<ul class="check">
+<li class="checked">Iterator category concepts</li>
+</ul>
+<ul class="check">
+<li class="checked">IteratorTraits</li>
+<li class="unchecked">advance</li>
+</ul>
+<ul class="check">
+<li class="unchecked">distance</li>
+</ul>
+<ul class="check">
+<li class="unchecked">next</li>
+</ul>
+<ul class="check">
+<li class="unchecked">prev</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Iterator adaptors:<ul class="check">
+<li class="unchecked">reverse_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">move_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">back_inserter</li>
+</ul>
+<ul class="check">
+<li class="unchecked">front_inderter</li>
+</ul>
+<ul class="check">
+<li class="unchecked">inserter</li>
+</ul>
+</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Stream iterator:<ul class="check">
+<li class="unchecked">istream_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">ostream_iterator</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Vector</b></summary>
+<p></p>
+<p>sources: <a href="include/containers/vector.h">1</a>, <a href="include/details/vector_iterator.h">2</a><br  />
+ tests: <a href="tests/vector">1</a></p>
+<p>This is a classic implementation of STL vector. It suports all original vector methods except <code>shrink_to_fit</code> and <code>insert</code>. They will be added later. The major difference from the STL one is an exception safety.</p><ul>
+<li><p class="startli">For methods like <code>pushBack</code> and <code>reserve</code> conditional safety is provided:</p>
+<p class="startli">For the reallocation the move constructor is always chosen. If it throws, Vector destroyes all moved elements, leaving the original array with some empty elements and elements, that weren't moved. There is the <em><b>basic guarantee</b></em>. Otherwise the <em><b>strong guarantee</b></em>.<br  />
+ Meanwhile, STL's version will choose move c-tor only if it is marked as noexcept.</p>
+</li>
+</ul>
+<p>Currently, there is a problem: the provided template type must not delete move c-tor explicitly, since forwarding and moving will stop compile(<code>reserve</code>, <code>pushBack</code>, <code>emplaceBack</code>). This can be fixed by concepts or SFINAE. Highly likely this will not be fixed due to the redundancy. Modern code must(at least from the author's point of view) either define both copy and move c-tor(may just call copy one if it isn't able to move) or doesn't define them at all. </p>
+</details>
+<details >
+<summary >
+<b>Type traits</b></summary>
+<p></p>
+<p><a href="include/utils/type_traits.h">source</a></p>
+<p>Some iterator traits will not be implemented, since c++20 concepts may almost completely replace them. Now implemented the most important traits. Support will be extended with the growth of the codebase.</p>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Concepts</b></summary>
+<p></p>
+<p><a href="include/utils/concepts.h">source</a></p>
+<p>Now implemented the most important concepts. Support will be extended with the growth of the codebase. </p>
+</details>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

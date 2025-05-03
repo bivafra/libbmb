@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['moveassignable_0',['MoveAssignable',['../conceptbmb_1_1_move_assignable.html',1,'bmb']]],
-  ['moveconstructible_1',['MoveConstructible',['../conceptbmb_1_1_move_constructible.html',1,'bmb']]]
+  ['defaultconstructible_0',['DefaultConstructible',['../conceptbmb_1_1_default_constructible.html',1,'bmb']]]
 ];

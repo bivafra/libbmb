@@ -1,0 +1,20 @@
+<map id="algo_base.h" name="algo_base.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="156,5,246,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,34,83,75,81,70,173,29"/>
+<area shape="rect" id="Node000003" href="$compare_8h.html" title=" " alt="" coords="101,79,210,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,33,174,67,169,64,191,30"/>
+<area shape="rect" id="Node000004" href="$concepts_8h.html" title=" " alt="" coords="190,153,302,178"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,30,225,78,242,137,237,138,220,80,203,32"/>
+<area shape="rect" id="Node000006" href="$iterators_8h.html" title=" " alt="" coords="286,79,393,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="226,29,304,69,301,74,223,34"/>
+<area shape="rect" id="Node000005" href="$type__traits_8h.html" title=" " alt="" coords="280,226,399,252"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,177,314,215,310,219,261,181"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="325,107,276,145,272,141,322,103"/>
+<area shape="poly" id="edge10_Node000006_Node000005" title=" " alt="" coords="342,105,342,211,337,211,337,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="377,153,441,178"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="353,103,389,140,385,143,349,107"/>
+<area shape="rect" id="Node000008" href="$move_8h.html" title=" " alt="" coords="465,153,556,178"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="370,103,468,144,466,149,368,108"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="482,181,384,222,382,218,480,176"/>
+</map>

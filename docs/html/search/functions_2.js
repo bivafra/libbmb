@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['deallocate_0',['deallocate',['../classbmb_1_1_primitive_allocator.html#ae796075c9d4b48496e3023aabdbeb7d5',1,'bmb::PrimitiveAllocator::deallocate()'],['../classbmb_1_1_allocator_traits.html#a7b04689095868b4fc54e005dd956c396',1,'bmb::AllocatorTraits::deallocate()']]],
-  ['declval_1',['declval',['../namespacebmb.html#afb1ba0a6a3fcef530ca3983ea29b66ec',1,'bmb']]],
-  ['destroy_2',['destroy',['../classbmb_1_1_allocator_traits.html#ab9891ac0bdd5ca18fc58d4d30848d491',1,'bmb::AllocatorTraits']]]
+  ['capacity_0',['capacity',['../classbmb_1_1_vector.html#a0da2a200323d6b6ac5f9911027f7ff4e',1,'bmb::Vector']]],
+  ['cbegin_1',['cbegin',['../classbmb_1_1_vector.html#a2c6a63d34554d4e22c4016dfe18ffe5e',1,'bmb::Vector']]],
+  ['cend_2',['cend',['../classbmb_1_1_vector.html#ab9bf099e5ec5e58f107349671c6c902e',1,'bmb::Vector']]],
+  ['clear_3',['clear',['../classbmb_1_1_vector.html#af0dede89e2fae62937ae1f9afc628f69',1,'bmb::Vector']]],
+  ['construct_4',['construct',['../classbmb_1_1_allocator_traits.html#ac20771f92d3e39494ea5edf38ec87241',1,'bmb::AllocatorTraits']]]
 ];

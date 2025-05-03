@@ -1,23 +1,9 @@
 var searchData=
 [
-  ['integral_5fconstant_0',['integral_constant',['../structbmb_1_1integral__constant.html',1,'bmb']]],
-  ['integral_5fconstant_3c_20false_20_3e_1',['integral_constant&lt; false &gt;',['../structbmb_1_1integral__constant.html',1,'bmb']]],
-  ['integral_5fconstant_3c_20true_20_3e_2',['integral_constant&lt; true &gt;',['../structbmb_1_1integral__constant.html',1,'bmb']]],
-  ['is_5fclass_3',['is_class',['../structbmb_1_1is__class.html',1,'bmb']]],
-  ['is_5fclass_5fv_4',['is_class_v',['../namespacebmb.html#a4100c7275d1d036f0a68187c596f51ea',1,'bmb']]],
-  ['is_5fconst_5',['is_const',['../structbmb_1_1is__const.html',1,'bmb']]],
-  ['is_5fconst_3c_20const_20t_20_3e_6',['is_const&lt; const T &gt;',['../structbmb_1_1is__const_3_01const_01_t_01_4.html',1,'bmb']]],
-  ['is_5fconst_5fv_7',['is_const_v',['../namespacebmb.html#a7179c32348d8ebc69dd053e9a0ecc47b',1,'bmb']]],
-  ['is_5flvalue_5fref_8',['is_lvalue_ref',['../structbmb_1_1is__lvalue__ref.html',1,'bmb']]],
-  ['is_5flvalue_5fref_3c_20t_20_26_20_3e_9',['is_lvalue_ref&lt; T &amp; &gt;',['../structbmb_1_1is__lvalue__ref_3_01_t_01_6_01_4.html',1,'bmb']]],
-  ['is_5flvalue_5fref_5fv_10',['is_lvalue_ref_v',['../namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85',1,'bmb']]],
-  ['is_5fpointer_11',['is_pointer',['../structbmb_1_1is__pointer.html',1,'bmb']]],
-  ['is_5fpointer_3c_20t_20_2a_20_3e_12',['is_pointer&lt; T * &gt;',['../structbmb_1_1is__pointer_3_01_t_01_5_01_4.html',1,'bmb']]],
-  ['is_5fpointer_5fv_13',['is_pointer_v',['../namespacebmb.html#ae173583f9b03d883c0c19b246b219309',1,'bmb']]],
-  ['is_5frvalue_5fref_14',['is_rvalue_ref',['../structbmb_1_1is__rvalue__ref.html',1,'bmb']]],
-  ['is_5frvalue_5fref_3c_20t_20_26_26_20_3e_15',['is_rvalue_ref&lt; T &amp;&amp; &gt;',['../structbmb_1_1is__rvalue__ref_3_01_t_01_6_6_01_4.html',1,'bmb']]],
-  ['is_5frvalue_5fref_5fv_16',['is_rvalue_ref_v',['../namespacebmb.html#ae75e01d69a1a776d8049520df1123533',1,'bmb']]],
-  ['is_5fsame_17',['is_same',['../structbmb_1_1is__same.html',1,'bmb']]],
-  ['is_5fsame_3c_20t_2c_20t_20_3e_18',['is_same&lt; T, T &gt;',['../structbmb_1_1is__same_3_01_t_00_01_t_01_4.html',1,'bmb']]],
-  ['is_5fsame_5fv_19',['is_same_v',['../namespacebmb.html#a2fe481c4fabaf7816a4164ddfed20866',1,'bmb']]]
+  ['false_5ftype_0',['false_type',['../namespacebmb.html#a44b6b10c570c560e140baecef66c9474',1,'bmb']]],
+  ['features_1',['⚙️ Features',['../index.html#autotoc_md4',1,'']]],
+  ['forward_2',['forward',['../namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2',1,'bmb::forward(remove_ref_t&lt; T &gt; &amp;value) noexcept'],['../namespacebmb.html#a1f5bd91ea0545bbd363ec365e4b14a68',1,'bmb::forward(remove_ref_t&lt; T &gt; &amp;&amp;value) noexcept']]],
+  ['forward_5fiter_5ftag_3',['forward_iter_tag',['../structbmb_1_1forward__iter__tag.html',1,'bmb']]],
+  ['forwarditerator_4',['ForwardIterator',['../conceptbmb_1_1_forward_iterator.html',1,'bmb']]],
+  ['front_5',['front',['../classbmb_1_1_vector.html#a379b44dab5eeb8a79ae011a4c6c30b72',1,'bmb::Vector::front() noexcept'],['../classbmb_1_1_vector.html#a82cb39f7c21ecf4d1aabba740134799a',1,'bmb::Vector::front() const noexcept']]]
 ];

@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['reserve_0',['reserve',['../classbmb_1_1_vector.html#a35953229c759943b0403a3f9ef37aa72',1,'bmb::Vector']]]
+];

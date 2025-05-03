@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_5fis_5fclass_0',['test_is_class',['../namespacebmb_1_1detail.html#a3d0dd97c996fd4027248e4bee085b27a',1,'bmb::detail::test_is_class(int T::*)'],['../namespacebmb_1_1detail.html#ae4fd2cb3e4d4855eba7ddddfed3e5ce1',1,'bmb::detail::test_is_class(...)']]]
+  ['getrawdata_0',['getRawData',['../classbmb_1_1_vector.html#a080f05e02883f124f42fa16b0cb0924d',1,'bmb::Vector::getRawData() noexcept'],['../classbmb_1_1_vector.html#a22f21a19e7f047e40206c917c7aa7f6a',1,'bmb::Vector::getRawData() const noexcept']]]
 ];
