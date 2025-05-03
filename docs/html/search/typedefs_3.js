@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['true_5ftype_0',['true_type',['../type__traits_8h.html#aabf2cb916779e877b347099e729b9c88',1,'bmb']]],
-  ['type_5fidentity_5ft_1',['type_identity_t',['../type__traits_8h.html#a2ee7eae935f73977bb23f14edcd423a5',1,'bmb']]]
+  ['difference_5ftype_0',['difference_type',['../classbmb_1_1detail_1_1_base_vector_iter.html#a5ef0ab1ae8ed303f196c78aa0d3c9d57',1,'bmb::detail::BaseVectorIter::difference_type'],['../structbmb_1_1detail_1_1_iterator_traits_impl_3_01_iter_00_01void__t_3_01typename_01_iter_1_1valub10188df1cabbb4fd0a914e7723039c9.html#a1e88a1a1d030fba78cb29833a6679d40',1,'bmb::detail::IteratorTraitsImpl&lt; Iter, void_t&lt; typename Iter::value_type, typename Iter::reference, typename Iter::pointer, typename Iter::difference_type, typename Iter::iterator_category &gt; &gt;::difference_type'],['../structbmb_1_1_iterator_traits_3_01_t_01_5_01_4.html#a58f2c8eb655be68edb3e13d1d2c3ff10',1,'bmb::IteratorTraits&lt; T * &gt;::difference_type']]]
 ];

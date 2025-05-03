@@ -1,6 +1,10 @@
 BasedOnStyle: Google
 IndentWidth: 4
 
+AccessModifierOffset: -4
+
+ColumnLimit: 0
+AlignAfterOpenBracket: Align
 
 AlignConsecutiveAssignments:
   Enabled: true
@@ -26,7 +30,7 @@ AllowShortCompoundRequirementOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
 AllowShortLambdasOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: None
+AllowShortFunctionsOnASingleLine: Inline
 
 BreakTemplateDeclarations: Leave
 BreakBeforeConceptDeclarations: Always

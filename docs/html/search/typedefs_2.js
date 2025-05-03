@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['remove_5fconst_5ft_0',['remove_const_t',['../type__traits_8h.html#a1bb6f3ed95ae13cce8351da4e00aa8eb',1,'bmb']]],
-  ['remove_5fref_5ft_1',['remove_ref_t',['../type__traits_8h.html#a3f28057f53e15d3bac5152f7f07991d0',1,'bmb']]]
+  ['conditional_5ft_0',['conditional_t',['../namespacebmb.html#a77cdc7be4ea2a6a1b2ff7b003a3245c4',1,'bmb']]],
+  ['const_5fiterator_1',['const_iterator',['../classbmb_1_1_vector.html#a020881ac1559e17375001eb1a93b48a6',1,'bmb::Vector']]],
+  ['const_5fpointer_2',['const_pointer',['../classbmb_1_1_vector.html#a42606f5d8120bc9f45aa723710b4aef7',1,'bmb::Vector']]],
+  ['const_5freference_3',['const_reference',['../classbmb_1_1_vector.html#a15c441678a8f31ed30d503dec5134011',1,'bmb::Vector']]]
 ];

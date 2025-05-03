@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['nothrowconstructiblefrom_0',['NothrowConstructibleFrom',['../conceptbmb_1_1NothrowConstructibleFrom.html',1,'bmb']]],
-  ['nothrowcopyassignable_1',['NothrowCopyAssignable',['../conceptbmb_1_1NothrowCopyAssignable.html',1,'bmb']]],
-  ['nothrowcopyconstructible_2',['NothrowCopyConstructible',['../conceptbmb_1_1NothrowCopyConstructible.html',1,'bmb']]],
-  ['nothrowmoveassignable_3',['NothrowMoveAssignable',['../conceptbmb_1_1NothrowMoveAssignable.html',1,'bmb']]],
-  ['nothrowmoveconstructible_4',['NothrowMoveConstructible',['../conceptbmb_1_1NothrowMoveConstructible.html',1,'bmb']]]
+  ['getrawdata_0',['getRawData',['../classbmb_1_1_vector.html#a080f05e02883f124f42fa16b0cb0924d',1,'bmb::Vector::getRawData() noexcept'],['../classbmb_1_1_vector.html#a22f21a19e7f047e40206c917c7aa7f6a',1,'bmb::Vector::getRawData() const noexcept']]],
+  ['greater_1',['greater',['../structbmb_1_1greater.html',1,'bmb']]],
+  ['greater_5fequal_2',['greater_equal',['../structbmb_1_1greater__equal.html',1,'bmb']]]
 ];

@@ -1,0 +1,4 @@
+var structbmb_1_1detail_1_1invoke__result__impl_3_01decltype_07void_07invoke_3_01_f_00_01_args_8_8_889964edc0008ca54201befec28e1e642 =
+[
+    [ "type", "structbmb_1_1detail_1_1invoke__result__impl_3_01decltype_07void_07invoke_3_01_f_00_01_args_8_8_889964edc0008ca54201befec28e1e642.html#a66190fb85b262d4394623b282870f4ac", null ]
+];

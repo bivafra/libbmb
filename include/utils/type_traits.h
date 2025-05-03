@@ -46,6 +46,26 @@ using true_type  = bool_constant<true>;
 /// false_type
 using false_type = bool_constant<false>;
 
+/// Logical AND metafunction
+template <typename... Types>
+struct conjunction {
+    static constexpr bool value = (Types::value && ...);
+};
+
+/// Logical AND metafunction
+template <typename... Types>
+constexpr bool conjunction_v = conjunction<Types...>::value;
+
+/// Logical OR metafunction
+template <typename... Types>
+struct disjunction {
+    static constexpr bool value = (Types::value || ...);
+};
+
+/// Logical OR metafunction
+template <typename... Types>
+constexpr bool disjunction_v = disjunction<Types...>::value;
+
 /// is_same
 template <typename T, typename U>
 struct is_same : false_type {};
@@ -160,5 +180,121 @@ struct remove_ref<T&&> {
 /// remove_ref_t
 template <typename T>
 using remove_ref_t = remove_ref<T>::type;
+
+/// conditional
+template <bool Cond, typename IfTrue, typename IfFalse>
+struct conditional {
+    using type = IfTrue;
+};
+
+template <typename IfTrue, typename IfFalse>
+struct conditional<false, IfTrue, IfFalse> {
+    using type = IfFalse;
+};
+
+/// conditional_t
+template <bool Cond, typename IfTrue, typename IfFalse>
+using conditional_t = conditional<Cond, IfTrue, IfFalse>::type;
+
+/// enable_if
+template <bool Cond, typename T = void>
+struct enable_if {};
+
+template <typename T>
+struct enable_if<true, T> {
+    using type = T;
+};
+
+/// enable_if_t
+template <bool Cond, typename T = void>
+using enable_if_t = enable_if<Cond, T>::type;
+
+namespace detail {
+
+// NOTE: here we need another one level of redirection,
+// because without it SFINAE won't work: test_ptr_cast(const B*) is
+// a valid declaration, thefore, the compiler choose it over others overloads,
+// and only then it checks avalability/accessibility, which causes CE in case of
+// private/disambiguous inheritance. However the 'decltype' below enables SFINAE.
+
+template <typename B>
+true_type test_ptr_cast(const B*);
+
+template <typename>
+false_type test_ptr_cast(const void*);
+
+template <typename B, typename D>
+auto test_is_base_of(int) -> decltype(test_ptr_cast<B>(static_cast<D*>(nullptr)));
+
+template <typename, typename>
+auto test_is_base_of(...) -> true_type;  // private/disambiguous base
+
+}  // namespace detail
+
+/// is_base_of
+template <typename Base, typename Derived>
+struct is_base_of : conjunction<
+                        is_class<Base>,
+                        is_class<Derived>,
+                        decltype(detail::test_is_base_of<Base, Derived>(0))> {};
+
+/// is_base_of_v
+template <typename Base, typename Derived>
+constexpr bool is_base_of_v = is_base_of<Base, Derived>::value;
+
+/// A metafunction that always equals to void,
+/// used for SFINAE checking(detecting valid types)
+///
+/// Example:
+/// template <typename T, typename = void_t>
+/// struct SomeStruct {};
+///
+/// template <typename T>
+/// struct SomeStruct<T, void_t<T::value_type>> {...};
+///
+/// Here the partial specialization is always chosen when T::value_type
+/// is valid, otherwise SFINAE works and first definition is chosen.
+template <typename...> using void_t = void;
+
+namespace detail {
+// TODO: add pointers to members support
+
+template <typename F, typename... Args>
+auto invoke() -> decltype(declval<F>()(declval<Args>()...));
+
+template <typename F, typename... Args>
+true_type test_is_invocable(decltype(invoke<F, Args...>(), 0));
+
+template <typename...>
+false_type test_is_invocable(...);
+
+// can't use void_t as default parameter
+template <typename AlwaysVoid, typename F, typename... Args>
+struct invoke_result_impl {};
+
+template <typename F, typename... Args>
+struct invoke_result_impl<decltype(void(invoke<F, Args...>())),  // just try to call 'invoke'
+                          F,
+                          Args...> {
+    using type = decltype(invoke<F, Args...>());
+};
+
+}  // namespace detail
+
+/// is_invocable
+template <typename F, typename... Args>
+struct is_invocable : decltype(detail::test_is_invocable<F, Args...>(0)) {};
+
+/// is_invocable_v
+template <typename F, typename... Args>
+constexpr bool is_invocable_v = is_invocable<F, Args...>::value;
+
+/// invoke_result
+template <typename F, typename... Args>
+struct invoke_result : detail::invoke_result_impl<void, F, Args...> {};
+
+/// invoke_result_t
+template <typename F, typename... Args>
+using invoke_result_t = invoke_result<F, Args...>::type;
 
 }  // namespace bmb

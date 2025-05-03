@@ -1,15 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libbmb: Main Page</title>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>libbmb: 🌟 libbmb</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
@@ -18,42 +42,29 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(function() { init_search(); });
-/* @license-end */
-</script>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-});
-</script>
-<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
-<link href="doxygen-styles.css" rel="stylesheet" type="text/css" />
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/bivafra/libbmb" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
  <tbody>
- <tr id="projectrow">
-  <td id="projectalign">
-   <div id="projectname">libbmb<span id="projectnumber">&#160;0.0.0</span>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libbmb
    </div>
+   <div id="projectbrief">Modern implementation of extended STL library</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +81,17 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,10 +130,236 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">libbmb Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">🌟 libbmb </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p><b>libbmb</b> is a header only DSA library written using modern C++. It implements significant STL functionality and extends it. The library's containers are <em>AllocatorAware</em> with <em>strong exception guarantee</em>. The <b>key features</b> of this realization are <b>code readability</b>, <b>rich documentation</b>, and modern view to the <b>code design</b>.<br  />
+</p>
+<p>All documentation is available <b><a href="https://bivafra.github.io/libbmb/">here</a></b>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+🎯 Technology stack</h1>
+<ul>
+<li><b>Compiling</b> (<em>must support c++23</em>): <a href="https://clang.llvm.org/">clang</a> and <a href="https://gcc.gnu.org/">gcc</a></li>
+<li><b>Build system</b>: <a href="https://cmake.org/">cmake</a> &gt;=3.23</li>
+<li><b>Testing</b>: <a href="https://github.com/google/googletest">gtest</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+🤔 Motivation</h1>
+<p>Why do we need one more DSA library while there'are STL, Boost, Abseil and many other great solutions? There are several reasons for that:</p><ol type="1">
+<li><b>My personal interest.</b><ul>
+<li>I love to understand things deeply, and STL is one of these things. In fact, implementing STL and DSA in general is much more challenging than one might imagine, given sometimes tough ISO C++ requirements(e.g. exception safety, iterators time complexity, type erasure).</li>
+</ul>
+</li>
+<li><b>Newbie friendly code.</b><ul>
+<li>When I started reading GCC libstdc++ sources, it was awful - infinite underscores, strange code alignment, lack of inline comments, etc. While <b>libbmb</b> explains many moments, understanding of the ideas how algorithms and containers work is required.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md3"></a>
+🛠️ Building</h1>
+<ol type="1">
+<li>Clone the repo: <div class="fragment"><div class="line">git clone https://github.com/bivafra/libbmb.git</div>
+</div><!-- fragment --></li>
+<li><ol type="a">
+<li>If you're using the library as a dependency, add this to your <code>CMakeLists.txt</code>: <code>shell add_subdirectory(libbmb) target_link_libraries(*your_target* PRIVATE libbmb) </code> <b>libbmb</b> uses cmake's <em>interface</em>, so when linking you'll automatically get include directories.</li>
+<li>If you want to develop the library, you must write unit tests for your code. <br  />
+ To build tests you should install <a href="https://valgrind.org/">valgrind</a> for memory checks, add the test files into <code>CMakeLists.txt</code>, and run: <code>shell make test </code> This will automatically install <code>gtest</code> and run tests with <code>valgrind</code> checks. <br  />
+<br  />
+ The default compiler is <code>clang</code>. To build with <code>gcc</code> run: <code>shell make test_gcc </code> Note: if you use clangd as a language server, adjust the include path in the <code>.clangd</code> config file. </li>
+</ol>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
+⚙️ Features</h1>
+<p>Following sections contain details about implemented and planned functionality, C++ standard compatibility, reasons why there's a deviation from the standard, and some other useful notes.</p>
+<details >
+<summary >
+<b>General</b></summary>
+<p></p>
+<ol type="1">
+<li><p class="startli">Declaration and definition of templates.</p>
+<p class="startli">Since C++ obligates to write boilerplate template types like: </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">class </span>A {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> foo();</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// definition either later or in the included `.tpp` file</span></div>
+<div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keywordtype">void</span> A&lt;T&gt;::foo() {...}</div>
+</div><!-- fragment --><p> it is painful to separatly declare and define template class methods. Boilerplate can be avoided using strange looking macroses like: </p><div class="fragment"><div class="line"><span class="comment">// Start of the `.tpp` file</span></div>
+<div class="line"><span class="preprocessor">#define A_METHOD(return_type)\</span></div>
+<div class="line"><span class="preprocessor">template &lt;typename T&gt;\</span></div>
+<div class="line"><span class="preprocessor">return_type A&lt;T&gt;::</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// some code ...</span></div>
+<div class="line"> </div>
+<div class="line">A_METHOD(<span class="keywordtype">void</span>) foo() {...}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// End of the file</span></div>
+<div class="line"><span class="preprocessor">#undef A_METHOD</span></div>
+</div><!-- fragment --><p> The desicion was made to define methods inside a class. Documentation and definition at the same place. If you don't like this - every modern IDE supports code wrapping, so collapse all definitions by default.</p>
+</li>
+</ol>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Allocator</b></summary>
+<p></p>
+<p><a href="include/utils/allocator.h">source</a></p>
+<ul class="check">
+<li class="checked">PrimitiveAllocator</li>
+</ul>
+<ul class="check">
+<li class="checked">AllocatorTraits</li>
+<li class="unchecked">StackAllocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">PoolAllocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">polymorphic_allocator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">scoped_allocator_adaptor</li>
+</ul>
+<p>There are changes in the allocator's design. <code>std::allocator</code> analog here is <code>PrimitiveAllocator</code>. <b>It isn't a template</b>. The template parameter in class only creates pain and <em>rebind</em> semantics. Instead, every allocator's function marked as a template. Thus, each allocator must define at least <code>allocate</code> method as a template(other methods can use template type deduction, so may be non-templated).</p><ul>
+<li>Pros:<ul>
+<li>There is no need for rebind at all, since the type will be either provided by the client or deduced by the compiler.</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li><code>allocate</code> method must be a template.</li>
+<li><p class="startli">Due to the C++ rules, <code>allocate</code> call will look weird: ```c++ using AllocTraits = <a class="el" href="classbmb_1_1_allocator_traits.html" title="Unifined interface for allocators.">bmb::AllocatorTraits&lt;SomeAllocator&gt;</a>; SomeAllocator alloc;</p>
+<p class="startli">auto ptr = AllocTraits::template allocate&lt;T&gt;(alloc, 10);</p>
+<p class="startli">``` Meanwhile other methods usage the same as STL ones.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Also the allocator's copy and move semantics changed:<br  />
+ STL differentiates allocators copying/moving as value type(like string, vector and any other) and allocators copying/moving as container's fields. Therefore every container must consult a allocator what to do while copying/moving. <b>libbmb</b> preserve only the second semantics, so now each allocator <b>must</b> define copy/move c-tors/assignment operators with appropriate semantics. <code>propogate_on_container_...</code> and <code>select_on_container_copy_construction</code> are not used.</p><ul>
+<li>Pros:<ul>
+<li>Easier containers implementation and support.</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Less flexibility for allocators. <br  />
+</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Move semantics</b></summary>
+<p></p>
+<p><a href="include/utils/move.h">source</a></p><ul class="check">
+<li class="checked">swap<ul>
+<li>You're free to overload it, but you should understand the consequences.</li>
+</ul>
+</li>
+</ul>
+<ul class="check">
+<li class="checked">move</li>
+</ul>
+<ul class="check">
+<li class="checked">forward</li>
+<li class="unchecked">forward_like<ul>
+<li>Useful for <em>deducing this</em> c++23</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Iterators</b></summary>
+<p></p>
+<p><a href="include/utils/iterators.h">source</a></p>
+<p><strike>iterator_traits are not implemented, since there's no real need for them - every iterator still must define category, value_type, etc. However traits support raw pointer and have rules for defining missing typedefs.</strike> There is real need for traits for raw pointers, otherwise this is not possible use general algorithms(like std::copy) for pointers. Now, as in STL, every Iter::<em>some type</em> must be IteratorTraits&lt;Iter&gt;::<em>some type</em>.</p>
+<ul class="check">
+<li class="checked">Iterator category tags</li>
+</ul>
+<ul class="check">
+<li class="checked">Iterator category concepts</li>
+</ul>
+<ul class="check">
+<li class="checked">IteratorTraits</li>
+<li class="unchecked">advance</li>
+</ul>
+<ul class="check">
+<li class="unchecked">distance</li>
+</ul>
+<ul class="check">
+<li class="unchecked">next</li>
+</ul>
+<ul class="check">
+<li class="unchecked">prev</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Iterator adaptors:<ul class="check">
+<li class="unchecked">reverse_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">move_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">back_inserter</li>
+</ul>
+<ul class="check">
+<li class="unchecked">front_inderter</li>
+</ul>
+<ul class="check">
+<li class="unchecked">inserter</li>
+</ul>
+</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Stream iterator:<ul class="check">
+<li class="unchecked">istream_iterator</li>
+</ul>
+<ul class="check">
+<li class="unchecked">ostream_iterator</li>
+</ul>
+</li>
+</ul>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Vector</b></summary>
+<p></p>
+<p>sources: <a href="include/containers/vector.h">1</a>, <a href="include/details/vector_iterator.h">2</a><br  />
+ tests: <a href="tests/vector">1</a></p>
+<p>This is a classic implementation of STL vector. It suports all original vector methods except <code>shrink_to_fit</code> and <code>insert</code>. They will be added later. The major difference from the STL one is an exception safety.</p><ul>
+<li><p class="startli">For methods like <code>pushBack</code> and <code>reserve</code> conditional safety is provided:</p>
+<p class="startli">For the reallocation the move constructor is always chosen. If it throws, Vector destroyes all moved elements, leaving the original array with some empty elements and elements, that weren't moved. There is the <em><b>basic guarantee</b></em>. Otherwise the <em><b>strong guarantee</b></em>.<br  />
+ Meanwhile, STL's version will choose move c-tor only if it is marked as noexcept.</p>
+</li>
+</ul>
+<p>Currently, there is a problem: the provided template type must not delete move c-tor explicitly, since forwarding and moving will stop compile(<code>reserve</code>, <code>pushBack</code>, <code>emplaceBack</code>). This can be fixed by concepts or SFINAE. Highly likely this will not be fixed due to the redundancy. Modern code must(at least from the author's point of view) either define both copy and move c-tor(may just call copy one if it isn't able to move) or doesn't define them at all. </p>
+</details>
+<details >
+<summary >
+<b>Type traits</b></summary>
+<p></p>
+<p><a href="include/utils/type_traits.h">source</a></p>
+<p>Some iterator traits will not be implemented, since c++20 concepts may almost completely replace them. Now implemented the most important traits. Support will be extended with the growth of the codebase.</p>
+<p></p>
+</details>
+<details >
+<summary >
+<b>Concepts</b></summary>
+<p></p>
+<p><a href="include/utils/concepts.h">source</a></p>
+<p>Now implemented the most important concepts. Support will be extended with the growth of the codebase. </p>
+</details>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

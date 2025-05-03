@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['sameas_0',['SameAs',['../conceptbmb_1_1SameAs.html',1,'bmb']]],
-  ['samehelper_1',['SameHelper',['../conceptbmb_1_1detail_1_1SameHelper.html',1,'bmb::detail']]],
-  ['swap_2',['swap',['../move_8h.html#a200db918e21cad6da78596db4499153e',1,'bmb']]]
+  ['less_0',['less',['../structbmb_1_1less.html',1,'bmb']]],
+  ['less_5fequal_1',['less_equal',['../structbmb_1_1less__equal.html',1,'bmb']]],
+  ['lexicographical_5fcompare_5fthree_5fway_2',['lexicographical_compare_three_way',['../namespacebmb.html#aedd561ab6f502ccd24c2742122887c39',1,'bmb']]],
+  ['libbmb_3',['🌟 libbmb',['../index.html',1,'']]]
 ];

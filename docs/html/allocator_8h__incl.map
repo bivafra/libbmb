@@ -1,0 +1,11 @@
+<map id="allocator.h" name="allocator.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="76,5,156,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,70,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,34,64,70,60,66,101,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,79,139,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,31,119,63,114,63,114,31"/>
+<area shape="rect" id="Node000004" href="$move_8h.html" title=" " alt="" coords="162,79,254,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,29,183,67,179,72,130,34"/>
+<area shape="rect" id="Node000005" href="$type__traits_8h.html" title=" " alt="" coords="148,153,268,178"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="211,105,211,137,206,137,206,105"/>
+</map>

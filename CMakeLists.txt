@@ -1,26 +1,49 @@
 cmake_minimum_required(VERSION 3.23) # should support FILE_SET
-project(libbmb)
+project(libbmb LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(LIB_NAME libbmb)
+set(TEST_EXE libbmb_tests)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_CXX_COMPILER clang++)
 
-set(RELEASE_OPTIONS "-Wall" "-O2")
-set(DEBUG_OPTIONS "-Wall -g")
+option(BUILD_TESTS "Build tests for the library" OFF)
 
-set(
-  SRC_LIST 
-)  
+add_library(${LIB_NAME} INTERFACE)
 
-add_library(libbmb ${SRC_LIST})
+target_include_directories(${LIB_NAME} INTERFACE 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
 
-target_include_directories(libbmb PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_compile_features(${LIB_NAME} INTERFACE cxx_std_23)
 
-# find_package(GTest REQUIRED)
-# include_directories(${GTEST_INCLUDE_DIRS})
+# Testing with google test
+if(BUILD_TESTS)
+    enable_testing()
 
-# add_executable(${TEST_TARGET} ${TEST_SRC})
+    # Taken from the official gtest docs.
+    # Here the version is fixed, to upgrade just change the version from the official repo.
+    include(FetchContent)
+    FetchContent_Declare(
+      googletest
+      GIT_REPOSITORY https://github.com/google/googletest.git
+      GIT_TAG        v1.17.0
+    )
+    FetchContent_MakeAvailable(googletest)
 
-# target_link_libraries(${TEST_TARGET} GTest::gtest_main)
-# target_link_libraries(${TEST_TARGET} MyLibrary)
+    # Test sources here
+    add_executable(${TEST_EXE}
+        tests/vector/test.cpp
+    )
+
+    target_link_libraries(${TEST_EXE} PRIVATE
+        GTest::gtest_main
+        ${LIB_NAME}
+    )
+
+    target_include_directories(${TEST_EXE} PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests
+    )
+
+    include(GoogleTest)
+    gtest_discover_tests(${TEST_EXE})
+endif()

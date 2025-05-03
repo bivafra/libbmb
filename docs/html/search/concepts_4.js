@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sameas_0',['SameAs',['../conceptbmb_1_1SameAs.html',1,'bmb']]],
-  ['samehelper_1',['SameHelper',['../conceptbmb_1_1detail_1_1SameHelper.html',1,'bmb::detail']]]
+  ['inputiterator_0',['InputIterator',['../conceptbmb_1_1_input_iterator.html',1,'bmb']]],
+  ['invocable_1',['Invocable',['../conceptbmb_1_1_invocable.html',1,'bmb']]]
 ];

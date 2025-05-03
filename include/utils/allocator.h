@@ -6,7 +6,6 @@
  */
 
 #include <cstddef>
-#include <cstdio>
 #include <new>
 
 #include "utils/move.h"
@@ -21,7 +20,7 @@ namespace bmb {
  * calls new/delete
  */
 class PrimitiveAllocator {
-   public:
+public:
     /**
      * @brief Allocates raw memory for n objects of type  T
      *
@@ -31,6 +30,7 @@ class PrimitiveAllocator {
      * @throws Same specification as for new operator
      */
     template <typename T>
+    [[nodiscard]]
     T* allocate(size_t n) {
         return static_cast<T*>(operator new(n * sizeof(T)));
     }
@@ -65,7 +65,7 @@ class PrimitiveAllocator {
  */
 template <typename Alloc>
 class AllocatorTraits {
-   public:
+public:
     using allocator_type = Alloc;
 
     /**
@@ -120,6 +120,7 @@ class AllocatorTraits {
      * @throws Same as alloc.allocate(...)
      */
     template <typename T>
+    [[nodiscard]]
     static T* allocate(Alloc& alloc, size_t n) {
         return alloc.template allocate<T>(n);
     }
