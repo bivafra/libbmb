@@ -2,13 +2,14 @@ cmake_minimum_required(VERSION 3.23) # should support FILE_SET
 project(libbmb LANGUAGES CXX)
 
 set(LIB_NAME libbmb)
-set(LIB_NAME_TESTS libbmb_tests)
+set(TEST_EXE libbmb_tests)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 option(BUILD_TESTS "Build tests for the library" OFF)
 
 add_library(${LIB_NAME} INTERFACE)
+
 target_include_directories(${LIB_NAME} INTERFACE 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
 )
@@ -25,24 +26,24 @@ if(BUILD_TESTS)
     FetchContent_Declare(
       googletest
       GIT_REPOSITORY https://github.com/google/googletest.git
-      GIT_TAG        v1.16.0
+      GIT_TAG        v1.17.0
     )
     FetchContent_MakeAvailable(googletest)
 
-    # Bunch of tests files here
-    add_executable(${LIB_NAME_TESTS}
-        # tests/
+    # Test sources here
+    add_executable(${TEST_EXE}
+        tests/vector/test.cpp
     )
 
-    target_link_libraries(${LIB_NAME_TESTS} PRIVATE
+    target_link_libraries(${TEST_EXE} PRIVATE
         GTest::gtest_main
         ${LIB_NAME}
-
     )
-    target_include_directories(${LIB_NAME_TESTS} PRIVATE 
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
+
+    target_include_directories(${TEST_EXE} PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests
     )
 
     include(GoogleTest)
-    gtest_discover_tests(${LIB_NAME_TESTS})
+    gtest_discover_tests(${TEST_EXE})
 endif()
