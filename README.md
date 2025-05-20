@@ -91,6 +91,11 @@ reasons why there's a deviation from the standard, and some other useful notes.
     definition at the same place. If you don't like this - every modern IDE supports 
     code wrapping, so collapse all definitions by default.
 
+2. For some data structures or algorithms there are conceptual schemas, placed in the appropriate folder.
+   They are defined in `.excalidraw` format and can be viewed and modified in the [official website](https://excalidraw.com/) 
+   without registration. Note: the schemas may slightly differ from the actual implementation, but 
+   the general concepts are preserved.
+
 </details>
 
 <details>
