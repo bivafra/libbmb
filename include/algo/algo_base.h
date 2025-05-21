@@ -70,8 +70,8 @@ auto lexicographical_compare_three_way(Iter1 first1, Iter1 last1,
 template <InputIterator Iter1,
           InputIterator Iter2, typename Pred = equal_to>
     requires Predicate<Pred,
-                       typename IteratorTraits<Iter1>::value_type,
-                       typename IteratorTraits<Iter2>::value_type>
+                       typename IteratorTraits<Iter1>::reference,
+                       typename IteratorTraits<Iter2>::reference>
 bool equal(Iter1 first1, Iter1 last1, Iter2 first2, Pred pred = Pred()) {
     while (first1 != last1) {
         if (!pred(*first1, *first2)) return false;
