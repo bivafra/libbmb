@@ -12,6 +12,10 @@
 #include "utils/type_traits.h"
 
 namespace bmb {
+
+template <typename, bool, bool, typename>
+class LinkedList;
+
 namespace detail {
 
 /**
@@ -27,6 +31,9 @@ class LListIter {
     // const-correctness through 'reference' and 'pointer' usings
     using Node     = llist::Node<T>;
     using BaseNode = llist::BaseNode;
+
+    template <typename, bool, bool, typename>
+    friend class bmb::LinkedList;
 
 public:
     using value_type        = remove_const_t<T>;
@@ -44,12 +51,6 @@ public:
     // Want a conversion non-const -> const underlying type
     operator LListIter<T, true>() const noexcept { return LListIter<T, true>(node_); }
 
-    // Sometimes want to return given const_iterator,
-    // but non-const
-    LListIter<T, false> constCast() const noexcept {
-        return LListIter<T, false>(node_);
-    }
-
     pointer   operator->() const noexcept { return &static_cast<Node*>(node_)->val; }
     reference operator*() const noexcept { return static_cast<Node*>(node_)->val; }
 
@@ -65,6 +66,13 @@ public:
     }
 
     bool operator==(const Self&) const = default;
+
+private:
+    // Sometimes want to return given const_iterator,
+    // but non-const
+    LListIter<T, false> constCast() const noexcept {
+        return LListIter<T, false>(node_);
+    }
 
     BaseNode* node_;
 };
