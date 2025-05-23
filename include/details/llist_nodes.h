@@ -5,6 +5,8 @@
  * @authors bivafra
  */
 
+#include "utils/move.h"
+
 namespace bmb {
 namespace llist {
 
@@ -14,6 +16,12 @@ struct BaseNode {
 
 template <typename T>
 struct Node : BaseNode {
+    // Enales construction of `val` from
+    // given args
+    template <typename... Args>
+    Node(Args&&... args)
+        : val(forward<Args>(args)...) {}
+
     T val;
 };
 
