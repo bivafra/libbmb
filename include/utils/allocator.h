@@ -52,6 +52,8 @@ public:
     void deallocate(T* ptr, size_t) noexcept {
         operator delete(ptr);
     }
+
+    bool operator==(const PrimitiveAllocator&) const { return true; };
 };
 
 /**
