@@ -7,6 +7,7 @@
 
 #include <cstddef>
 #include <initializer_list>
+#include <stdexcept>
 
 #include "algo/algo_base.h"
 #include "details/llist_iterator.h"
@@ -98,11 +99,13 @@ public:
                const Allocator& alloc = Allocator())
         : LinkedList(alloc) {
         try {
+            auto cur = beforeBegin();
             for (; first != last; ++first) {
-                auto node = createNode(*first);
+                emplaceAfter(cur, *first);
+                ++cur;
 
                 if constexpr (TrackSize) ++size_;
-                if constexpr (TrackLast) last_ = node;
+                if constexpr (TrackLast) last_ = cur.node_;
             }
         } catch (...) {
             // Use the fact, that in case of exception here
@@ -158,7 +161,7 @@ public:
      * moved value will be destroyed.
      */
     LinkedList& operator=(LinkedList other) {
-        swap(*this, other);
+        swap(other);
         return *this;
     }
 
@@ -172,13 +175,14 @@ public:
      * @throws Same as swap for allocators
      */
     void swap(LinkedList& other) {
+        using bmb::swap;
         // First, swap allocs to provide strong safety
         swap(alloc_, other.alloc_);
 
         swap(head_, other.head_);
         if constexpr (TrackSize) swap(size_, other.size_);
         if constexpr (TrackLast) swap(last_, other.last_);
-    }  // TODO:
+    }
 
     /**
      * @brief Removes all elements in the list.
@@ -235,13 +239,13 @@ public:
 
     /**
      * @brief Inserts elements from `[first, last)` in the list
-     * after the `pos`.
+     * after `pos`.
      *
      * That's it, copies elements in `[first, last)` and places
      * them between `pos` and `next(pos)`.
      *
      * `pos` must be valid iterator in `[beforeBegin(), end())`.
-     * Othrwise UB.
+     * Otherwise UB.
      *
      * Time complexity: `O(distance(first, last))` - number elements to insert.
      *
@@ -262,16 +266,7 @@ public:
 
         if (tmp.isEmpty()) return pos.constCast();
 
-        // TODO: put them in spliceAfterImpl
-        //
-        // if constexpr (TrackSize) size_ += tmp.size_;
-        //
-        // if constexpr (TrackLast) {
-        //     if (isIterToLast(pos)) last_ = tmp.last_;
-        // }
-
-        // TODO: consider to use here transferAfter
-        return spliceAfterImpl(pos, tmp.cbeforeBegin(), tmp.cend());
+        return spliceAfter(pos, move(tmp));
     }
 
     /**
@@ -359,7 +354,7 @@ public:
     }
 
     /**
-     * @brief Destroys element right after the `pos`.
+     * @brief Destroys element right after `pos`.
      *
      * `pos` must be valid iterator in `[cbeforeBegin(), end)`.
      * If `pos` is the last element in the list or
@@ -415,7 +410,6 @@ public:
 
         while (next(first) != last) {
             eraseAfter(first);
-            ++first;
         }
         return last.constCast();
     }
@@ -455,32 +449,308 @@ public:
         eraseAfter(const_iterator(before_last));
     }
 
-    void merge(LinkedList& other, auto cmp = less());
-    void merge(LinkedList&& other, auto cmp = less());
-
-    /// See `spliceAfter(const_iterator, LinkedList&&)`
-    void spliceAfter(const_iterator pos, LinkedList& other) {
-        spliceAfter(pos, move(other));
+    /// See `merge(LinkedList&&, auto)`
+    void merge(LinkedList& other, auto cmp = less()) {
+        merge(move(other), move(cmp));
     }
-
-    /// See `spliceAfter(const_iterator, const_iterator, const_iterator)`
-    void spliceAfter(const_iterator pos, LinkedList&& other) {
-        spliceAfter(pos, other.begin(), other.end());
-    }
-
-    void spliceAfter(const_iterator pos,
-                     const_iterator first, const_iterator last) {
-        spliceAfterImpl(pos, first, last);
-    }
-
-    void reverse() noexcept;
-
-    reference front() const;
-    reference back() const;
-    // TODO: getrawfirstnode
 
     /**
-     * @brief Return list's size
+     * @brief Merges elements from 2 sorted lists into one sorted.
+     *
+     * Transfers all elements from `other` to `this`, so `this`
+     * is sorted. `other` becomes empty after this operation.
+     *
+     * Assumes that `this` and `other` are already sorted according to `cmp`.
+     * If they don't, resulting list will be unpredictably merged.
+     * Current implementation is NOT stable.
+     *
+     *
+     * `this->getAllocator()` must be equal to `other.getAllocator()`.
+     * Otherwise exception is thrown.
+     *
+     * If `other` refers to `this`, does nothing.
+     *
+     * Time complexity: `O(max(this->size(), other.size()))`.
+     *
+     * @param other List to merge with
+     * @param cmp Comparator to use
+     *
+     * @throws Provides conditional exception safety.
+     * If allocators are different - throws `std::runtime_error`.
+     * If a call to `cmp` throws - no exception guarantee, there will be memory leak.
+     * Otherwise noexcept.
+     */
+    void merge(LinkedList&& other, auto cmp = less()) {
+        // NOTE: If you want, you can try to make merge at least
+        // basic exception safety. Just save the last node when
+        // node should be linked to the node from other list.
+        // If there is exception, link these "lost" nodes to the
+        // end of any list - they will be destroyed by destructor.
+        //
+        // Also if you may make merge be stable.
+
+        if (this == &other) return;
+
+        if (getAllocator() != other.getAllocator())
+            throw std::runtime_error(
+                "Try to merge linked list "
+                "allocated via different allocator");
+
+        // Just to make comparasion less verbose
+        auto compare = [this, &cmp](auto a, auto b) -> bool {
+            return cmp(castToNode(a)->val, castToNode(b)->val);
+        };
+
+        auto a    = head_.next;
+        auto b    = other.head_.next;
+        auto prev = &head_;
+
+        while (a && b) {
+            // Make `a` always less than `b`
+            if (!compare(a, b)) bmb::swap(a, b);
+
+            prev->next = a;
+            prev       = a;
+            a          = a->next;
+        }
+        prev->next = a != nullptr ? a : b;
+
+        other.head_.next = nullptr;
+
+        if constexpr (TrackSize) {
+            size_ += other.size_;
+            other.size_ = 0;
+        }
+
+        if constexpr (TrackLast) {
+            // If nodes from `other` > than from `this`,
+            // they will be places after `last_`, so update it.
+            // Remember to handle cases with empty lists.
+
+            // `this` is empty, `other` is not
+            if (last_ == &head_
+                && other.last_ != &other.head_) last_ = other.last_;
+            // `this` is not empty, `other` is not empty,
+            // and nodes from `other` are after `this->last_`
+            else if (last_ != &head_
+                     && other.last_ != &other.head_
+                     && compare(last_, other.last_)) {
+                last_ = other.last_;
+            }
+
+            other.last_ = &head_;
+        }
+    }
+
+    /// See `spliceAfter(const_iterator, LinkedList&&)`
+    iterator spliceAfter(const_iterator pos, LinkedList& other) {
+        return spliceAfter(pos, move(other));
+    }
+
+    /**
+     * @brief Transfers all elements from `other` to `*this`. `other`
+     * becomes empty.
+     *
+     * `this->getAllocator()` must be equal to `other.getAllocator()`.
+     * Otherwise exception is thrown.
+     *
+     * `pos` must be valid iterator in `[beforeBegin(), end())`.
+     * Otherwise UB.
+     *
+     * If `other` refers to `*this`, does nothing.
+     *
+     * Time complexity:
+     *      1) If `TrackLast==true`: `O(1)`.
+     *      2) If `TrackLast==false`: `O(other.size())`.
+     *
+     * @param pos Iterator to transfer after
+     * @param other List to transfer from
+     *
+     * @return iterator to the last element transferred or `pos`
+     *
+     * @throws std::runtime_error if allocators aren't equal
+     */
+    iterator spliceAfter(const_iterator pos, LinkedList&& other) {
+        if (this == &other) return pos.constCast();
+
+        if (getAllocator() != other.getAllocator())
+            throw std::runtime_error(
+                "Try to transfer linked list "
+                "allocated via different allocator");
+
+        // If track last, we can bypass its search.
+        if constexpr (TrackLast) {
+            auto last_transferred = other.last_;
+
+            transferAfter(pos.node_,
+                          other.beforeBegin().node_, other.last_);
+
+            if (isIterToLast(pos)) last_ = other.last_;
+
+            other.last_ = &other.head_;
+
+            // Update size
+            if constexpr (TrackSize) {
+                size_ += other.size_;
+                other.size_ = 0;
+            }
+
+            return iterator(last_transferred);
+        }
+
+        // If `last_` is not available, use non effective version
+        return spliceAfter(pos, move(other),
+                           other.beforeBegin(), other.end());
+    }
+
+    /// See `spliceAfter(const_iterator, LinkedList&&, const_iterator, const_iterator)`
+    iterator spliceAfter(const_iterator pos, LinkedList& other,
+                         const_iterator first, const_iterator last) {
+        return spliceAfter(pos, move(other), first, last);
+    }
+
+    /**
+     * @brief Transfers all elements in `(first, last)` from `other`
+     * to `*this` right after `pos`.
+     *
+     * If `first==last` or `next(first)==last`, does nothing and
+     * returns `pos`.
+     *
+     * `other` can refer to `*this`. In this case `pos` must
+     * not be in (first, last), otherwise UB - at least memory leak.
+     *
+     * `this->getAllocator()` must be equal to `other.getAllocator()`.
+     * Otherwise exception is thrown.
+     *
+     * `pos` must be valid iterator in `[beforeBegin(), end())`.
+     * Otherwise UB.
+     *
+     *
+     * Time complexity: `O(distance(first, last))`.
+     *
+     * @param pos Iterator to transfer range after
+     * @param other List to transfer from
+     * @param first Iterator before the element to start cut
+     * @param last Iterator after the element to stop cut
+     *
+     * @return iterator to the last element transferred or `pos`
+     *
+     * @throws std::runtime_error if allocators aren't equal
+     */
+    iterator spliceAfter(const_iterator pos, LinkedList&& other,
+                         const_iterator first, const_iterator last) {
+        if (getAllocator() != other.getAllocator())
+            throw std::runtime_error(
+                "Try to transfer linked list nodes "
+                "allocated via different allocator");
+
+        // If no elements to transfer
+        if (first == last
+            || next(first) == last) return pos.constCast();
+
+        // Find last element to transfer(right before `last` iterator)
+        auto   before = first.node_;
+        auto   end    = before;
+        size_t cnt    = 0;
+
+        while (end->next != last.node_) {
+            end = end->next;
+            ++cnt;
+        }
+
+        if constexpr (TrackSize) {
+            // Update only if obtained new elements
+            if (this != &other) {
+                size_ += cnt;
+                other.size_ -= cnt;
+            }
+        }
+
+        if constexpr (TrackLast) {
+            if (isIterToLast(pos)) last_ = end;
+        }
+
+        return iterator(transferAfter(pos.node_, before, end));
+    }
+
+    /**
+     * @brief Reverses linked list.
+     *
+     * Time complexity: `O(n)` where n=size()
+     *
+     * @throws noexcept
+     */
+    void reverse() noexcept {
+        BaseNode* left  = nullptr;
+        BaseNode* right = head_.next;
+        // Left will be point to the new first element
+        while (right != nullptr) {
+            auto keep   = right->next;
+            right->next = left;
+            left        = right;
+            right       = keep;
+        }
+
+        if constexpr (TrackLast) {
+            if (!isEmpty()) last_ = head_.next;
+            // If empty - last points to the `head`
+        }
+
+        head_.next = left;
+    }
+
+    /**
+     * @brief Returns first element in the list.
+     *
+     * If list is empty, UB.
+     */
+    reference front() noexcept { return *begin(); }
+
+    /**
+     * @brief Returns first element in the list.
+     *
+     * If list is empty, UB.
+     */
+    const_reference front() const noexcept { return *begin(); }
+
+    /**
+     * @brief Returns last element in the list.
+     *
+     * Time complexity:
+     *      1) If `TrackLast=true`: `O(1)`.
+     *      2) If `TrackLast=false`: `O(n)` where n=size().
+     *
+     * If list is empty, UB.
+     */
+    reference back() noexcept {
+        return *iterator(getLastNode());
+    }
+
+    /**
+     * @brief Returns last element in the list.
+     *
+     * Time complexity:
+     *      1) If `TrackLast=true`: `O(1)`.
+     *      2) If `TrackLast=false`: `O(n)` where n=size().
+     *
+     * If list is empty, UB.
+     */
+    const_reference back() const noexcept {
+        return *iterator(getLastNode());
+    }
+
+    /**
+     * @brief Returns raw representation of
+     * the first list's node.
+     *
+     * Generally, you should not use it.
+     */
+    Node* getRawFirstNode() const noexcept {
+        return castToNode(*begin());
+    }
+
+    /**
+     * @brief Returns list's size.
      *
      * Time complexity:
      *      1) If `TrackSize=true`: `O(1)`.
@@ -510,10 +780,12 @@ public:
      * @throws noexcept
      */
     bool isEmpty() const noexcept {
+        // Don't use `size()` here, since
+        // it may has linear time complexity
         return head_.next == nullptr;
     }
 
-    allocator_type getAllocator() const noexcept { return alloc_; }
+    allocator_type getAllocator() const { return alloc_; }
 
     iterator begin() noexcept { return iterator(head_.next); }
     iterator end() noexcept { return iterator(nullptr); }
@@ -545,35 +817,15 @@ public:
 
 private:
     /**
-     * @brief Transfers all elements ....
-     *
-     * @param Name and description of the parameter
-     * @return Description of the returned value
-     *
-     * @throws Description of the exception safety and possible exceptions
-     */
-    iterator spliceAfterImpl(const_iterator pos,
-                             const_iterator first, const_iterator last) noexcept {
-        // If no elements to transfer
-        if (first == last
-            || next(first) == last) return pos.constCast();
-
-        // Find last element to transfer(right before `last` iterator)
-        auto before = first.node_;
-        auto end    = before;
-        while (end->next != last.node_) end = end->next;
-
-        return iterator(transferAfter(pos.node_, before, end));
-    }
-
-    /**
      * @brief Effectively transfers nodes
-     * from `(begin, end]` to right after the `pos`.
-     * That's it, the range is not standard `[begin, end)`.
+     * from `(begin, end]` to right after `pos`.
+     * That's it, `end` must be valid node in the list.
+     *
      * Does NOT update list's `size_` and `last_` if needed.
      *
-     * `end` may equal to `nullptr`, which means the `end()`
-     * element of the list.
+     * `pos` must be valid node in `[beforeBegin(), end())`.
+     *
+     * Time complexity: `O(1)`.
      *
      * @param pos Pointer to insert elements after
      * @param begin Pointer right before the start of the range
@@ -592,15 +844,8 @@ private:
 
         auto keep = begin->next;
 
-        // transfer untill the end
-        if (end == nullptr) {
-            begin->next = nullptr;
-        }
-        // or cut inside list
-        else {
-            begin->next = end->next;
-            end->next   = pos->next;
-        }
+        begin->next = end->next;
+        end->next   = pos->next;
 
         pos->next = keep;
         return end;
@@ -674,7 +919,7 @@ private:
      *
      * Time complexity:
      *      If `TrackLast=true`: `O(1)`.
-     *      If `TrackLast=false`: `O(n)` where n=size()
+     *      If `TrackLast=false`: `O(n)` where n=size().
      *
      * @return Pointer to the last node, or pointer
      * to the head, if the list is empty.
@@ -729,17 +974,13 @@ template <typename T,
           typename Allocator = PrimitiveAllocator>
 using LListFat = LinkedList<T, true, true, Allocator>;
 
-inline void foo() {
-    LinkedList<int> arr;
-    arr.emplaceAfter(arr.beforeBegin(), 5);
-    struct A {
-        A(int, int);
-    };
-    LinkedList<A> bb;
-    bb.emplaceAfter(bb.beforeBegin(), 2, 3);
-
-    arr.cbegin();
-    arr.insertAfter(arr.begin(), arr.begin(), arr.end());
+/// See `LinkedList::swap`
+template <typename T,
+          bool TrackSize = true,
+          bool TrackLast = true, typename Allocator = PrimitiveAllocator>
+void swap(LinkedList<T, TrackSize, TrackLast, Allocator>& a,
+          LinkedList<T, TrackSize, TrackLast, Allocator>& b) {
+    a.swap(b);
 }
 
 // TODO: reconsider noexcept
