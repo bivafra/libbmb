@@ -19,7 +19,7 @@ namespace bmb {
  * Compares elements iteratively, until either non-equal were found
  * or some range was exausted. In the 2-nd case, detects longer range as greater.
  *
- * Time complexity: O(min(last1 - first1, last2 - first2))
+ * Time complexity: `O(min(last1 - first1, last2 - first2))`
  *
  * @param first1 - Start of the 1-st range
  * @param last1 - End of the 1-st range
@@ -52,10 +52,12 @@ auto lexicographical_compare_three_way(Iter1 first1, Iter1 last1,
 /**
  * @brief Checks whether given ranges are equal.
  *
- * More precisely, compares (last1 - first1) elements from 2-nd range.
- * Therefore, 1-st range must not shorter than 2-nd one.
+ * More precisely, compares `last1 - first1` elements from 2-nd range.
+ * Thus, 1-st range must not be longer than 2-nd one.
  * Otherwise undefined behaviour - will increment the end iterator from 2-nd range.
  * Given Predicate must return boolean-convertible value.
+ *
+ * Time complexity: `O(last1 - first1)`
  *
  * @param first1 Start of the 1-st range
  * @param last1 End of the 1-st range
@@ -81,4 +83,61 @@ bool equal(Iter1 first1, Iter1 last1, Iter2 first2, Pred pred = Pred()) {
     return true;
 }
 
+/**
+ * @brief Checks whether given ranges are equal.
+ *
+ * Given Predicate must return boolean-convertible value.
+ *
+ * Time complexity: `O(min(last1 - first1, last2 - first2))`
+ *
+ * @param first1 Start of the 1-st range
+ * @param last1 End of the 1-st range
+ * @param first2 Start of the 2-nd range
+ * @param pred Predicate that compares range elements
+ *
+ * @return true if ranges are equal on Predicate. false otherwise.
+ *
+ * @throws Almost always noexcept. In fact, the same specification
+ * as operations on iterators and calling predicate.
+ */
+template <InputIterator Iter1,
+          InputIterator Iter2, typename Pred = equal_to>
+    requires Predicate<Pred,
+                       typename IteratorTraits<Iter1>::reference,
+                       typename IteratorTraits<Iter2>::reference>
+bool equal(Iter1 first1, Iter1 last1,
+           Iter2 first2, Iter2 last2, Pred pred = Pred()) {
+    while (first1 != last1 && first2 != last2) {
+        if (!pred(*first1, *first2)) return false;
+
+        ++first1, ++first2;
+    }
+
+    return first1 == last1 && first2 == last2;
+}
+
+/// See `equal` overload for `InputIterator` constraints.
+/// In addition to it, this overload firstly checks
+/// length of the compared ranges to enable early inequality detection.
+///
+/// Time complexity:
+///     1) If `last1 - first1 != last2 - first2`: `O(1)`,
+///     2) Otherwise: `O(min(last1 - first1, last2 - first2))`
+template <RandomAccessIterator Iter1,
+          RandomAccessIterator Iter2, typename Pred = equal_to>
+    requires Predicate<Pred,
+                       typename IteratorTraits<Iter1>::reference,
+                       typename IteratorTraits<Iter2>::reference>
+bool equal(Iter1 first1, Iter1 last1,
+           Iter2 first2, Iter2 last2, Pred pred = Pred()) {
+    if (last1 - first1 != last2 - first2) return false;
+
+    while (first1 != last1 && first2 != last2) {
+        if (!pred(*first1, *first2)) return false;
+
+        ++first1, ++first2;
+    }
+
+    return true;
+}
 }  // namespace bmb
