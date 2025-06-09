@@ -20,11 +20,39 @@
 
 namespace bmb {
 
-// for simplicity merge and spliceAfter work only if allocators are the same. Why? because :)
+/**
+ * @class LinkedList
+ * @brief Singly linked list.
+ *
+ * @tparam T type to hold
+ * @tparam TrackSize enables fast size access
+ * @tparam TrackLast enables fast last element access
+ * @tparam Allocator allocator to use for memory management
+ *
+ * This implementation may be used in several modes:
+ *      1) Memory saving:
+ *          sizeof this class equals 1 pointer, but
+ *          methods that use size and last element will
+ *          work slowly(linearly).
+ *      2) Fast size:
+ *          sizeof this class equals sizeof(void*) + sizeof(size_t),
+ *          enables access to size for a constant time,
+ *      3) Fast last element:
+ *          sizeof this class equals 2*sizeof(void*),
+ *          last element access is constant.
+ *      4) Fast size and last element:
+ *          modes 2 + 3
+ *
+ *
+ * All methods provides strong/basics exception safety(all
+ * strong except the move assignment)
+ */
 template <typename T,
           bool TrackSize = true,
           bool TrackLast = true, typename Allocator = PrimitiveAllocator>
 class LinkedList {
+    // TODO: refactor iterator/pointers usage
+
     using Node     = llist::Node<T>;
     using BaseNode = llist::BaseNode;
 
@@ -47,7 +75,9 @@ public:
     using iterator        = detail::LListIter<T, false>;
     using const_iterator  = detail::LListIter<T, true>;
 
-    LinkedList() noexcept(noexcept(Allocator())) {}
+    LinkedList() noexcept(noexcept(Allocator())) {
+        initOptionalFields();
+    }
 
     explicit LinkedList(const Allocator& alloc)
         : alloc_(alloc) {
@@ -62,23 +92,19 @@ public:
      * moves are performed.
      *
      * @param count Number of elements to construct
-     * @param value Value to initilize elements.
-     * @param alloc Container's allocator.
+     * @param value Value to initilize elements
+     * @param alloc Container's allocator
      *
      * @throws Provides strong exception guarantee.
      */
-    LinkedList(size_t count, const value_type& value = value_type(),
-               const Allocator& alloc = Allocator())
+    explicit LinkedList(size_t count, const value_type& value = value_type(),
+                        const Allocator& alloc = Allocator())
         : LinkedList(alloc) {
+        // Thanks to delegeting c-tor, if exception is thrown,
+        // the destructor will be called automatically
         auto cur_it = cbeforeBegin();
-
         for (; count > 0; --count, ++cur_it) {
-            try {
-                insertAfter(cur_it, value);
-            } catch (...) {
-                clear();
-                throw;
-            }
+            emplaceAfter(cur_it, value);
         }
     }
 
@@ -90,7 +116,7 @@ public:
      *
      * @param first Start of the range
      * @param last End of the range
-     * @param alloc Container's allocator.
+     * @param alloc Container's allocator
      *
      * @throws Provides strong exception guarantee.
      */
@@ -98,23 +124,12 @@ public:
     LinkedList(Iter first, Iter last,
                const Allocator& alloc = Allocator())
         : LinkedList(alloc) {
-        try {
-            auto cur = beforeBegin();
-            for (; first != last; ++first) {
-                emplaceAfter(cur, *first);
-                ++cur;
-
-                if constexpr (TrackSize) ++size_;
-                if constexpr (TrackLast) last_ = cur.node_;
-            }
-        } catch (...) {
-            // Use the fact, that in case of exception here
-            // we should destroy all elements. That
-            // would be harder to implement in `insertAfter`,
-            // since there we would have to track start and
-            // end of the created range.
-            clear();
-            throw;
+        // Thanks to delegeting c-tor, if exception is thrown,
+        // the destructor will be called automatically
+        auto cur = beforeBegin();
+        for (; first != last; ++first) {
+            emplaceAfter(cur, *first);
+            ++cur;
         }
     }
 
@@ -139,6 +154,10 @@ public:
         : LinkedList(other.cbegin(),
                      other.cend(), other.alloc_) {}
 
+    /**
+     * @brief Move constructor.
+     * No iterators are invalidated.
+     */
     LinkedList(LinkedList&& other) noexcept(noexcept(Allocator(move(other.alloc_))))
         : head_(other.head_)
         , size_(other.size_)
@@ -152,7 +171,7 @@ public:
     /**
      * @brief Copy/move assignment operator.
      *
-     * Implemented through copy/move-and-swap idiom.
+     * No iterators are invalidated.
      *
      * @throws Provides conditional exception safety.
      * If operator is used as a copy operator, strong guarantee.
@@ -170,6 +189,8 @@ public:
     /**
      * @brief Effectively swaps content of the lists.
      *
+     * No iterators are invalidated.
+     *
      * @param other Lists to swap with
      *
      * @throws Same as swap for allocators
@@ -179,6 +200,8 @@ public:
         // First, swap allocs to provide strong safety
         swap(alloc_, other.alloc_);
 
+        // Head never points to itself: either node in heap or nullptr,
+        // so it is safe just swap it.
         swap(head_, other.head_);
         if constexpr (TrackSize) swap(size_, other.size_);
         if constexpr (TrackLast) swap(last_, other.last_);
@@ -188,10 +211,11 @@ public:
      * @brief Removes all elements in the list.
      *
      * After this operation, there are no elements in the list,
-     * if `TrackSize=true`, then size()=0, if `TrackLast=true`,
-     * it is updated appropriately.
+     * `size()=0`, `beforeBegin()=beforeEnd()`.
      *
-     * Time complexity: `O(size())`.
+     * All iterators are invalidated.
+     *
+     * Time complexity: `O(n)` where n=size().
      *
      * @throws noexcept
      */
@@ -247,6 +271,8 @@ public:
      * `pos` must be valid iterator in `[beforeBegin(), end())`.
      * Otherwise UB.
      *
+     * No iterators are invalidated.
+     *
      * Time complexity: `O(distance(first, last))` - number elements to insert.
      *
      * @param pos Iterator to place range after
@@ -278,6 +304,8 @@ public:
      *
      * `pos` must be valid iterator in `[beforeBegin(), end())`.
      * Otherwise UB.
+     *
+     * No iterators are invalidated.
      *
      * Time complexity: `O(1)`.
      *
@@ -360,6 +388,8 @@ public:
      * If `pos` is the last element in the list or
      * `isEmpty()==true`, does nothing.
      *
+     * No iterators, except one to the erased element, are invalidated.
+     *
      * @param pos Iterator to destroy after
      *
      * @return iterator to the element after destroyed one
@@ -395,6 +425,8 @@ public:
      *
      * `first` and `last` must be valid iterators in `[beforeBegin(), end()]`.
      * Otherwise UB.
+     *
+     * No iterators, except ones to the erased elements, are invalidated.
      *
      * If `first==last` or `next(first)==last`, does nothing.
      *
@@ -433,8 +465,9 @@ public:
      * `eraseAfter` on it. By construction, to find node before the last
      * one we need to iterate over the whole list.
      *
+     * No iterators, except one to the erased element, are invalidated.
      *
-     * Time complexity: `O(n)` where n=size()
+     * Time complexity: `O(n)` where n=size().
      *
      * @throws noexcept
      */
@@ -450,7 +483,8 @@ public:
     }
 
     /// See `merge(LinkedList&&, auto)`
-    void merge(LinkedList& other, auto cmp = less()) {
+    template <typename Cmp = less>
+    void merge(LinkedList& other, Cmp cmp = Cmp()) {
         merge(move(other), move(cmp));
     }
 
@@ -470,6 +504,8 @@ public:
      *
      * If `other` refers to `this`, does nothing.
      *
+     * No iterators are invalidated.
+     *
      * Time complexity: `O(max(this->size(), other.size()))`.
      *
      * @param other List to merge with
@@ -480,7 +516,8 @@ public:
      * If a call to `cmp` throws - no exception guarantee, there will be memory leak.
      * Otherwise noexcept.
      */
-    void merge(LinkedList&& other, auto cmp = less()) {
+    template <typename Cmp = less>
+    void merge(LinkedList&& other, Cmp cmp = Cmp()) {
         // NOTE: If you want, you can try to make merge at least
         // basic exception safety. Just save the last node when
         // node should be linked to the node from other list.
@@ -524,7 +561,7 @@ public:
 
         if constexpr (TrackLast) {
             // If nodes from `other` > than from `this`,
-            // they will be places after `last_`, so update it.
+            // they will be placed after `last_`, so update it.
             // Remember to handle cases with empty lists.
 
             // `this` is empty, `other` is not
@@ -538,7 +575,7 @@ public:
                 last_ = other.last_;
             }
 
-            other.last_ = &head_;
+            other.last_ = &other.head_;
         }
     }
 
@@ -559,6 +596,8 @@ public:
      *
      * If `other` refers to `*this`, does nothing.
      *
+     * No iterators are invalidated.
+     *
      * Time complexity:
      *      1) If `TrackLast==true`: `O(1)`.
      *      2) If `TrackLast==false`: `O(other.size())`.
@@ -571,7 +610,7 @@ public:
      * @throws std::runtime_error if allocators aren't equal
      */
     iterator spliceAfter(const_iterator pos, LinkedList&& other) {
-        if (this == &other) return pos.constCast();
+        if (this == &other || other.isEmpty()) return pos.constCast();
 
         if (getAllocator() != other.getAllocator())
             throw std::runtime_error(
@@ -583,7 +622,7 @@ public:
             auto last_transferred = other.last_;
 
             transferAfter(pos.node_,
-                          other.beforeBegin().node_, other.last_);
+                          &other.head_, other.last_);
 
             if (isIterToLast(pos)) last_ = other.last_;
 
@@ -625,6 +664,7 @@ public:
      * `pos` must be valid iterator in `[beforeBegin(), end())`.
      * Otherwise UB.
      *
+     * No iterators are invalidated.
      *
      * Time complexity: `O(distance(first, last))`.
      *
@@ -677,6 +717,8 @@ public:
      * @brief Reverses linked list.
      *
      * Time complexity: `O(n)` where n=size()
+     *
+     * No iterators, except one to the erased element, are invalidated.
      *
      * @throws noexcept
      */
@@ -746,7 +788,7 @@ public:
      * Generally, you should not use it.
      */
     Node* getRawFirstNode() const noexcept {
-        return castToNode(*begin());
+        return castToNode(begin().node_);
     }
 
     /**
@@ -800,6 +842,9 @@ public:
     const_iterator beforeBegin() const noexcept { return const_iterator(&head_); }
     const_iterator cbeforeBegin() const noexcept { return const_iterator(&head_); }
 
+    iterator       beforeEnd() noexcept { return iterator(getLastNode()); }
+    const_iterator beforeEnd() const noexcept { return const_iterator(getLastNode()); }
+    const_iterator cbeforeEnd() const noexcept { return const_iterator(getLastNode()); }
     // reverese_iterator rbegin() ....
 
     bool operator==(const LinkedList& other) const noexcept {
@@ -807,7 +852,7 @@ public:
             return size_ == other.size_
                    && equal(begin(), end(), other.begin());
         }
-        return equal(begin(), end(), other.begin());
+        return equal(begin(), end(), other.begin(), other.end());
     }
 
     auto operator<=>(const LinkedList& other) const noexcept {
@@ -911,9 +956,9 @@ private:
      * @brief Obtains last node in the list.
      *
      * If `TrackLast=true`, uses cached value.
-     * In this case, if the list was modified, cached
-     * value must be updated manually, otherwise
-     * the method returns wrong node.
+     * In this case, if the list was modified before call,
+     * cached value must be updated manually,
+     * otherwise the method may return wrong node.
      *
      * If `TrackLast=false` visits every node in the list.
      *
@@ -983,9 +1028,8 @@ void swap(LinkedList<T, TrackSize, TrackLast, Allocator>& a,
     a.swap(b);
 }
 
-// TODO: reconsider noexcept
-// TODO: iterator invalidation
-// TODO: refactor iterator/pointers usage
-// TODO: mention what updates size and last
+template <InputIterator Iter, typename Allocator = PrimitiveAllocator>
+LinkedList(Iter, Iter, Allocator = Allocator()) -> LinkedList<typename IteratorTraits<Iter>::value_type,
+                                                              true, true, PrimitiveAllocator>;
 
 }  // namespace bmb

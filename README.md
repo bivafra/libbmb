@@ -72,7 +72,7 @@ reasons why there's a deviation from the standard, and some other useful notes.
     template <typename T>
     void A<T>::foo() {...}
     ```
-    it is painful to separatly declare and define template class methods. Boilerplate 
+    it is painful to separately declare and define template class methods. Boilerplate 
     can be avoided using strange looking macroses like:
     ```c++
     // Start of the `.tpp` file
@@ -214,6 +214,42 @@ Modern code must(at least from the author's point of view) either define both co
 just call copy one if it isn't able to move) or doesn't define them at all.
 </details>
 
+<details>
+<summary><strong>LinkedList</strong></summary>
+
+concept: [1](schemas/linked_list.excalidraw)<br/>
+sources: [1](include/containers/linked_list.h), [2](include/details/llist_iterator.h), [3](include/details/llist_nodes.h)<br/>
+tests: [1](tests/linked_list)
+
+Extended implementation of singly linked list. Conceptually, 
+have head node on the stack, allocates other nodes in heap. But introduces 
+several modes, that affect class instanse size and performance:
+1. Memory save.
+    This mode uses as few as possible memory. More presicely, 
+    it stores only 1 pointer per class instanse. But operations that 
+    require list's size or last element take O(n) where n = size(). 
+    It is best suited for many short lists with few amount of memory 
+    available. 
+
+2. Fast size.
+    This mode introduces fast list's size retrieving. It 
+    caches lists size, that requires additional 1 size_t field.
+    Operations that require lists's size take O(1).
+
+3. Fast last element.
+    Caches 1 additional pointer to the last element in the list.
+    If list is empty, points to head. Enables fast emplacing and 
+    retrieving last element: O(1).
+
+Modes 2 and 3 can be used separately or simultaneously. Simultaneous 
+use of 2 and 3  is preffered for most cases. Note that there is only one 
+definition of the class, modes are controlled via 2 additional template 
+bool parameters and internally via `if constexpr`, so, if you don't need
+additional functionality, you wont get any useless overhead. 
+For convenience, there are using-declarations: 
+`LListTiny`, `LListFat`, `LListFastSize`, `LListFastLast`.
+
+</details>
 
 <details>
 <summary><strong>Type traits</strong></summary>
