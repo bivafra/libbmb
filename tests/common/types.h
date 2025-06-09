@@ -6,6 +6,7 @@
  * @authors bivafra
  */
 
+#include <compare>
 #include <exception>
 
 template <typename Type>
@@ -62,7 +63,11 @@ public:
         return *ptr_ == *other.ptr_;
     }
 
-private:
+    std::strong_ordering operator<=>(const Self& other) const {
+        return *ptr_ <=> *other.ptr_;
+    }
+
+public:
     int* ptr_ = nullptr;
 };
 
@@ -70,12 +75,15 @@ private:
 struct NoDefaultCtor {
 public:
     NoDefaultCtor() = delete;
+    NoDefaultCtor(int) {};
 
     NoDefaultCtor(NoDefaultCtor&&)                 = default;
     NoDefaultCtor(const NoDefaultCtor&)            = default;
     NoDefaultCtor& operator=(NoDefaultCtor&&)      = default;
     NoDefaultCtor& operator=(const NoDefaultCtor&) = default;
     ~NoDefaultCtor()                               = default;
+
+    auto operator<=>(const NoDefaultCtor&) const = default;
 };
 
 // TODO: consider refactoring: rename to AllowNthChainCopies
@@ -101,7 +109,7 @@ public:
  * ThrowOnNthChainCopy g(c); // throws
  *
  */
-struct ThrowOnNthChainCopy {
+struct ThrowOnNthChainCopy : private DefaultTraits<ThrowOnNthChainCopy> {
 public:
     ThrowOnNthChainCopy() = default;
     explicit ThrowOnNthChainCopy(int copy_num_to_throw, int payload = 0)
@@ -112,14 +120,14 @@ public:
     // ThrowOnCopy(ThrowOnCopy&&)            = delete;
     // ThrowOnCopy& operator=(ThrowOnCopy&&) = delete;
 
-    ThrowOnNthChainCopy(const ThrowOnNthChainCopy& other) {
+    ThrowOnNthChainCopy(const Self& other) {
         if (other.copies_allowed_ == 0) throw std::exception();
 
         payload_        = other.payload_;
         copies_allowed_ = other.copies_allowed_ - 1;
     }
 
-    ThrowOnNthChainCopy& operator=(const ThrowOnNthChainCopy& other) {
+    ThrowOnNthChainCopy& operator=(const Self& other) {
         if (this == &other) return *this;
 
         if (other.copies_allowed_ == 0) throw std::exception();
@@ -131,7 +139,13 @@ public:
 
     ~ThrowOnNthChainCopy() = default;
 
-    bool operator==(const ThrowOnNthChainCopy& other) const { return payload_ == other.payload_; }
+    bool operator==(const Self& other) const {
+        return payload_ == other.payload_;
+    }
+
+    std::strong_ordering operator<=>(const Self& other) const {
+        return payload_ <=> other.payload_;
+    }
 
 private:
     int payload_        = 0;
