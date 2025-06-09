@@ -63,7 +63,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libbmb
    </div>
-   <div id="projectbrief">Modern implementation of extended STL library</div>
+   <div id="projectbrief">Modern implementation of STL</div>
   </td>
  </tr>
  </tbody>
@@ -149,7 +149,7 @@ Include dependency graph for algo_base.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="algo__base_8h__dep__incl.svg" width="102" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="algo__base_8h__dep__incl.svg" width="192" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="algo__base_8h_source.html">Go to the source code of this file.</a></p>
@@ -165,11 +165,16 @@ Functions</h2></td></tr>
 <tr class="memitem:aedd561ab6f502ccd24c2742122887c39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#aedd561ab6f502ccd24c2742122887c39">bmb::lexicographical_compare_three_way</a> (Iter1 first1, Iter1 last1, Iter2 first2, Iter2 last2, Cmp cmp=Cmp())</td></tr>
 <tr class="memdesc:aedd561ab6f502ccd24c2742122887c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares ranges lexicographically using C++20 three-way comparation.  <br /></td></tr>
 <tr class="separator:aedd561ab6f502ccd24c2742122887c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2a30ed720c8ee0f12ade928c8283e34" id="r_af2a30ed720c8ee0f12ade928c8283e34"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
-requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::value_type, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::value_type&gt;</td></tr>
-<tr class="memitem:af2a30ed720c8ee0f12ade928c8283e34"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#af2a30ed720c8ee0f12ade928c8283e34">bmb::equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Pred pred=Pred())</td></tr>
-<tr class="memdesc:af2a30ed720c8ee0f12ade928c8283e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
-<tr class="separator:af2a30ed720c8ee0f12ade928c8283e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9b121cec32eae0bd84aa39856faee8" id="r_a8f9b121cec32eae0bd84aa39856faee8"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</td></tr>
+<tr class="memitem:a8f9b121cec32eae0bd84aa39856faee8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#a8f9b121cec32eae0bd84aa39856faee8">bmb::equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Pred pred=Pred())</td></tr>
+<tr class="memdesc:a8f9b121cec32eae0bd84aa39856faee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
+<tr class="separator:a8f9b121cec32eae0bd84aa39856faee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac6397e59a4283f25f1191f3988c91a" id="r_adac6397e59a4283f25f1191f3988c91a"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</td></tr>
+<tr class="memitem:adac6397e59a4283f25f1191f3988c91a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacebmb.html#adac6397e59a4283f25f1191f3988c91a">bmb::equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Iter2 last2, Pred pred=Pred())</td></tr>
+<tr class="memdesc:adac6397e59a4283f25f1191f3988c91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
+<tr class="separator:adac6397e59a4283f25f1191f3988c91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File provides basic, convenient functions (like equal, transform, etc.) </p><dl class="section author"><dt>Authors</dt><dd>bivafra </dd></dl>

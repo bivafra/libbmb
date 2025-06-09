@@ -63,7 +63,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libbmb
    </div>
-   <div id="projectbrief">Modern implementation of extended STL library</div>
+   <div id="projectbrief">Modern implementation of STL</div>
   </td>
  </tr>
  </tbody>
@@ -140,18 +140,22 @@ $(function(){initNavTree('functions_func.html',''); initResizable(true); });
 
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
-<li>back()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#ab6a55030e6ff63506198acbc73d0b08b">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>back()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a296b6ccfadf3bc939edcc242a3113624">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#ab6a55030e6ff63506198acbc73d0b08b">bmb::Vector&lt; T, Allocator &gt;</a></li>
 <li>BaseVectorIter()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#ab435a145b2b6de3bea4ba793a64179cc">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
-<li>begin()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#ad6baabee6b1c77f3365dfccc4bb9c121">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>beforeBegin()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a2deae7220de57736aa09357b0327b729">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>beforeEnd()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a3087f85e1ff3182c6f852f7d90f1c896">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>begin()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#ae84a8f277bc2be3130f29e1b0708c162">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#ad6baabee6b1c77f3365dfccc4bb9c121">bmb::Vector&lt; T, Allocator &gt;</a></li>
 <li>boundPopBack()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a1273a04320bc315b04cab35a8a03cb3a">bmb::Vector&lt; T, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>capacity()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a0da2a200323d6b6ac5f9911027f7ff4e">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>cbegin()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a2c6a63d34554d4e22c4016dfe18ffe5e">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>cend()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#ab9bf099e5ec5e58f107349671c6c902e">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>clear()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#af0dede89e2fae62937ae1f9afc628f69">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>cbeforeBegin()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a999180a9609e7027e75d9cdbd178ea0a">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>cbeforeEnd()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#ac0b5fbad3a07730ec6fbe81c84929395">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>cbegin()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a155a951de47e4f61e06607e0af154904">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a2c6a63d34554d4e22c4016dfe18ffe5e">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>cend()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a2cef75523c3596f745217b507a5c16ab">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#ab9bf099e5ec5e58f107349671c6c902e">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>clear()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#ab8ba1a2d92379fe608078e24bc205993">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#af0dede89e2fae62937ae1f9afc628f69">bmb::Vector&lt; T, Allocator &gt;</a></li>
 <li>construct()&#160;:&#160;<a class="el" href="classbmb_1_1_allocator_traits.html#ac20771f92d3e39494ea5edf38ec87241">bmb::AllocatorTraits&lt; Alloc &gt;</a></li>
 </ul>
 
@@ -163,57 +167,84 @@ $(function(){initNavTree('functions_func.html',''); initResizable(true); });
 
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>emplaceBack()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a534410750d2fcc40873bdadfa26767e3">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>end()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a4bb5a7c92313c8d938887eb5df279fa2">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>emplaceAfter()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#ae8c2355edbb81e87d2285738615491b2">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>emplaceBack()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a2ce8af50dbee7d99b537faab744b69bd">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a534410750d2fcc40873bdadfa26767e3">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>emplaceFront()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a155231419decab99a0edfafb0bc8b669">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>end()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a7a2748c3c00360dccf45475503ca7ee7">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a4bb5a7c92313c8d938887eb5df279fa2">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>eraseAfter()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#acd18576bf8742d2c65d9c998eb051a39">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>front()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a379b44dab5eeb8a79ae011a4c6c30b72">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>front()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a57d5f5710779879de03c94b711ea9d4f">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a379b44dab5eeb8a79ae011a4c6c30b72">bmb::Vector&lt; T, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>getAllocator()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#aae9da6bfee5fe0b74a628305963f975a">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 <li>getRawData()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a080f05e02883f124f42fa16b0cb0924d">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>getRawFirstNode()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a589fddfebdd2eb5d27a0cecff14433e7">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>isEmpty()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a0b5fe14a6f5c490666f882032dd879b2">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>insertAfter()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a83b9cc0a0fc555d20eee015fdd1adc1c">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>isEmpty()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#af3fdf86815ea39f622cbaa5e446c3356">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a0b5fe14a6f5c490666f882032dd879b2">bmb::Vector&lt; T, Allocator &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>LinkedList()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#af8b6373232a45460c624c373147827c1">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>LListIter()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a7bf697135eb515256a1db93d76873658">bmb::detail::LListIter&lt; T, IsConst &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>merge()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#adabf184524dae65e4171eb562f07f846">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+</ul>
+
+
+<h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>Node()&#160;:&#160;<a class="el" href="structbmb_1_1llist_1_1_node.html#acc3e7f11b31b4e4fd60c2cdd027d5b25">bmb::llist::Node&lt; T &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
 <li>operator BaseVectorIter&lt; T, true &gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#ada19972eaf203e0fcc879cc218834fc5">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
+<li>operator LListIter&lt; T, true &gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a584725717fe24a99badea90b963d955a">bmb::detail::LListIter&lt; T, IsConst &gt;</a></li>
 <li>operator()()&#160;:&#160;<a class="el" href="structbmb_1_1compare__three__way.html#a34838b0521d963fdc7d638adf1c77fdc">bmb::compare_three_way</a>, <a class="el" href="structbmb_1_1equal__to.html#a7f93b691e3b4fc3d7a6f4bc3186bfae4">bmb::equal_to</a>, <a class="el" href="structbmb_1_1greater.html#ad87a71abded95ed814db2118ed3abe57">bmb::greater</a>, <a class="el" href="structbmb_1_1greater__equal.html#a482c22eca3026b7cc454757ab7e91328">bmb::greater_equal</a>, <a class="el" href="structbmb_1_1less.html#aac0f0dd713e9e2da17eb540f23e90a2f">bmb::less</a>, <a class="el" href="structbmb_1_1less__equal.html#a634bd6de1d47a9da7b8d861571c93498">bmb::less_equal</a>, <a class="el" href="structbmb_1_1not__equal__to.html#aa8f7a08f7fdba0f6abc3f8c1070bedbf">bmb::not_equal_to</a></li>
-<li>operator*()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a100cda6373635914a5c14594cabfb05b">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
+<li>operator*()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a100cda6373635914a5c14594cabfb05b">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a894d4c2cd726598a53dd42d0d2d76b6d">bmb::detail::LListIter&lt; T, IsConst &gt;</a></li>
 <li>operator+()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a1a97a12cf0c4fca28155447b7a010da9">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
-<li>operator++()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#ab2b6f364806a73018af8600cbe79114c">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
+<li>operator++()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#ab2b6f364806a73018af8600cbe79114c">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a4e1a27636527c36611f1d05ed1ab5bb1">bmb::detail::LListIter&lt; T, IsConst &gt;</a></li>
 <li>operator+=()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a0e8680b26b56e2a7902facf1c9779066">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
 <li>operator-()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#af0650cef4a3134376794f847b04c9ba1">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
 <li>operator--()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a962c98d265df141ca8cb2adc437b7950">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
 <li>operator-=()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a3ffe8fa4ec6580e155e3b538ed39f33c">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
-<li>operator-&gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a76139cccff1c437d4763c1c57efee834">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a></li>
-<li>operator&lt;=&gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a10764e9dbe6334b78fdfc0dcf645e340">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a4470bb6dfbae54f01a64cd9429e3919f">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>operator=()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#aaf49b5ed13bb392ee2f70d6162372083">bmb::Vector&lt; T, Allocator &gt;</a></li>
-<li>operator==()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#aa19faff2d92b87b32c2045cf13d03697">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>operator-&gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a76139cccff1c437d4763c1c57efee834">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a024e2daf918470af91d0a72fc2c05c6c">bmb::detail::LListIter&lt; T, IsConst &gt;</a></li>
+<li>operator&lt;=&gt;()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_base_vector_iter.html#a10764e9dbe6334b78fdfc0dcf645e340">bmb::detail::BaseVectorIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1_linked_list.html#a66058cc452961800d23e5bd1a50e8933">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a4470bb6dfbae54f01a64cd9429e3919f">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>operator=()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a945f8e895860b32a434f115d9dee716c">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#aaf49b5ed13bb392ee2f70d6162372083">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>operator==()&#160;:&#160;<a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html#a2b1eb08fc84ca479144c6ba570fb9f2b">bmb::detail::LListIter&lt; T, IsConst &gt;</a>, <a class="el" href="classbmb_1_1_linked_list.html#afb4f63a8a3d45c41d505ab5c590260d4">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_primitive_allocator.html#af49ee3185ff1a1c4e47404701e7f0a84">bmb::PrimitiveAllocator</a>, <a class="el" href="classbmb_1_1_vector.html#aa19faff2d92b87b32c2045cf13d03697">bmb::Vector&lt; T, Allocator &gt;</a></li>
 <li>operator[]()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#ad837abde5b764e717cc67cd24f3e5d06">bmb::Vector&lt; T, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>popBack()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a98c2e835b15b60e632a8db1711a87bba">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>popBack()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a55a1c88c036a6ce7d51be0ff3fd57a58">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a98c2e835b15b60e632a8db1711a87bba">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>popFront()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a9ca3c73295970b195efe7976e3519a59">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 <li>pushBack()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#aed5eeb8c88b6d41d1175dd072e0f2900">bmb::Vector&lt; T, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
 <li>reserve()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a35953229c759943b0403a3f9ef37aa72">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>reverse()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a02c1c676ba5927e09adfe31ce3bf9713">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>size()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a32271895341c6cb0684439fa748c5fd3">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>size()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#aa20e77e944fa8d9c6fbe1fe345b54b0c">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a>, <a class="el" href="classbmb_1_1_vector.html#a32271895341c6cb0684439fa748c5fd3">bmb::Vector&lt; T, Allocator &gt;</a></li>
+<li>spliceAfter()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a6f9e0d8a8976b46d6c8cfa6512cc331b">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
+<li>swap()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a00646b4fa782ca9173338d9eebe686ea">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 </ul>
 
 
@@ -223,6 +254,7 @@ $(function(){initNavTree('functions_func.html',''); initResizable(true); });
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~LinkedList()&#160;:&#160;<a class="el" href="classbmb_1_1_linked_list.html#a2cae942e5789a608e382b2aaba30946e">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</a></li>
 <li>~Vector()&#160;:&#160;<a class="el" href="classbmb_1_1_vector.html#a0675896206d671dfa00362b25b790e45">bmb::Vector&lt; T, Allocator &gt;</a></li>
 </ul>
 </div><!-- contents -->

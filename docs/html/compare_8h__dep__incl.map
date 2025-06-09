@@ -1,7 +1,10 @@
 <map id="compare.h" name="compare.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,5,91,31"/>
-<area shape="rect" id="Node000002" href="$algo__base_8h.html" title=" " alt="" coords="5,79,96,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,46,53,79,48,79,48,46"/>
-<area shape="rect" id="Node000003" href="$vector_8h.html" title=" " alt="" coords="17,153,84,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="53,120,53,152,48,152,48,120"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="51,5,132,31"/>
+<area shape="rect" id="Node000002" href="$algo__base_8h.html" title=" " alt="" coords="88,79,178,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,43,128,77,123,80,103,46"/>
+<area shape="rect" id="Node000003" href="$linked__list_8h.html" title=" " alt="" coords="5,153,95,178"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="86,46,56,153,51,151,81,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="109,117,66,154,62,150,105,113"/>
+<area shape="rect" id="Node000004" href="$vector_8h.html" title=" " alt="" coords="119,153,186,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="143,119,152,151,147,153,137,120"/>
 </map>

@@ -1,29 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structbmb_1_1integral__constant.html" title=" " alt="" coords="5,247,157,288"/>
-<area shape="rect" id="Node000001" href="$structbmb_1_1is__const_3_01const_01_t_01_4.html" title=" " alt="" coords="205,55,371,80"/>
-<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="103,233,162,145,203,91,225,79,228,83,206,95,167,149,107,236"/>
-<area shape="rect" id="Node000003" href="$structbmb_1_1is__lvalue__ref_3_01_t_01_6_01_4.html" title=" " alt="" coords="225,104,350,145"/>
-<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="110,234,152,193,203,155,225,143,227,148,206,159,155,197,113,237"/>
-<area shape="rect" id="Node000004" href="$structbmb_1_1is__pointer_3_01_t_01_5_01_4.html" title=" " alt="" coords="215,169,361,195"/>
-<area shape="poly" id="edge12_Node000000_Node000004" title=" " alt="" coords="133,237,204,205,238,193,239,198,206,210,135,242"/>
-<area shape="rect" id="Node000005" href="$structbmb_1_1is__rvalue__ref_3_01_t_01_6_6_01_4.html" title=" " alt="" coords="225,219,351,260"/>
-<area shape="poly" id="edge13_Node000000_Node000005" title=" " alt="" coords="172,253,224,245,225,251,172,258"/>
-<area shape="rect" id="Node000006" href="$structbmb_1_1is__same_3_01_t_00_01_t_01_4.html" title=" " alt="" coords="215,5,361,31"/>
-<area shape="poly" id="edge14_Node000000_Node000006" title=" " alt="" coords="105,233,154,156,167,123,172,94,181,68,203,40,219,29,222,34,206,44,186,70,178,96,172,124,159,158,109,236"/>
-<area shape="rect" id="Node000007" href="$structbmb_1_1is__const.html" title="is_const" alt="" coords="222,284,354,310"/>
-<area shape="poly" id="edge15_Node000000_Node000007" title=" " alt="" coords="173,278,222,285,221,290,172,283"/>
-<area shape="rect" id="Node000008" href="$structbmb_1_1is__lvalue__ref.html" title="is_lvalue_ref" alt="" coords="210,333,366,359"/>
-<area shape="poly" id="edge16_Node000000_Node000008" title=" " alt="" coords="140,292,206,320,238,330,236,335,204,325,138,297"/>
-<area shape="rect" id="Node000009" href="$structbmb_1_1is__pointer.html" title="is_pointer" alt="" coords="219,383,357,408"/>
-<area shape="poly" id="edge17_Node000000_Node000009" title=" " alt="" coords="114,297,156,335,206,369,230,380,228,385,203,374,152,339,110,301"/>
-<area shape="rect" id="Node000010" href="$structbmb_1_1is__rvalue__ref.html" title="is_lvalue_ref" alt="" coords="210,432,366,458"/>
-<area shape="poly" id="edge18_Node000000_Node000010" title=" " alt="" coords="103,300,145,361,174,392,206,419,226,429,224,434,203,423,170,396,141,364,99,303"/>
-<area shape="rect" id="Node000011" href="$structbmb_1_1is__same.html" title="is_same" alt="" coords="214,481,362,507"/>
-<area shape="poly" id="edge19_Node000000_Node000011" title=" " alt="" coords="97,301,113,340,137,385,168,430,206,468,224,478,222,483,203,472,164,433,132,388,108,343,92,303"/>
-<area shape="rect" id="Node000002" href="$structbmb_1_1integral__constant.html" title=" " alt="" coords="5,104,157,145"/>
-<area shape="poly" id="edge20_Node000002_Node000001" title=" " alt="" coords="170,97,238,78,239,84,172,103"/>
-<area shape="poly" id="edge21_Node000002_Node000003" title=" " alt="" coords="172,122,225,122,225,128,172,128"/>
-<area shape="poly" id="edge22_Node000002_Node000004" title=" " alt="" coords="172,147,239,166,238,171,170,152"/>
-<area shape="poly" id="edge23_Node000002_Node000005" title=" " alt="" coords="123,152,162,179,206,205,229,216,227,221,203,210,160,184,120,157"/>
-<area shape="poly" id="edge24_Node000002_Node000006" title=" " alt="" coords="119,93,158,65,204,40,231,29,233,34,206,45,161,70,122,97"/>
+<area shape="rect" id="Node000000" href="$structbmb_1_1input__iter__tag.html" title="input_iter_tag" alt="" coords="5,13,136,38"/>
+<area shape="rect" id="Node000001" href="$structbmb_1_1forward__iter__tag.html" title="forward_iter_tag" alt="" coords="184,13,329,38"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="151,23,183,23,183,28,151,28"/>
+<area shape="rect" id="Node000002" href="$structbmb_1_1bidirectional__iter__tag.html" title="bidirectional_iter_tag" alt="" coords="377,5,498,46"/>
+<area shape="poly" id="edge7_Node000001_Node000002" title=" " alt="" coords="345,23,377,23,377,28,345,28"/>
+<area shape="rect" id="Node000003" href="$structbmb_1_1random__access__iter__tag.html" title="random_access_iter_tag" alt="" coords="546,5,691,46"/>
+<area shape="poly" id="edge8_Node000002_Node000003" title=" " alt="" coords="514,23,546,23,546,28,514,28"/>
+<area shape="rect" id="Node000004" href="$structbmb_1_1contiguous__iter__tag.html" title="contiguous_iter_tag" alt="" coords="739,13,904,38"/>
+<area shape="poly" id="edge9_Node000003_Node000004" title=" " alt="" coords="706,23,738,23,738,28,706,28"/>
 </map>

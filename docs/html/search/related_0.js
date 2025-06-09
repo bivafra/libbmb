@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['operator_2b_0',['operator+',['../classbmb_1_1detail_1_1_base_vector_iter.html#a816e96d5b4d92794fb24a63bbea95e21',1,'bmb::detail::BaseVectorIter']]],
-  ['operator_2d_1',['operator-',['../classbmb_1_1detail_1_1_base_vector_iter.html#a513a713dfd833f95f49346c8a800bca6',1,'bmb::detail::BaseVectorIter']]]
+  ['bmb_3a_3alinkedlist_0',['LinkedList',['../classbmb_1_1detail_1_1_l_list_iter.html#a3aa42fa59ff36af3b3d5d8b69c86e52a',1,'bmb::detail::LListIter']]]
 ];

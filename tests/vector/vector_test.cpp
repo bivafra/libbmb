@@ -3,13 +3,14 @@
  * @authors bivafra
  */
 
+#include "containers/vector.h"
+
 #include <exception>
 #include <initializer_list>
 #include <stdexcept>
 #include <vector>
 
 #include "common/types.h"
-#include "containers/vector.h"
 #include "gtest/gtest.h"
 #include "utils/iterators.h"
 #include "utils/move.h"

@@ -32,7 +32,8 @@ if(BUILD_TESTS)
 
     # Test sources here
     add_executable(${TEST_EXE}
-        tests/vector/test.cpp
+        tests/vector/vector_test.cpp
+        tests/linked_list/linked_list_test.cpp
     )
 
     target_link_libraries(${TEST_EXE} PRIVATE

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['size_0',['size',['../classbmb_1_1_vector.html#a32271895341c6cb0684439fa748c5fd3',1,'bmb::Vector']]],
-  ['swap_1',['swap',['../namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd',1,'bmb']]]
+  ['size_0',['size',['../classbmb_1_1_linked_list.html#aa20e77e944fa8d9c6fbe1fe345b54b0c',1,'bmb::LinkedList::size()'],['../classbmb_1_1_vector.html#a32271895341c6cb0684439fa748c5fd3',1,'bmb::Vector::size()']]],
+  ['spliceafter_1',['spliceAfter',['../classbmb_1_1_linked_list.html#a6f9e0d8a8976b46d6c8cfa6512cc331b',1,'bmb::LinkedList::spliceAfter(const_iterator pos, LinkedList &amp;other)'],['../classbmb_1_1_linked_list.html#a4c8526bce3f7188855841e7863886a4a',1,'bmb::LinkedList::spliceAfter(const_iterator pos, LinkedList &amp;&amp;other)'],['../classbmb_1_1_linked_list.html#a60873d8faf7b32e43dfcbc8ead15b9b1',1,'bmb::LinkedList::spliceAfter(const_iterator pos, LinkedList &amp;other, const_iterator first, const_iterator last)'],['../classbmb_1_1_linked_list.html#a798f3c7fd0ca040be087407559af355b',1,'bmb::LinkedList::spliceAfter(const_iterator pos, LinkedList &amp;&amp;other, const_iterator first, const_iterator last)']]],
+  ['swap_2',['swap',['../classbmb_1_1_linked_list.html#a00646b4fa782ca9173338d9eebe686ea',1,'bmb::LinkedList::swap()'],['../namespacebmb.html#aa9715909a91dfdea6dcd59616a686a63',1,'bmb::swap(LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;a, LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;b)'],['../namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd',1,'bmb::swap(T &amp;x, T &amp;y)']]]
 ];

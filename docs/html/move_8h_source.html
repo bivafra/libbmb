@@ -63,7 +63,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libbmb
    </div>
-   <div id="projectbrief">Modern implementation of extended STL library</div>
+   <div id="projectbrief">Modern implementation of STL</div>
   </td>
  </tr>
  </tbody>
@@ -170,7 +170,7 @@ $(function(){initNavTree('move_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">swap</a>(T&amp; x, T&amp; y) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacebmb.html#aa9715909a91dfdea6dcd59616a686a63">swap</a>(T&amp; x, T&amp; y) {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    T tmp = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(x);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    x = <a class="code hl_function" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(y);</div>
@@ -182,8 +182,8 @@ $(function(){initNavTree('move_8h_source.html',''); initResizable(true); });
 <div class="ttc" id="anamespacebmb_html"><div class="ttname"><a href="namespacebmb.html">bmb</a></div><div class="ttdef"><b>Definition</b> algo_base.h:14</div></div>
 <div class="ttc" id="anamespacebmb_html_a09576dc4ba18e2df90d9f6e1ca809a85"><div class="ttname"><a href="namespacebmb.html#a09576dc4ba18e2df90d9f6e1ca809a85">bmb::is_lvalue_ref_v</a></div><div class="ttdeci">constexpr bool is_lvalue_ref_v</div><div class="ttdoc">is_lvalue_ref_v</div><div class="ttdef"><b>Definition</b> type_traits.h:89</div></div>
 <div class="ttc" id="anamespacebmb_html_a264120afa6d7704e00de0c0433958280"><div class="ttname"><a href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">bmb::move</a></div><div class="ttdeci">constexpr remove_ref_t&lt; T &gt; &amp;&amp; move(T &amp;&amp;value) noexcept</div><div class="ttdoc">Convert a value to xvalue.</div><div class="ttdef"><b>Definition</b> move.h:19</div></div>
-<div class="ttc" id="anamespacebmb_html_a2c0cf6a6c303a49b7599b40ed823c3fd"><div class="ttname"><a href="namespacebmb.html#a2c0cf6a6c303a49b7599b40ed823c3fd">bmb::swap</a></div><div class="ttdeci">void swap(T &amp;x, T &amp;y)</div><div class="ttdoc">Swap values.</div><div class="ttdef"><b>Definition</b> move.h:60</div></div>
 <div class="ttc" id="anamespacebmb_html_a3f28057f53e15d3bac5152f7f07991d0"><div class="ttname"><a href="namespacebmb.html#a3f28057f53e15d3bac5152f7f07991d0">bmb::remove_ref_t</a></div><div class="ttdeci">remove_ref&lt; T &gt;::type remove_ref_t</div><div class="ttdoc">remove_ref_t</div><div class="ttdef"><b>Definition</b> type_traits.h:182</div></div>
+<div class="ttc" id="anamespacebmb_html_aa9715909a91dfdea6dcd59616a686a63"><div class="ttname"><a href="namespacebmb.html#aa9715909a91dfdea6dcd59616a686a63">bmb::swap</a></div><div class="ttdeci">void swap(LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;a, LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;b)</div><div class="ttdoc">See LinkedList::swap</div><div class="ttdef"><b>Definition</b> linked_list.h:1026</div></div>
 <div class="ttc" id="anamespacebmb_html_ad6e28351b3ce5c7980db338ecc7cc5e2"><div class="ttname"><a href="namespacebmb.html#ad6e28351b3ce5c7980db338ecc7cc5e2">bmb::forward</a></div><div class="ttdeci">constexpr T &amp;&amp; forward(remove_ref_t&lt; T &gt; &amp;value) noexcept</div><div class="ttdoc">Forward a lvalue.</div><div class="ttdef"><b>Definition</b> move.h:33</div></div>
 <div class="ttc" id="atype__traits_8h_html"><div class="ttname"><a href="type__traits_8h.html">type_traits.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
