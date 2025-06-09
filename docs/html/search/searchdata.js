@@ -3,11 +3,11 @@ var indexSectionsWithContent =
   0: "abcdefgilmnoprstv~⚙🌟🎯🛠🤔",
   1: "abcdefgilnoprtv",
   2: "b",
-  3: "acimrtv",
+  3: "acilmrtv",
   4: "abcdefgilmnoprstv~",
-  5: "cdiv",
-  6: "abcdefiprstv",
-  7: "os",
+  5: "cdinv",
+  6: "abcdefilprstv",
+  7: "bos",
   8: "l🌟",
   9: "bcdfimnoprs"
 };

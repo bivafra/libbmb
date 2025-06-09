@@ -63,7 +63,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libbmb
    </div>
-   <div id="projectbrief">Modern implementation of extended STL library</div>
+   <div id="projectbrief">Modern implementation of STL</div>
   </td>
  </tr>
  </tbody>
@@ -189,7 +189,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="line"><span class="comment">// definition either later or in the included `.tpp` file</span></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><span class="keywordtype">void</span> A&lt;T&gt;::foo() {...}</div>
-</div><!-- fragment --><p> it is painful to separatly declare and define template class methods. Boilerplate can be avoided using strange looking macroses like: </p><div class="fragment"><div class="line"><span class="comment">// Start of the `.tpp` file</span></div>
+</div><!-- fragment --><p> it is painful to separately declare and define template class methods. Boilerplate can be avoided using strange looking macroses like: </p><div class="fragment"><div class="line"><span class="comment">// Start of the `.tpp` file</span></div>
 <div class="line"><span class="preprocessor">#define A_METHOD(return_type)\</span></div>
 <div class="line"><span class="preprocessor">template &lt;typename T&gt;\</span></div>
 <div class="line"><span class="preprocessor">return_type A&lt;T&gt;::</span></div>
@@ -202,6 +202,7 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="line"><span class="preprocessor">#undef A_METHOD</span></div>
 </div><!-- fragment --><p> The desicion was made to define methods inside a class. Documentation and definition at the same place. If you don't like this - every modern IDE supports code wrapping, so collapse all definitions by default.</p>
 </li>
+<li>For some data structures or algorithms there are conceptual schemas, placed in the appropriate folder. They are defined in <code>.excalidraw</code> format and can be viewed and modified in the <a href="https://excalidraw.com/">official website</a> without registration. Note: the schemas may slightly differ from the actual implementation, but the general concepts are preserved.</li>
 </ol>
 <p></p>
 </details>
@@ -343,6 +344,21 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </li>
 </ul>
 <p>Currently, there is a problem: the provided template type must not delete move c-tor explicitly, since forwarding and moving will stop compile(<code>reserve</code>, <code>pushBack</code>, <code>emplaceBack</code>). This can be fixed by concepts or SFINAE. Highly likely this will not be fixed due to the redundancy. Modern code must(at least from the author's point of view) either define both copy and move c-tor(may just call copy one if it isn't able to move) or doesn't define them at all. </p>
+</details>
+<details >
+<summary >
+<b>LinkedList</b></summary>
+<p></p>
+<p>concept: <a href="schemas/linked_list.excalidraw">1</a><br  />
+ sources: <a href="include/containers/linked_list.h">1</a>, <a href="include/details/llist_iterator.h">2</a>, <a href="include/details/llist_nodes.h">3</a><br  />
+ tests: <a href="tests/linked_list">1</a></p>
+<p>Extended implementation of singly linked list. Conceptually, have head node on the stack, allocates other nodes in heap. But introduces several modes, that affect class instanse size and performance:</p><ol type="1">
+<li>Memory save. This mode uses as few as possible memory. More presicely, it stores only 1 pointer per class instanse. But operations that require list's size or last element take O(n) where n = size(). It is best suited for many short lists with few amount of memory available.</li>
+<li>Fast size. This mode introduces fast list's size retrieving. It caches lists size, that requires additional 1 size_t field. Operations that require lists's size take O(1).</li>
+<li>Fast last element. Caches 1 additional pointer to the last element in the list. If list is empty, points to head. Enables fast emplacing and retrieving last element: O(1).</li>
+</ol>
+<p>Modes 2 and 3 can be used separately or simultaneously. Simultaneous use of 2 and 3 is preffered for most cases. Note that there is only one definition of the class, modes are controlled via 2 additional template bool parameters and internally via <code>if constexpr</code>, so, if you don't need additional functionality, you wont get any useless overhead. For convenience, there are using-declarations: <code>LListTiny</code>, <code>LListFat</code>, <code>LListFastSize</code>, <code>LListFastLast</code>.</p>
+<p></p>
 </details>
 <details >
 <summary >

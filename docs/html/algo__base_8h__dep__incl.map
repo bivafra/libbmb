@@ -1,5 +1,7 @@
 <map id="algo_base.h" name="algo_base.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,96,31"/>
-<area shape="rect" id="Node000002" href="$vector_8h.html" title=" " alt="" coords="17,79,84,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,46,53,79,48,79,48,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="56,5,146,31"/>
+<area shape="rect" id="Node000002" href="$linked__list_8h.html" title=" " alt="" coords="5,79,95,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,45,61,80,56,77,81,42"/>
+<area shape="rect" id="Node000003" href="$vector_8h.html" title=" " alt="" coords="119,79,186,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="120,42,146,77,142,80,116,45"/>
 </map>

@@ -63,7 +63,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libbmb
    </div>
-   <div id="projectbrief">Modern implementation of extended STL library</div>
+   <div id="projectbrief">Modern implementation of STL</div>
   </td>
  </tr>
  </tbody>
@@ -145,6 +145,8 @@ $(function(){initNavTree('namespacebmb.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1detail.html">detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacebmb_1_1llist.html">llist</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -242,6 +244,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1less__equal.html">less_equal</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1less__equal.html" title="less_equal">less_equal</a>  <a href="structbmb_1_1less__equal.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singly linked list.  <a href="classbmb_1_1_linked_list.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbmb_1_1not__equal__to.html">not_equal_to</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structbmb_1_1not__equal__to.html" title="not_equal_to">not_equal_to</a>  <a href="structbmb_1_1not__equal__to.html#details">More...</a><br /></td></tr>
@@ -342,6 +347,22 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a68e19f698685cf80a9109a4551826b80" id="r_a68e19f698685cf80a9109a4551826b80"><td class="memTemplParams" colspan="2">template&lt;typename T, bool TrackLast, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:a68e19f698685cf80a9109a4551826b80"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a68e19f698685cf80a9109a4551826b80">LListFastSize</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, true, TrackLast, Allocator&gt;</td></tr>
+<tr class="memdesc:a68e19f698685cf80a9109a4551826b80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with enabled track of size.  <br /></td></tr>
+<tr class="separator:a68e19f698685cf80a9109a4551826b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabbd7d00f56493c7fb1afbc398605ef7" id="r_aabbd7d00f56493c7fb1afbc398605ef7"><td class="memTemplParams" colspan="2">template&lt;typename T, bool TrackSize, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:aabbd7d00f56493c7fb1afbc398605ef7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aabbd7d00f56493c7fb1afbc398605ef7">LListFastLast</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, TrackSize, true, Allocator&gt;</td></tr>
+<tr class="memdesc:aabbd7d00f56493c7fb1afbc398605ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with enabled track of last element.  <br /></td></tr>
+<tr class="separator:aabbd7d00f56493c7fb1afbc398605ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2988926836ca742ceb9de77d9ed6ee" id="r_a3c2988926836ca742ceb9de77d9ed6ee"><td class="memTemplParams" colspan="2">template&lt;typename T, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:a3c2988926836ca742ceb9de77d9ed6ee"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3c2988926836ca742ceb9de77d9ed6ee">LListTiny</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, false, false, Allocator&gt;</td></tr>
+<tr class="memdesc:a3c2988926836ca742ceb9de77d9ed6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> without size and last element tracking.  <br /></td></tr>
+<tr class="separator:a3c2988926836ca742ceb9de77d9ed6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d1d1059f1b39dd510f5abd4890b277" id="r_a84d1d1059f1b39dd510f5abd4890b277"><td class="memTemplParams" colspan="2">template&lt;typename T, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:a84d1d1059f1b39dd510f5abd4890b277"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a84d1d1059f1b39dd510f5abd4890b277">LListFat</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, true, true, Allocator&gt;</td></tr>
+<tr class="memdesc:a84d1d1059f1b39dd510f5abd4890b277"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with size and last element tracking.  <br /></td></tr>
+<tr class="separator:a84d1d1059f1b39dd510f5abd4890b277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ee7eae935f73977bb23f14edcd423a5" id="r_a2ee7eae935f73977bb23f14edcd423a5"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a2ee7eae935f73977bb23f14edcd423a5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2ee7eae935f73977bb23f14edcd423a5">type_identity_t</a> = <a class="el" href="structbmb_1_1type__identity.html">type_identity</a>&lt;T&gt;::type</td></tr>
 <tr class="memdesc:a2ee7eae935f73977bb23f14edcd423a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a2ee7eae935f73977bb23f14edcd423a5" title="type_identity_t">type_identity_t</a>  <br /></td></tr>
@@ -386,11 +407,23 @@ Functions</h2></td></tr>
 <tr class="memitem:aedd561ab6f502ccd24c2742122887c39"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aedd561ab6f502ccd24c2742122887c39">lexicographical_compare_three_way</a> (Iter1 first1, Iter1 last1, Iter2 first2, Iter2 last2, Cmp cmp=Cmp())</td></tr>
 <tr class="memdesc:aedd561ab6f502ccd24c2742122887c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares ranges lexicographically using C++20 three-way comparation.  <br /></td></tr>
 <tr class="separator:aedd561ab6f502ccd24c2742122887c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2a30ed720c8ee0f12ade928c8283e34" id="r_af2a30ed720c8ee0f12ade928c8283e34"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
-requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::value_type, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::value_type&gt;</td></tr>
-<tr class="memitem:af2a30ed720c8ee0f12ade928c8283e34"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af2a30ed720c8ee0f12ade928c8283e34">equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Pred pred=Pred())</td></tr>
-<tr class="memdesc:af2a30ed720c8ee0f12ade928c8283e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
-<tr class="separator:af2a30ed720c8ee0f12ade928c8283e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9b121cec32eae0bd84aa39856faee8" id="r_a8f9b121cec32eae0bd84aa39856faee8"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</td></tr>
+<tr class="memitem:a8f9b121cec32eae0bd84aa39856faee8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8f9b121cec32eae0bd84aa39856faee8">equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Pred pred=Pred())</td></tr>
+<tr class="memdesc:a8f9b121cec32eae0bd84aa39856faee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
+<tr class="separator:a8f9b121cec32eae0bd84aa39856faee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac6397e59a4283f25f1191f3988c91a" id="r_adac6397e59a4283f25f1191f3988c91a"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</td></tr>
+<tr class="memitem:adac6397e59a4283f25f1191f3988c91a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adac6397e59a4283f25f1191f3988c91a">equal</a> (Iter1 first1, Iter1 last1, Iter2 first2, Iter2 last2, Pred pred=Pred())</td></tr>
+<tr class="memdesc:adac6397e59a4283f25f1191f3988c91a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether given ranges are equal.  <br /></td></tr>
+<tr class="separator:adac6397e59a4283f25f1191f3988c91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9715909a91dfdea6dcd59616a686a63" id="r_aa9715909a91dfdea6dcd59616a686a63"><td class="memTemplParams" colspan="2">template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:aa9715909a91dfdea6dcd59616a686a63"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa9715909a91dfdea6dcd59616a686a63">swap</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;a, <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;b)</td></tr>
+<tr class="memdesc:aa9715909a91dfdea6dcd59616a686a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code><a class="el" href="classbmb_1_1_linked_list.html#a00646b4fa782ca9173338d9eebe686ea" title="Effectively swaps content of the lists.">LinkedList::swap</a></code>  <br /></td></tr>
+<tr class="separator:aa9715909a91dfdea6dcd59616a686a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc4a5d69de0976f9acac3bbc8d405e5" id="r_a9dc4a5d69de0976f9acac3bbc8d405e5"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter, typename Allocator = PrimitiveAllocator&gt; </td></tr>
+<tr class="memitem:a9dc4a5d69de0976f9acac3bbc8d405e5"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9dc4a5d69de0976f9acac3bbc8d405e5">LinkedList</a> (Iter, Iter, Allocator=Allocator()) -&gt; LinkedList&lt; typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt; Iter &gt;::value_type, true, true, <a class="el" href="classbmb_1_1_primitive_allocator.html">PrimitiveAllocator</a> &gt;</td></tr>
+<tr class="separator:a9dc4a5d69de0976f9acac3bbc8d405e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76686df7483cf0c0517ef8b10361eabc" id="r_a76686df7483cf0c0517ef8b10361eabc"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter, typename Allocator = PrimitiveAllocator&gt; </td></tr>
 <tr class="memitem:a76686df7483cf0c0517ef8b10361eabc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a76686df7483cf0c0517ef8b10361eabc">Vector</a> (Iter, Iter, Allocator=Allocator()) -&gt; Vector&lt; typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt; Iter &gt;::value_type, Allocator &gt;</td></tr>
 <tr class="separator:a76686df7483cf0c0517ef8b10361eabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -561,6 +594,78 @@ template&lt;typename F, typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="#a2e13fc8728220caa096f697f1e72f400" title="invoke_result_t">invoke_result_t</a> </p>
+
+</div>
+</div>
+<a id="aabbd7d00f56493c7fb1afbc398605ef7" name="aabbd7d00f56493c7fb1afbc398605ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbd7d00f56493c7fb1afbc398605ef7">&#9670;&#160;</a></span>LListFastLast</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aabbd7d00f56493c7fb1afbc398605ef7">bmb::LListFastLast</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, TrackSize, true, Allocator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with enabled track of last element. </p>
+
+</div>
+</div>
+<a id="a68e19f698685cf80a9109a4551826b80" name="a68e19f698685cf80a9109a4551826b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e19f698685cf80a9109a4551826b80">&#9670;&#160;</a></span>LListFastSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackLast, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a68e19f698685cf80a9109a4551826b80">bmb::LListFastSize</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, true, TrackLast, Allocator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with enabled track of size. </p>
+
+</div>
+</div>
+<a id="a84d1d1059f1b39dd510f5abd4890b277" name="a84d1d1059f1b39dd510f5abd4890b277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d1d1059f1b39dd510f5abd4890b277">&#9670;&#160;</a></span>LListFat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a84d1d1059f1b39dd510f5abd4890b277">bmb::LListFat</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, true, true, Allocator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> with size and last element tracking. </p>
+
+</div>
+</div>
+<a id="a3c2988926836ca742ceb9de77d9ed6ee" name="a3c2988926836ca742ceb9de77d9ed6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c2988926836ca742ceb9de77d9ed6ee">&#9670;&#160;</a></span>LListTiny</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3c2988926836ca742ceb9de77d9ed6ee">bmb::LListTiny</a> = <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt;T, false, false, Allocator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a> without size and last element tracking. </p>
 
 </div>
 </div>
@@ -756,14 +861,75 @@ template&lt;InputIterator Iter&gt; </div>
 
 </div>
 </div>
-<a id="af2a30ed720c8ee0f12ade928c8283e34" name="af2a30ed720c8ee0f12ade928c8283e34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2a30ed720c8ee0f12ade928c8283e34">&#9670;&#160;</a></span>equal()</h2>
+<a id="adac6397e59a4283f25f1191f3988c91a" name="adac6397e59a4283f25f1191f3988c91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac6397e59a4283f25f1191f3988c91a">&#9670;&#160;</a></span>equal() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
-requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::value_type, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::value_type&gt;</div>
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bmb::equal </td>
+          <td>(</td>
+          <td class="paramtype">Iter1</td>          <td class="paramname"><span class="paramname"><em>first1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter1</td>          <td class="paramname"><span class="paramname"><em>last1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter2</td>          <td class="paramname"><span class="paramname"><em>first2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter2</td>          <td class="paramname"><span class="paramname"><em>last2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pred</td>          <td class="paramname"><span class="paramname"><em>pred</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Pred()</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether given ranges are equal. </p>
+<p>Given <a class="el" href="conceptbmb_1_1_predicate.html" title="Predicate.">Predicate</a> must return boolean-convertible value.</p>
+<p>Time complexity: <code>O(min(last1 - first1, last2 - first2))</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first1</td><td>Start of the 1-st range </td></tr>
+    <tr><td class="paramname">last1</td><td>End of the 1-st range </td></tr>
+    <tr><td class="paramname">first2</td><td>Start of the 2-nd range </td></tr>
+    <tr><td class="paramname">pred</td><td><a class="el" href="conceptbmb_1_1_predicate.html" title="Predicate.">Predicate</a> that compares range elements</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if ranges are equal on <a class="el" href="conceptbmb_1_1_predicate.html" title="Predicate.">Predicate</a>. false otherwise.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Almost</td><td>always noexcept. In fact, the same specification as operations on iterators and calling predicate.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See <code>equal</code> overload for <code><a class="el" href="conceptbmb_1_1_input_iterator.html" title="InputIterator.">InputIterator</a></code> constraints. In addition to it, this overload firstly checks length of the compared ranges to enable early inequality detection.</p>
+<p>Time complexity: 1) If <code>last1 - first1 != last2 - first2</code>: <code>O(1)</code>, 2) Otherwise: <code>O(min(last1 - first1, last2 - first2))</code> </p>
+
+</div>
+</div>
+<a id="a8f9b121cec32eae0bd84aa39856faee8" name="a8f9b121cec32eae0bd84aa39856faee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9b121cec32eae0bd84aa39856faee8">&#9670;&#160;</a></span>equal() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;InputIterator Iter1, InputIterator Iter2, typename Pred = equal_to&gt; <br />
+requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter1&gt;::reference, typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt;Iter2&gt;::reference&gt;</div>
       <table class="memname">
         <tr>
           <td class="memname">bool bmb::equal </td>
@@ -789,7 +955,8 @@ requires Predicate&lt;Pred, typename <a class="el" href="structbmb_1_1_iterator_
 </div><div class="memdoc">
 
 <p>Checks whether given ranges are equal. </p>
-<p>More precisely, compares (last1 - first1) elements from 2-nd range. Therefore, 1-st range must not shorter than 2-nd one. Otherwise undefined behaviour - will increment the end iterator from 2-nd range. Given <a class="el" href="conceptbmb_1_1_predicate.html" title="Predicate.">Predicate</a> must return boolean-convertible value.</p>
+<p>More precisely, compares <code>last1 - first1</code> elements from 2-nd range. Thus, 1-st range must not be longer than 2-nd one. Otherwise undefined behaviour - will increment the end iterator from 2-nd range. Given <a class="el" href="conceptbmb_1_1_predicate.html" title="Predicate.">Predicate</a> must return boolean-convertible value.</p>
+<p>Time complexity: <code>O(last1 - first1)</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">first1</td><td>Start of the 1-st range </td></tr>
@@ -920,7 +1087,7 @@ template&lt;InputIterator Iter1, InputIterator Iter2, typename Cmp = compare_thr
 
 <p>Compares ranges lexicographically using C++20 three-way comparation. </p>
 <p>Compares elements iteratively, until either non-equal were found or some range was exausted. In the 2-nd case, detects longer range as greater.</p>
-<p>Time complexity: O(min(last1 - first1, last2 - first2))</p>
+<p>Time complexity: <code>O(min(last1 - first1, last2 - first2))</code></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">first1</td><td>- Start of the 1-st range </td></tr>
@@ -938,6 +1105,34 @@ template&lt;InputIterator Iter1, InputIterator Iter2, typename Cmp = compare_thr
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9dc4a5d69de0976f9acac3bbc8d405e5" name="a9dc4a5d69de0976f9acac3bbc8d405e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dc4a5d69de0976f9acac3bbc8d405e5">&#9670;&#160;</a></span>LinkedList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;InputIterator Iter, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bmb::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Allocator</td>          <td class="paramname"><span class="paramname"><em></em></span><span class="paramdefsep"> = </span><span class="paramdefval">Allocator()</span>&#160;) -&gt;  LinkedList&lt; typename <a class="el" href="structbmb_1_1_iterator_traits.html">IteratorTraits</a>&lt; Iter &gt;::value_type, true, true, <a class="el" href="classbmb_1_1_primitive_allocator.html">PrimitiveAllocator</a> &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1055,8 +1250,33 @@ template&lt;BidirectionalIterator Iter&gt; </div>
 
 </div>
 </div>
+<a id="aa9715909a91dfdea6dcd59616a686a63" name="aa9715909a91dfdea6dcd59616a686a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9715909a91dfdea6dcd59616a686a63">&#9670;&#160;</a></span>swap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void bmb::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>See <code><a class="el" href="classbmb_1_1_linked_list.html#a00646b4fa782ca9173338d9eebe686ea" title="Effectively swaps content of the lists.">LinkedList::swap</a></code> </p>
+
+</div>
+</div>
 <a id="a2c0cf6a6c303a49b7599b40ed823c3fd" name="a2c0cf6a6c303a49b7599b40ed823c3fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c0cf6a6c303a49b7599b40ed823c3fd">&#9670;&#160;</a></span>swap()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c0cf6a6c303a49b7599b40ed823c3fd">&#9670;&#160;</a></span>swap() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

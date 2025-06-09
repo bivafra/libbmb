@@ -1,0 +1,2323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>libbmb: bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+    DoxygenAwesomeInteractiveToc.init()
+    DoxygenAwesomeTabs.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/bivafra/libbmb" class="github-corner" title="View source on GitHub" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">libbmb
+   </div>
+   <div id="projectbrief">Modern implementation of STL</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classbmb_1_1_linked_list.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classbmb_1_1_linked_list-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Singly linked list.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="linked__list_8h_source.html">linked_list.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3d0e6d0a59fdfaacfc1d2fe43b130aeb" id="r_a3d0e6d0a59fdfaacfc1d2fe43b130aeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> = T</td></tr>
+<tr class="separator:a3d0e6d0a59fdfaacfc1d2fe43b130aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9684c86d17b2fa067d106ff8ab088613" id="r_a9684c86d17b2fa067d106ff8ab088613"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a> = <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>&amp;</td></tr>
+<tr class="separator:a9684c86d17b2fa067d106ff8ab088613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f847af0eac518833fc6e45f50dc08f" id="r_a18f847af0eac518833fc6e45f50dc08f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18f847af0eac518833fc6e45f50dc08f">const_reference</a> = const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>&amp;</td></tr>
+<tr class="separator:a18f847af0eac518833fc6e45f50dc08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86264648d1ee4290d0c31a45fad76167" id="r_a86264648d1ee4290d0c31a45fad76167"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86264648d1ee4290d0c31a45fad76167">pointer</a> = <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>*</td></tr>
+<tr class="separator:a86264648d1ee4290d0c31a45fad76167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af724770d735372b75e07f03e1edef674" id="r_af724770d735372b75e07f03e1edef674"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af724770d735372b75e07f03e1edef674">const_pointer</a> = const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>*</td></tr>
+<tr class="separator:af724770d735372b75e07f03e1edef674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a985578de871ee3de8605ac07750b8a09" id="r_a985578de871ee3de8605ac07750b8a09"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a985578de871ee3de8605ac07750b8a09">size_type</a> = size_t</td></tr>
+<tr class="separator:a985578de871ee3de8605ac07750b8a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dbc51380edb103e9cd63d5d5758fee" id="r_a72dbc51380edb103e9cd63d5d5758fee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72dbc51380edb103e9cd63d5d5758fee">allocator_type</a> = Allocator</td></tr>
+<tr class="separator:a72dbc51380edb103e9cd63d5d5758fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d867b7306b423f2a1da0bfff7fc0f0" id="r_aa3d867b7306b423f2a1da0bfff7fc0f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> = <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html">detail::LListIter</a>&lt;T, false&gt;</td></tr>
+<tr class="separator:aa3d867b7306b423f2a1da0bfff7fc0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1c5a0d01dd5828e8a50ca26a2bd17f" id="r_a6e1c5a0d01dd5828e8a50ca26a2bd17f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> = <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html">detail::LListIter</a>&lt;T, true&gt;</td></tr>
+<tr class="separator:a6e1c5a0d01dd5828e8a50ca26a2bd17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af8b6373232a45460c624c373147827c1" id="r_af8b6373232a45460c624c373147827c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8b6373232a45460c624c373147827c1">LinkedList</a> () noexcept(noexcept(Allocator()))</td></tr>
+<tr class="separator:af8b6373232a45460c624c373147827c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c1c48e204a33ebeba4d3fbf18d049b3" id="r_a9c1c48e204a33ebeba4d3fbf18d049b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c1c48e204a33ebeba4d3fbf18d049b3">LinkedList</a> (const Allocator &amp;alloc)</td></tr>
+<tr class="separator:a9c1c48e204a33ebeba4d3fbf18d049b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6391b18bfa590899e95911c949eb729a" id="r_a6391b18bfa590899e95911c949eb729a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6391b18bfa590899e95911c949eb729a">LinkedList</a> (size_t count, const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> &amp;value=<a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>(), const Allocator &amp;alloc=Allocator())</td></tr>
+<tr class="memdesc:a6391b18bfa590899e95911c949eb729a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <code>count</code> elements with given value.  <br /></td></tr>
+<tr class="separator:a6391b18bfa590899e95911c949eb729a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a246980f1957831a45103de3e8d7483e4" id="r_a246980f1957831a45103de3e8d7483e4"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter&gt; </td></tr>
+<tr class="memitem:a246980f1957831a45103de3e8d7483e4"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a246980f1957831a45103de3e8d7483e4">LinkedList</a> (Iter first, Iter last, const Allocator &amp;alloc=Allocator())</td></tr>
+<tr class="memdesc:a246980f1957831a45103de3e8d7483e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize list with the given range.  <br /></td></tr>
+<tr class="separator:a246980f1957831a45103de3e8d7483e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ba9098548b231e7762fd3222533bf9" id="r_a05ba9098548b231e7762fd3222533bf9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05ba9098548b231e7762fd3222533bf9">LinkedList</a> (std::initializer_list&lt; <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> &gt; init_list, const Allocator &amp;alloc=Allocator())</td></tr>
+<tr class="memdesc:a05ba9098548b231e7762fd3222533bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize list with the given initializer_list.  <br /></td></tr>
+<tr class="separator:a05ba9098548b231e7762fd3222533bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4844db95be0ab9b2a60533da8a62e62" id="r_ab4844db95be0ab9b2a60533da8a62e62"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4844db95be0ab9b2a60533da8a62e62">LinkedList</a> (const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other)</td></tr>
+<tr class="memdesc:ab4844db95be0ab9b2a60533da8a62e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
+<tr class="separator:ab4844db95be0ab9b2a60533da8a62e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2cad9103ab97ca0a78da35facb1b8bc" id="r_ab2cad9103ab97ca0a78da35facb1b8bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2cad9103ab97ca0a78da35facb1b8bc">LinkedList</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;&amp;other) noexcept(noexcept(Allocator(<a class="el" href="namespacebmb.html#a264120afa6d7704e00de0c0433958280">move</a>(other.alloc_))))</td></tr>
+<tr class="memdesc:ab2cad9103ab97ca0a78da35facb1b8bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. No iterators are invalidated.  <br /></td></tr>
+<tr class="separator:ab2cad9103ab97ca0a78da35facb1b8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a945f8e895860b32a434f115d9dee716c" id="r_a945f8e895860b32a434f115d9dee716c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a945f8e895860b32a434f115d9dee716c">operator=</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> other)</td></tr>
+<tr class="memdesc:a945f8e895860b32a434f115d9dee716c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy/move assignment operator.  <br /></td></tr>
+<tr class="separator:a945f8e895860b32a434f115d9dee716c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cae942e5789a608e382b2aaba30946e" id="r_a2cae942e5789a608e382b2aaba30946e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cae942e5789a608e382b2aaba30946e">~LinkedList</a> ()</td></tr>
+<tr class="separator:a2cae942e5789a608e382b2aaba30946e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00646b4fa782ca9173338d9eebe686ea" id="r_a00646b4fa782ca9173338d9eebe686ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00646b4fa782ca9173338d9eebe686ea">swap</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other)</td></tr>
+<tr class="memdesc:a00646b4fa782ca9173338d9eebe686ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Effectively swaps content of the lists.  <br /></td></tr>
+<tr class="separator:a00646b4fa782ca9173338d9eebe686ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ba1a2d92379fe608078e24bc205993" id="r_ab8ba1a2d92379fe608078e24bc205993"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8ba1a2d92379fe608078e24bc205993">clear</a> () noexcept</td></tr>
+<tr class="memdesc:ab8ba1a2d92379fe608078e24bc205993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements in the list.  <br /></td></tr>
+<tr class="separator:ab8ba1a2d92379fe608078e24bc205993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b9cc0a0fc555d20eee015fdd1adc1c" id="r_a83b9cc0a0fc555d20eee015fdd1adc1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83b9cc0a0fc555d20eee015fdd1adc1c">insertAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> value)</td></tr>
+<tr class="memdesc:a83b9cc0a0fc555d20eee015fdd1adc1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates element and places it after the given iterator.  <br /></td></tr>
+<tr class="separator:a83b9cc0a0fc555d20eee015fdd1adc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe3455901baa08ecf126918a7be0d82" id="r_aafe3455901baa08ecf126918a7be0d82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafe3455901baa08ecf126918a7be0d82">insertAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, std::initializer_list&lt; T &gt; init_list)</td></tr>
+<tr class="memdesc:aafe3455901baa08ecf126918a7be0d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements from initializer list in the list.  <br /></td></tr>
+<tr class="separator:aafe3455901baa08ecf126918a7be0d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24a8e4fd542275d4f3be8c1a9b53eea" id="r_aa24a8e4fd542275d4f3be8c1a9b53eea"><td class="memTemplParams" colspan="2">template&lt;InputIterator Iter&gt; </td></tr>
+<tr class="memitem:aa24a8e4fd542275d4f3be8c1a9b53eea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa24a8e4fd542275d4f3be8c1a9b53eea">insertAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, Iter first, Iter last)</td></tr>
+<tr class="memdesc:aa24a8e4fd542275d4f3be8c1a9b53eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements from <code>[first, last)</code> in the list after <code>pos</code>.  <br /></td></tr>
+<tr class="separator:aa24a8e4fd542275d4f3be8c1a9b53eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c2355edbb81e87d2285738615491b2" id="r_ae8c2355edbb81e87d2285738615491b2"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ae8c2355edbb81e87d2285738615491b2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae8c2355edbb81e87d2285738615491b2">emplaceAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ae8c2355edbb81e87d2285738615491b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new node from given arguments and places it after the given position.  <br /></td></tr>
+<tr class="separator:ae8c2355edbb81e87d2285738615491b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155231419decab99a0edfafb0bc8b669" id="r_a155231419decab99a0edfafb0bc8b669"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a155231419decab99a0edfafb0bc8b669"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a155231419decab99a0edfafb0bc8b669">emplaceFront</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a155231419decab99a0edfafb0bc8b669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new node from given arguments in the start of the list.  <br /></td></tr>
+<tr class="separator:a155231419decab99a0edfafb0bc8b669"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce8af50dbee7d99b537faab744b69bd" id="r_a2ce8af50dbee7d99b537faab744b69bd"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a2ce8af50dbee7d99b537faab744b69bd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2ce8af50dbee7d99b537faab744b69bd">emplaceBack</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a2ce8af50dbee7d99b537faab744b69bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new node from given arguments in the end of the list.  <br /></td></tr>
+<tr class="separator:a2ce8af50dbee7d99b537faab744b69bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd18576bf8742d2c65d9c998eb051a39" id="r_acd18576bf8742d2c65d9c998eb051a39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd18576bf8742d2c65d9c998eb051a39">eraseAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos) noexcept</td></tr>
+<tr class="memdesc:acd18576bf8742d2c65d9c998eb051a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys element right after <code>pos</code>.  <br /></td></tr>
+<tr class="separator:acd18576bf8742d2c65d9c998eb051a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eee24428b7716a7cc1cb64bcf6f8408" id="r_a0eee24428b7716a7cc1cb64bcf6f8408"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0eee24428b7716a7cc1cb64bcf6f8408">eraseAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> first, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> last) noexcept</td></tr>
+<tr class="memdesc:a0eee24428b7716a7cc1cb64bcf6f8408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys elements in <code>(first, last)</code>.  <br /></td></tr>
+<tr class="separator:a0eee24428b7716a7cc1cb64bcf6f8408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ca3c73295970b195efe7976e3519a59" id="r_a9ca3c73295970b195efe7976e3519a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ca3c73295970b195efe7976e3519a59">popFront</a> () noexcept</td></tr>
+<tr class="memdesc:a9ca3c73295970b195efe7976e3519a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys first element in the list.  <br /></td></tr>
+<tr class="separator:a9ca3c73295970b195efe7976e3519a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a1c88c036a6ce7d51be0ff3fd57a58" id="r_a55a1c88c036a6ce7d51be0ff3fd57a58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a1c88c036a6ce7d51be0ff3fd57a58">popBack</a> () noexcept</td></tr>
+<tr class="memdesc:a55a1c88c036a6ce7d51be0ff3fd57a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys last element in the list.  <br /></td></tr>
+<tr class="separator:a55a1c88c036a6ce7d51be0ff3fd57a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabf184524dae65e4171eb562f07f846" id="r_adabf184524dae65e4171eb562f07f846"><td class="memTemplParams" colspan="2">template&lt;typename Cmp = less&gt; </td></tr>
+<tr class="memitem:adabf184524dae65e4171eb562f07f846"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adabf184524dae65e4171eb562f07f846">merge</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other, Cmp cmp=Cmp())</td></tr>
+<tr class="memdesc:adabf184524dae65e4171eb562f07f846"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code>merge(<a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;, auto)</code>  <br /></td></tr>
+<tr class="separator:adabf184524dae65e4171eb562f07f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab46377353eb1cfe6098ffd72182ad1bd" id="r_ab46377353eb1cfe6098ffd72182ad1bd"><td class="memTemplParams" colspan="2">template&lt;typename Cmp = less&gt; </td></tr>
+<tr class="memitem:ab46377353eb1cfe6098ffd72182ad1bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab46377353eb1cfe6098ffd72182ad1bd">merge</a> (<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;&amp;other, Cmp cmp=Cmp())</td></tr>
+<tr class="memdesc:ab46377353eb1cfe6098ffd72182ad1bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merges elements from 2 sorted lists into one sorted.  <br /></td></tr>
+<tr class="separator:ab46377353eb1cfe6098ffd72182ad1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9e0d8a8976b46d6c8cfa6512cc331b" id="r_a6f9e0d8a8976b46d6c8cfa6512cc331b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f9e0d8a8976b46d6c8cfa6512cc331b">spliceAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other)</td></tr>
+<tr class="memdesc:a6f9e0d8a8976b46d6c8cfa6512cc331b"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code>spliceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;)</code>  <br /></td></tr>
+<tr class="separator:a6f9e0d8a8976b46d6c8cfa6512cc331b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8526bce3f7188855841e7863886a4a" id="r_a4c8526bce3f7188855841e7863886a4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c8526bce3f7188855841e7863886a4a">spliceAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:a4c8526bce3f7188855841e7863886a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers all elements from <code>other</code> to <code>*this</code>. <code>other</code> becomes empty.  <br /></td></tr>
+<tr class="separator:a4c8526bce3f7188855841e7863886a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60873d8faf7b32e43dfcbc8ead15b9b1" id="r_a60873d8faf7b32e43dfcbc8ead15b9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60873d8faf7b32e43dfcbc8ead15b9b1">spliceAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> first, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> last)</td></tr>
+<tr class="memdesc:a60873d8faf7b32e43dfcbc8ead15b9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">See <code>spliceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>)</code>  <br /></td></tr>
+<tr class="separator:a60873d8faf7b32e43dfcbc8ead15b9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798f3c7fd0ca040be087407559af355b" id="r_a798f3c7fd0ca040be087407559af355b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a798f3c7fd0ca040be087407559af355b">spliceAfter</a> (<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> pos, <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;&amp;other, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> first, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> last)</td></tr>
+<tr class="memdesc:a798f3c7fd0ca040be087407559af355b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers all elements in <code>(first, last)</code> from <code>other</code> to <code>*this</code> right after <code>pos</code>.  <br /></td></tr>
+<tr class="separator:a798f3c7fd0ca040be087407559af355b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c1c676ba5927e09adfe31ce3bf9713" id="r_a02c1c676ba5927e09adfe31ce3bf9713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02c1c676ba5927e09adfe31ce3bf9713">reverse</a> () noexcept</td></tr>
+<tr class="memdesc:a02c1c676ba5927e09adfe31ce3bf9713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses linked list.  <br /></td></tr>
+<tr class="separator:a02c1c676ba5927e09adfe31ce3bf9713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d5f5710779879de03c94b711ea9d4f" id="r_a57d5f5710779879de03c94b711ea9d4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57d5f5710779879de03c94b711ea9d4f">front</a> () noexcept</td></tr>
+<tr class="memdesc:a57d5f5710779879de03c94b711ea9d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns first element in the list.  <br /></td></tr>
+<tr class="separator:a57d5f5710779879de03c94b711ea9d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71be25ce0326a7cb8da32725e375b6e9" id="r_a71be25ce0326a7cb8da32725e375b6e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a18f847af0eac518833fc6e45f50dc08f">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71be25ce0326a7cb8da32725e375b6e9">front</a> () const noexcept</td></tr>
+<tr class="memdesc:a71be25ce0326a7cb8da32725e375b6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns first element in the list.  <br /></td></tr>
+<tr class="separator:a71be25ce0326a7cb8da32725e375b6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296b6ccfadf3bc939edcc242a3113624" id="r_a296b6ccfadf3bc939edcc242a3113624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a296b6ccfadf3bc939edcc242a3113624">back</a> () noexcept</td></tr>
+<tr class="memdesc:a296b6ccfadf3bc939edcc242a3113624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns last element in the list.  <br /></td></tr>
+<tr class="separator:a296b6ccfadf3bc939edcc242a3113624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477c7739845ffc4b07cee15a3a9f216f" id="r_a477c7739845ffc4b07cee15a3a9f216f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a18f847af0eac518833fc6e45f50dc08f">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a477c7739845ffc4b07cee15a3a9f216f">back</a> () const noexcept</td></tr>
+<tr class="memdesc:a477c7739845ffc4b07cee15a3a9f216f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns last element in the list.  <br /></td></tr>
+<tr class="separator:a477c7739845ffc4b07cee15a3a9f216f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a589fddfebdd2eb5d27a0cecff14433e7" id="r_a589fddfebdd2eb5d27a0cecff14433e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbmb_1_1llist_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a589fddfebdd2eb5d27a0cecff14433e7">getRawFirstNode</a> () const noexcept</td></tr>
+<tr class="memdesc:a589fddfebdd2eb5d27a0cecff14433e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw representation of the first list's node.  <br /></td></tr>
+<tr class="separator:a589fddfebdd2eb5d27a0cecff14433e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa20e77e944fa8d9c6fbe1fe345b54b0c" id="r_aa20e77e944fa8d9c6fbe1fe345b54b0c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c">size</a> () const noexcept</td></tr>
+<tr class="memdesc:aa20e77e944fa8d9c6fbe1fe345b54b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns list's size.  <br /></td></tr>
+<tr class="separator:aa20e77e944fa8d9c6fbe1fe345b54b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3fdf86815ea39f622cbaa5e446c3356" id="r_af3fdf86815ea39f622cbaa5e446c3356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3fdf86815ea39f622cbaa5e446c3356">isEmpty</a> () const noexcept</td></tr>
+<tr class="memdesc:af3fdf86815ea39f622cbaa5e446c3356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether list has elements.  <br /></td></tr>
+<tr class="separator:af3fdf86815ea39f622cbaa5e446c3356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9da6bfee5fe0b74a628305963f975a" id="r_aae9da6bfee5fe0b74a628305963f975a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a72dbc51380edb103e9cd63d5d5758fee">allocator_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9da6bfee5fe0b74a628305963f975a">getAllocator</a> () const</td></tr>
+<tr class="separator:aae9da6bfee5fe0b74a628305963f975a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84a8f277bc2be3130f29e1b0708c162" id="r_ae84a8f277bc2be3130f29e1b0708c162"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae84a8f277bc2be3130f29e1b0708c162">begin</a> () noexcept</td></tr>
+<tr class="separator:ae84a8f277bc2be3130f29e1b0708c162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2748c3c00360dccf45475503ca7ee7" id="r_a7a2748c3c00360dccf45475503ca7ee7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end</a> () noexcept</td></tr>
+<tr class="separator:a7a2748c3c00360dccf45475503ca7ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3f6ff5f23997a24752390b81908b81" id="r_a9d3f6ff5f23997a24752390b81908b81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d3f6ff5f23997a24752390b81908b81">begin</a> () const noexcept</td></tr>
+<tr class="separator:a9d3f6ff5f23997a24752390b81908b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be2aeac1d0abaf506e0dbd184ecc1bb" id="r_a2be2aeac1d0abaf506e0dbd184ecc1bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be2aeac1d0abaf506e0dbd184ecc1bb">end</a> () const noexcept</td></tr>
+<tr class="separator:a2be2aeac1d0abaf506e0dbd184ecc1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155a951de47e4f61e06607e0af154904" id="r_a155a951de47e4f61e06607e0af154904"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a155a951de47e4f61e06607e0af154904">cbegin</a> () const noexcept</td></tr>
+<tr class="separator:a155a951de47e4f61e06607e0af154904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cef75523c3596f745217b507a5c16ab" id="r_a2cef75523c3596f745217b507a5c16ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cef75523c3596f745217b507a5c16ab">cend</a> () const noexcept</td></tr>
+<tr class="separator:a2cef75523c3596f745217b507a5c16ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2deae7220de57736aa09357b0327b729" id="r_a2deae7220de57736aa09357b0327b729"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin</a> () noexcept</td></tr>
+<tr class="separator:a2deae7220de57736aa09357b0327b729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24ef5fd8b106f0266235e21c4f37bfac" id="r_a24ef5fd8b106f0266235e21c4f37bfac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24ef5fd8b106f0266235e21c4f37bfac">beforeBegin</a> () const noexcept</td></tr>
+<tr class="separator:a24ef5fd8b106f0266235e21c4f37bfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999180a9609e7027e75d9cdbd178ea0a" id="r_a999180a9609e7027e75d9cdbd178ea0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a999180a9609e7027e75d9cdbd178ea0a">cbeforeBegin</a> () const noexcept</td></tr>
+<tr class="separator:a999180a9609e7027e75d9cdbd178ea0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3087f85e1ff3182c6f852f7d90f1c896" id="r_a3087f85e1ff3182c6f852f7d90f1c896"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3087f85e1ff3182c6f852f7d90f1c896">beforeEnd</a> () noexcept</td></tr>
+<tr class="separator:a3087f85e1ff3182c6f852f7d90f1c896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b04944823eafd04320d05a35831d443" id="r_a7b04944823eafd04320d05a35831d443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b04944823eafd04320d05a35831d443">beforeEnd</a> () const noexcept</td></tr>
+<tr class="separator:a7b04944823eafd04320d05a35831d443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b5fbad3a07730ec6fbe81c84929395" id="r_ac0b5fbad3a07730ec6fbe81c84929395"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0b5fbad3a07730ec6fbe81c84929395">cbeforeEnd</a> () const noexcept</td></tr>
+<tr class="separator:ac0b5fbad3a07730ec6fbe81c84929395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4f63a8a3d45c41d505ab5c590260d4" id="r_afb4f63a8a3d45c41d505ab5c590260d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb4f63a8a3d45c41d505ab5c590260d4">operator==</a> (const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:afb4f63a8a3d45c41d505ab5c590260d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66058cc452961800d23e5bd1a50e8933" id="r_a66058cc452961800d23e5bd1a50e8933"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66058cc452961800d23e5bd1a50e8933">operator&lt;=&gt;</a> (const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:a66058cc452961800d23e5bd1a50e8933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt;<br />
+class bmb::LinkedList&lt; T, TrackSize, TrackLast, Allocator &gt;</div><p>Singly linked list. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>type to hold </td></tr>
+    <tr><td class="paramname">TrackSize</td><td>enables fast size access </td></tr>
+    <tr><td class="paramname">TrackLast</td><td>enables fast last element access </td></tr>
+    <tr><td class="paramname">Allocator</td><td>allocator to use for memory management</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This implementation may be used in several modes: 1) Memory saving: sizeof this class equals 1 pointer, but methods that use size and last element will work slowly(linearly). 2) Fast size: sizeof this class equals sizeof(void*) + sizeof(size_t), enables access to size for a constant time, 3) Fast last element: sizeof this class equals 2*sizeof(void*), last element access is constant. 4) Fast size and last element: modes 2 + 3</p>
+<p>All methods provides strong/basics exception safety(all
+strong except the move assignment) </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a72dbc51380edb103e9cd63d5d5758fee" name="a72dbc51380edb103e9cd63d5d5758fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72dbc51380edb103e9cd63d5d5758fee">&#9670;&#160;</a></span>allocator_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::allocator_type = Allocator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e1c5a0d01dd5828e8a50ca26a2bd17f" name="a6e1c5a0d01dd5828e8a50ca26a2bd17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">&#9670;&#160;</a></span>const_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::const_iterator = <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html">detail::LListIter</a>&lt;T, true&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af724770d735372b75e07f03e1edef674" name="af724770d735372b75e07f03e1edef674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af724770d735372b75e07f03e1edef674">&#9670;&#160;</a></span>const_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::const_pointer = const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18f847af0eac518833fc6e45f50dc08f" name="a18f847af0eac518833fc6e45f50dc08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f847af0eac518833fc6e45f50dc08f">&#9670;&#160;</a></span>const_reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::const_reference = const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3d867b7306b423f2a1da0bfff7fc0f0" name="aa3d867b7306b423f2a1da0bfff7fc0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d867b7306b423f2a1da0bfff7fc0f0">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::iterator = <a class="el" href="classbmb_1_1detail_1_1_l_list_iter.html">detail::LListIter</a>&lt;T, false&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86264648d1ee4290d0c31a45fad76167" name="a86264648d1ee4290d0c31a45fad76167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86264648d1ee4290d0c31a45fad76167">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::pointer = <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9684c86d17b2fa067d106ff8ab088613" name="a9684c86d17b2fa067d106ff8ab088613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9684c86d17b2fa067d106ff8ab088613">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::reference = <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a985578de871ee3de8605ac07750b8a09" name="a985578de871ee3de8605ac07750b8a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a985578de871ee3de8605ac07750b8a09">&#9670;&#160;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::size_type = size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d0e6d0a59fdfaacfc1d2fe43b130aeb" name="a3d0e6d0a59fdfaacfc1d2fe43b130aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::value_type = T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af8b6373232a45460c624c373147827c1" name="af8b6373232a45460c624c373147827c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b6373232a45460c624c373147827c1">&#9670;&#160;</a></span>LinkedList() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c1c48e204a33ebeba4d3fbf18d049b3" name="a9c1c48e204a33ebeba4d3fbf18d049b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1c48e204a33ebeba4d3fbf18d049b3">&#9670;&#160;</a></span>LinkedList() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;</td>          <td class="paramname"><span class="paramname"><em>alloc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6391b18bfa590899e95911c949eb729a" name="a6391b18bfa590899e95911c949eb729a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6391b18bfa590899e95911c949eb729a">&#9670;&#160;</a></span>LinkedList() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a>()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;</td>          <td class="paramname"><span class="paramname"><em>alloc</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Allocator()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs <code>count</code> elements with given value. </p>
+<p>Allocates and copy-constructs <code>count</code> elements one by one. Actually copies, then moves each element. So, <code>count</code> copies and moves are performed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>Number of elements to construct </td></tr>
+    <tr><td class="paramname">value</td><td>Value to initilize elements </td></tr>
+    <tr><td class="paramname">alloc</td><td>Container's allocator</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a246980f1957831a45103de3e8d7483e4" name="a246980f1957831a45103de3e8d7483e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a246980f1957831a45103de3e8d7483e4">&#9670;&#160;</a></span>LinkedList() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;InputIterator Iter&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em>last</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;</td>          <td class="paramname"><span class="paramname"><em>alloc</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Allocator()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize list with the given range. </p>
+<p>Copies all elements in <code>[first, last)</code>. Actually copies, then moves each element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Start of the range </td></tr>
+    <tr><td class="paramname">last</td><td>End of the range </td></tr>
+    <tr><td class="paramname">alloc</td><td>Container's allocator</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a05ba9098548b231e7762fd3222533bf9" name="a05ba9098548b231e7762fd3222533bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05ba9098548b231e7762fd3222533bf9">&#9670;&#160;</a></span>LinkedList() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>init_list</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Allocator &amp;</td>          <td class="paramname"><span class="paramname"><em>alloc</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Allocator()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize list with the given initializer_list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init_list</td><td>Initializer list to copy </td></tr>
+    <tr><td class="paramname">alloc</td><td>Container's allocator</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab4844db95be0ab9b2a60533da8a62e62" name="ab4844db95be0ab9b2a60533da8a62e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4844db95be0ab9b2a60533da8a62e62">&#9670;&#160;</a></span>LinkedList() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab2cad9103ab97ca0a78da35facb1b8bc" name="ab2cad9103ab97ca0a78da35facb1b8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cad9103ab97ca0a78da35facb1b8bc">&#9670;&#160;</a></span>LinkedList() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::LinkedList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor. No iterators are invalidated. </p>
+
+</div>
+</div>
+<a id="a2cae942e5789a608e382b2aaba30946e" name="a2cae942e5789a608e382b2aaba30946e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cae942e5789a608e382b2aaba30946e">&#9670;&#160;</a></span>~LinkedList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::~<a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a477c7739845ffc4b07cee15a3a9f216f" name="a477c7739845ffc4b07cee15a3a9f216f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477c7739845ffc4b07cee15a3a9f216f">&#9670;&#160;</a></span>back() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a18f847af0eac518833fc6e45f50dc08f">const_reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns last element in the list. </p>
+<p>Time complexity: 1) If <code>TrackLast=true</code>: <code>O(1)</code>. 2) If <code>TrackLast=false</code>: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>.</p>
+<p>If list is empty, UB. </p>
+
+</div>
+</div>
+<a id="a296b6ccfadf3bc939edcc242a3113624" name="a296b6ccfadf3bc939edcc242a3113624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a296b6ccfadf3bc939edcc242a3113624">&#9670;&#160;</a></span>back() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns last element in the list. </p>
+<p>Time complexity: 1) If <code>TrackLast=true</code>: <code>O(1)</code>. 2) If <code>TrackLast=false</code>: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>.</p>
+<p>If list is empty, UB. </p>
+
+</div>
+</div>
+<a id="a24ef5fd8b106f0266235e21c4f37bfac" name="a24ef5fd8b106f0266235e21c4f37bfac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24ef5fd8b106f0266235e21c4f37bfac">&#9670;&#160;</a></span>beforeBegin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::beforeBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2deae7220de57736aa09357b0327b729" name="a2deae7220de57736aa09357b0327b729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2deae7220de57736aa09357b0327b729">&#9670;&#160;</a></span>beforeBegin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::beforeBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b04944823eafd04320d05a35831d443" name="a7b04944823eafd04320d05a35831d443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b04944823eafd04320d05a35831d443">&#9670;&#160;</a></span>beforeEnd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::beforeEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3087f85e1ff3182c6f852f7d90f1c896" name="a3087f85e1ff3182c6f852f7d90f1c896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3087f85e1ff3182c6f852f7d90f1c896">&#9670;&#160;</a></span>beforeEnd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::beforeEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d3f6ff5f23997a24752390b81908b81" name="a9d3f6ff5f23997a24752390b81908b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3f6ff5f23997a24752390b81908b81">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae84a8f277bc2be3130f29e1b0708c162" name="ae84a8f277bc2be3130f29e1b0708c162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84a8f277bc2be3130f29e1b0708c162">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a999180a9609e7027e75d9cdbd178ea0a" name="a999180a9609e7027e75d9cdbd178ea0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999180a9609e7027e75d9cdbd178ea0a">&#9670;&#160;</a></span>cbeforeBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::cbeforeBegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0b5fbad3a07730ec6fbe81c84929395" name="ac0b5fbad3a07730ec6fbe81c84929395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b5fbad3a07730ec6fbe81c84929395">&#9670;&#160;</a></span>cbeforeEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::cbeforeEnd </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a155a951de47e4f61e06607e0af154904" name="a155a951de47e4f61e06607e0af154904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155a951de47e4f61e06607e0af154904">&#9670;&#160;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cef75523c3596f745217b507a5c16ab" name="a2cef75523c3596f745217b507a5c16ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cef75523c3596f745217b507a5c16ab">&#9670;&#160;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8ba1a2d92379fe608078e24bc205993" name="ab8ba1a2d92379fe608078e24bc205993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ba1a2d92379fe608078e24bc205993">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all elements in the list. </p>
+<p>After this operation, there are no elements in the list, <code><a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>=0</code>, <code><a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>=<a class="el" href="#a3087f85e1ff3182c6f852f7d90f1c896">beforeEnd()</a></code>.</p>
+<p>All iterators are invalidated.</p>
+<p>Time complexity: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8c2355edbb81e87d2285738615491b2" name="ae8c2355edbb81e87d2285738615491b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c2355edbb81e87d2285738615491b2">&#9670;&#160;</a></span>emplaceAfter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::emplaceAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates new node from given arguments and places it after the given position. </p>
+<p>After this operation, <code>next(pos)</code> will give an iterator to the newly created node.</p>
+<p><code>pos</code> must be valid iterator in <code>[<a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>, <a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end()</a>)</code>. Otherwise UB.</p>
+<p>No iterators are invalidated.</p>
+<p>Time complexity: <code>O(1)</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Position to insert after </td></tr>
+    <tr><td class="paramname">args...</td><td>Arguments to forward in the element's c-tor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the created element</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ce8af50dbee7d99b537faab744b69bd" name="a2ce8af50dbee7d99b537faab744b69bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce8af50dbee7d99b537faab744b69bd">&#9670;&#160;</a></span>emplaceBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::emplaceBack </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates new node from given arguments in the end of the list. </p>
+<p>That's it, places the new node after <code>prev(end())</code>, so it becomes last element in the list.</p>
+<p>See <code>emplaceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, Args&amp;&amp;...)</code> docs for details.</p>
+<p>Time complexity: 1) If <code>TrackLast=true</code>: <code>O(1)</code>. 2) If <code>TrackLast=false</code>: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args...</td><td>Arguments to forward in the element's c-tor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the created element</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a155231419decab99a0edfafb0bc8b669" name="a155231419decab99a0edfafb0bc8b669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155231419decab99a0edfafb0bc8b669">&#9670;&#160;</a></span>emplaceFront()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::emplaceFront </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates new node from given arguments in the start of the list. </p>
+<p>That's it, places the new node after <code><a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a></code>, so it becomes <code><a class="el" href="#ae84a8f277bc2be3130f29e1b0708c162">begin()</a></code>.</p>
+<p>See <code>emplaceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, Args&amp;&amp;...)</code> docs for details.</p>
+<p>Time complexity: <code>O(1)</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args...</td><td>Arguments to forward in the element's c-tor</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the created element</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2be2aeac1d0abaf506e0dbd184ecc1bb" name="a2be2aeac1d0abaf506e0dbd184ecc1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be2aeac1d0abaf506e0dbd184ecc1bb">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a2748c3c00360dccf45475503ca7ee7" name="a7a2748c3c00360dccf45475503ca7ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2748c3c00360dccf45475503ca7ee7">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0eee24428b7716a7cc1cb64bcf6f8408" name="a0eee24428b7716a7cc1cb64bcf6f8408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eee24428b7716a7cc1cb64bcf6f8408">&#9670;&#160;</a></span>eraseAfter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::eraseAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys elements in <code>(first, last)</code>. </p>
+<p>That's it, all elements from <code>next(first)</code> to <code>prev(last)</code> are erased. And <code>next(first)</code> becomes equal to <code>last</code>.</p>
+<p><code>first</code> and <code>last</code> must be valid iterators in <code>[<a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>, <a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end()</a>]</code>. Otherwise UB.</p>
+<p>No iterators, except ones to the erased elements, are invalidated.</p>
+<p>If <code>first==last</code> or <code>next(first)==last</code>, does nothing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>Iterator to start the erase after </td></tr>
+    <tr><td class="paramname">last</td><td>Iterator to end the erase before</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>last</code></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acd18576bf8742d2c65d9c998eb051a39" name="acd18576bf8742d2c65d9c998eb051a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd18576bf8742d2c65d9c998eb051a39">&#9670;&#160;</a></span>eraseAfter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::eraseAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys element right after <code>pos</code>. </p>
+<p><code>pos</code> must be valid iterator in <code>[<a class="el" href="#a999180a9609e7027e75d9cdbd178ea0a">cbeforeBegin()</a>, end)</code>. If <code>pos</code> is the last element in the list or <code><a class="el" href="#af3fdf86815ea39f622cbaa5e446c3356" title="Checks whether list has elements.">isEmpty()</a>==true</code>, does nothing.</p>
+<p>No iterators, except one to the erased element, are invalidated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Iterator to destroy after</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the element after destroyed one</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a71be25ce0326a7cb8da32725e375b6e9" name="a71be25ce0326a7cb8da32725e375b6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71be25ce0326a7cb8da32725e375b6e9">&#9670;&#160;</a></span>front() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a18f847af0eac518833fc6e45f50dc08f">const_reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns first element in the list. </p>
+<p>If list is empty, UB. </p>
+
+</div>
+</div>
+<a id="a57d5f5710779879de03c94b711ea9d4f" name="a57d5f5710779879de03c94b711ea9d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57d5f5710779879de03c94b711ea9d4f">&#9670;&#160;</a></span>front() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a9684c86d17b2fa067d106ff8ab088613">reference</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns first element in the list. </p>
+<p>If list is empty, UB. </p>
+
+</div>
+</div>
+<a id="aae9da6bfee5fe0b74a628305963f975a" name="aae9da6bfee5fe0b74a628305963f975a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9da6bfee5fe0b74a628305963f975a">&#9670;&#160;</a></span>getAllocator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a72dbc51380edb103e9cd63d5d5758fee">allocator_type</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::getAllocator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a589fddfebdd2eb5d27a0cecff14433e7" name="a589fddfebdd2eb5d27a0cecff14433e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a589fddfebdd2eb5d27a0cecff14433e7">&#9670;&#160;</a></span>getRawFirstNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structbmb_1_1llist_1_1_node.html">Node</a> * <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::getRawFirstNode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns raw representation of the first list's node. </p>
+<p>Generally, you should not use it. </p>
+
+</div>
+</div>
+<a id="aa24a8e4fd542275d4f3be8c1a9b53eea" name="aa24a8e4fd542275d4f3be8c1a9b53eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24a8e4fd542275d4f3be8c1a9b53eea">&#9670;&#160;</a></span>insertAfter() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;InputIterator Iter&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::insertAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iter</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts elements from <code>[first, last)</code> in the list after <code>pos</code>. </p>
+<p>That's it, copies elements in <code>[first, last)</code> and places them between <code>pos</code> and <code>next(pos)</code>.</p>
+<p><code>pos</code> must be valid iterator in <code>[<a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>, <a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end()</a>)</code>. Otherwise UB.</p>
+<p>No iterators are invalidated.</p>
+<p>Time complexity: <code>O(distance(first, last))</code> - number elements to insert.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Iterator to place range after </td></tr>
+    <tr><td class="paramname">first</td><td>Start of range </td></tr>
+    <tr><td class="paramname">last</td><td>End of range</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the last element inserted, or <code>pos</code> if <code>first==last</code></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aafe3455901baa08ecf126918a7be0d82" name="aafe3455901baa08ecf126918a7be0d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe3455901baa08ecf126918a7be0d82">&#9670;&#160;</a></span>insertAfter() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::insertAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>init_list</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts elements from initializer list in the list. </p>
+<p>Actually calls <code>insertAfter(pos, init_list.begin(), init_list.end())</code>. See its docs for details.</p>
+<p>Time complexity: <code>O(n)</code> where n=number elements to insert.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Iterator to place elements after </td></tr>
+    <tr><td class="paramname">init_list</td><td>Initializer list to copy</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the last element inserted, or <code>pos</code> if init_list is empty.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a83b9cc0a0fc555d20eee015fdd1adc1c" name="a83b9cc0a0fc555d20eee015fdd1adc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b9cc0a0fc555d20eee015fdd1adc1c">&#9670;&#160;</a></span>insertAfter() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::insertAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a3d0e6d0a59fdfaacfc1d2fe43b130aeb">value_type</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates element and places it after the given iterator. </p>
+<p>Actually calls <code>emplaceAfter(pos, bmb::move(value))</code>. See its docs for details.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Position to insert after </td></tr>
+    <tr><td class="paramname">value</td><td>Value to initialize new node</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Time complexity: <code>O(1)</code>.</p>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the created element</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>strong exception guarantee </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3fdf86815ea39f622cbaa5e446c3356" name="af3fdf86815ea39f622cbaa5e446c3356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3fdf86815ea39f622cbaa5e446c3356">&#9670;&#160;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether list has elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>true, if list is empty. Otherwise false.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab46377353eb1cfe6098ffd72182ad1bd" name="ab46377353eb1cfe6098ffd72182ad1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab46377353eb1cfe6098ffd72182ad1bd">&#9670;&#160;</a></span>merge() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename Cmp = less&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cmp</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Cmp()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Merges elements from 2 sorted lists into one sorted. </p>
+<p>Transfers all elements from <code>other</code> to <code>this</code>, so <code>this</code> is sorted. <code>other</code> becomes empty after this operation.</p>
+<p>Assumes that <code>this</code> and <code>other</code> are already sorted according to <code>cmp</code>. If they don't, resulting list will be unpredictably merged. Current implementation is NOT stable.</p>
+<p><code>this-&gt;<a class="el" href="#aae9da6bfee5fe0b74a628305963f975a">getAllocator()</a></code> must be equal to <code>other.getAllocator()</code>. Otherwise exception is thrown.</p>
+<p>If <code>other</code> refers to <code>this</code>, does nothing.</p>
+<p>No iterators are invalidated.</p>
+<p>Time complexity: <code>O(max(this-&gt;<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>, other.size()))</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>List to merge with </td></tr>
+    <tr><td class="paramname">cmp</td><td>Comparator to use</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>conditional exception safety. If allocators are different - throws <code>std::runtime_error</code>. If a call to <code>cmp</code> throws - no exception guarantee, there will be memory leak. Otherwise noexcept. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adabf184524dae65e4171eb562f07f846" name="adabf184524dae65e4171eb562f07f846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adabf184524dae65e4171eb562f07f846">&#9670;&#160;</a></span>merge() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<div class="memtemplate">
+template&lt;typename Cmp = less&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cmp</td>          <td class="paramname"><span class="paramname"><em>cmp</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Cmp()</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>See <code>merge(<a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;, auto)</code> </p>
+
+</div>
+</div>
+<a id="a66058cc452961800d23e5bd1a50e8933" name="a66058cc452961800d23e5bd1a50e8933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66058cc452961800d23e5bd1a50e8933">&#9670;&#160;</a></span>operator&lt;=&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a945f8e895860b32a434f115d9dee716c" name="a945f8e895860b32a434f115d9dee716c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945f8e895860b32a434f115d9dee716c">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a> &amp; <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy/move assignment operator. </p>
+<p>No iterators are invalidated.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Provides</td><td>conditional exception safety. If operator is used as a copy operator, strong guarantee. If operator is used as a move operator and interanal call to <code>swap</code> throws(due to allocator), basic guarantee, since moved value will be destroyed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb4f63a8a3d45c41d505ab5c590260d4" name="afb4f63a8a3d45c41d505ab5c590260d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4f63a8a3d45c41d505ab5c590260d4">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55a1c88c036a6ce7d51be0ff3fd57a58" name="a55a1c88c036a6ce7d51be0ff3fd57a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a1c88c036a6ce7d51be0ff3fd57a58">&#9670;&#160;</a></span>popBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::popBack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys last element in the list. </p>
+<p>If <code><a class="el" href="#af3fdf86815ea39f622cbaa5e446c3356" title="Checks whether list has elements.">isEmpty()</a>==true</code>, does nothing.</p>
+<p>Finds element before the last in the list and calls <code>eraseAfter</code> on it. By construction, to find node before the last one we need to iterate over the whole list.</p>
+<p>No iterators, except one to the erased element, are invalidated.</p>
+<p>Time complexity: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a>.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9ca3c73295970b195efe7976e3519a59" name="a9ca3c73295970b195efe7976e3519a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca3c73295970b195efe7976e3519a59">&#9670;&#160;</a></span>popFront()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::popFront </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys first element in the list. </p>
+<p>Actually calls <code>eraseAfter(cbeforeBegin())</code>. See its docs for details.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a02c1c676ba5927e09adfe31ce3bf9713" name="a02c1c676ba5927e09adfe31ce3bf9713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c1c676ba5927e09adfe31ce3bf9713">&#9670;&#160;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::reverse </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reverses linked list. </p>
+<p>Time complexity: <code>O(n)</code> where n=<a class="el" href="#aa20e77e944fa8d9c6fbe1fe345b54b0c" title="Returns list&#39;s size.">size()</a></p>
+<p>No iterators, except one to the erased element, are invalidated.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa20e77e944fa8d9c6fbe1fe345b54b0c" name="aa20e77e944fa8d9c6fbe1fe345b54b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20e77e944fa8d9c6fbe1fe345b54b0c">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns list's size. </p>
+<p>Time complexity: 1) If <code>TrackSize=true</code>: <code>O(1)</code>. 2) If <code>TrackSize=false</code>: <code>O(n)</code> where n - num. of elements in list.</p>
+<dl class="section return"><dt>Returns</dt><dd>number of elements in the list</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">noexcept</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4c8526bce3f7188855841e7863886a4a" name="a4c8526bce3f7188855841e7863886a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8526bce3f7188855841e7863886a4a">&#9670;&#160;</a></span>spliceAfter() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::spliceAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers all elements from <code>other</code> to <code>*this</code>. <code>other</code> becomes empty. </p>
+<p><code>this-&gt;<a class="el" href="#aae9da6bfee5fe0b74a628305963f975a">getAllocator()</a></code> must be equal to <code>other.getAllocator()</code>. Otherwise exception is thrown.</p>
+<p><code>pos</code> must be valid iterator in <code>[<a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>, <a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end()</a>)</code>. Otherwise UB.</p>
+<p>If <code>other</code> refers to <code>*this</code>, does nothing.</p>
+<p>No iterators are invalidated.</p>
+<p>Time complexity: 1) If <code>TrackLast==true</code>: <code>O(1)</code>. 2) If <code>TrackLast==false</code>: <code>O(other.size())</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Iterator to transfer after </td></tr>
+    <tr><td class="paramname">other</td><td>List to transfer from</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the last element transferred or <code>pos</code></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if allocators aren't equal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a798f3c7fd0ca040be087407559af355b" name="a798f3c7fd0ca040be087407559af355b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798f3c7fd0ca040be087407559af355b">&#9670;&#160;</a></span>spliceAfter() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::spliceAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transfers all elements in <code>(first, last)</code> from <code>other</code> to <code>*this</code> right after <code>pos</code>. </p>
+<p>If <code>first==last</code> or <code>next(first)==last</code>, does nothing and returns <code>pos</code>.</p>
+<p><code>other</code> can refer to <code>*this</code>. In this case <code>pos</code> must not be in (first, last), otherwise UB - at least memory leak.</p>
+<p><code>this-&gt;<a class="el" href="#aae9da6bfee5fe0b74a628305963f975a">getAllocator()</a></code> must be equal to <code>other.getAllocator()</code>. Otherwise exception is thrown.</p>
+<p><code>pos</code> must be valid iterator in <code>[<a class="el" href="#a2deae7220de57736aa09357b0327b729">beforeBegin()</a>, <a class="el" href="#a7a2748c3c00360dccf45475503ca7ee7">end()</a>)</code>. Otherwise UB.</p>
+<p>No iterators are invalidated.</p>
+<p>Time complexity: <code>O(distance(first, last))</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Iterator to transfer range after </td></tr>
+    <tr><td class="paramname">other</td><td>List to transfer from </td></tr>
+    <tr><td class="paramname">first</td><td>Iterator before the element to start cut </td></tr>
+    <tr><td class="paramname">last</td><td>Iterator after the element to stop cut</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the last element transferred or <code>pos</code></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if allocators aren't equal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f9e0d8a8976b46d6c8cfa6512cc331b" name="a6f9e0d8a8976b46d6c8cfa6512cc331b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f9e0d8a8976b46d6c8cfa6512cc331b">&#9670;&#160;</a></span>spliceAfter() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::spliceAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>See <code>spliceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;)</code> </p>
+
+</div>
+</div>
+<a id="a60873d8faf7b32e43dfcbc8ead15b9b1" name="a60873d8faf7b32e43dfcbc8ead15b9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60873d8faf7b32e43dfcbc8ead15b9b1">&#9670;&#160;</a></span>spliceAfter() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa3d867b7306b423f2a1da0bfff7fc0f0">iterator</a> <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::spliceAfter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>See <code>spliceAfter(<a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="classbmb_1_1_linked_list.html" title="Singly linked list.">LinkedList</a>&amp;&amp;, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>, <a class="el" href="#a6e1c5a0d01dd5828e8a50ca26a2bd17f">const_iterator</a>)</code> </p>
+
+</div>
+</div>
+<a id="a00646b4fa782ca9173338d9eebe686ea" name="a00646b4fa782ca9173338d9eebe686ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00646b4fa782ca9173338d9eebe686ea">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, bool TrackSize = true, bool TrackLast = true, typename Allocator = PrimitiveAllocator&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classbmb_1_1_linked_list.html">bmb::LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a>&lt; T, TrackSize, TrackLast, Allocator &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Effectively swaps content of the lists. </p>
+<p>No iterators are invalidated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Lists to swap with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Same</td><td>as swap for allocators </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="linked__list_8h_source.html">linked_list.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacebmb.html">bmb</a></li><li class="navelem"><a class="el" href="classbmb_1_1_linked_list.html">LinkedList</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>
